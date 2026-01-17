@@ -28,10 +28,12 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <StructuredData />
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      <WhatsAppButton />
+      <div className="overflow-x-hidden">
+        <Header />
+        <main className="overflow-x-hidden">{children}</main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
     </NextIntlClientProvider>
   );
 }
