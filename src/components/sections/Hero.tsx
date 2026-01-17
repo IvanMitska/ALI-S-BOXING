@@ -79,23 +79,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-6 lg:left-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-        >
-          <div className="flex flex-col items-start gap-2 text-[#555]">
-            <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
-            <motion.div
-              className="w-px h-12 bg-gradient-to-b from-[#555] to-transparent"
-              animate={{ scaleY: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
-
         {/* Stats box */}
         <motion.div
           className="absolute bottom-8 right-8 lg:right-16 bg-[#0a0a0a]/90 border border-[#222] p-5"
