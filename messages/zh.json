@@ -96,30 +96,7 @@
     },
     "pricing": {
       "title": "价格",
-      "subtitle": "灵活的选择满足您的训练需求",
-      "dropIn": {
-        "title": "单次",
-        "price": "500",
-        "currency": "泰铢",
-        "period": "每节",
-        "features": ["单次团体课", "包含设备", "淋浴设施", "无需承诺"]
-      },
-      "weekly": {
-        "title": "周卡",
-        "price": "2,500",
-        "currency": "泰铢",
-        "period": "每周",
-        "features": ["无限团体课", "包含设备", "淋浴设施", "储物柜"],
-        "popular": true
-      },
-      "monthly": {
-        "title": "月卡",
-        "price": "8,000",
-        "currency": "泰铢",
-        "period": "每月",
-        "features": ["无限团体课", "包含设备", "淋浴设施", "储物柜", "1节私人课程"]
-      },
-      "cta": "开始"
+      "subtitle": "灵活的选择满足您的训练需求"
     },
     "schedule": {
       "title": "课程表",
@@ -130,13 +107,11 @@
         "wed": "周三",
         "thu": "周四",
         "fri": "周五",
-        "sat": "周六",
-        "sun": "周日"
+        "sat": "周六"
       },
       "headers": {
         "time": "时间",
-        "class": "课程",
-        "instructor": "教练"
+        "class": "课程"
       }
     }
   },

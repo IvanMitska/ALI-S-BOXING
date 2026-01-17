@@ -96,30 +96,7 @@
     },
     "pricing": {
       "title": "Pricing",
-      "subtitle": "Flexible options to fit your training needs",
-      "dropIn": {
-        "title": "Drop-in",
-        "price": "500",
-        "currency": "THB",
-        "period": "per session",
-        "features": ["Single group class", "Equipment included", "Shower facilities", "No commitment"]
-      },
-      "weekly": {
-        "title": "Weekly Pass",
-        "price": "2,500",
-        "currency": "THB",
-        "period": "per week",
-        "features": ["Unlimited group classes", "Equipment included", "Shower facilities", "Locker access"],
-        "popular": true
-      },
-      "monthly": {
-        "title": "Monthly Pass",
-        "price": "8,000",
-        "currency": "THB",
-        "period": "per month",
-        "features": ["Unlimited group classes", "Equipment included", "Shower facilities", "Locker access", "1 private session"]
-      },
-      "cta": "Get Started"
+      "subtitle": "Flexible options to fit your training needs"
     },
     "schedule": {
       "title": "Class Schedule",
@@ -130,13 +107,11 @@
         "wed": "Wednesday",
         "thu": "Thursday",
         "fri": "Friday",
-        "sat": "Saturday",
-        "sun": "Sunday"
+        "sat": "Saturday"
       },
       "headers": {
         "time": "Time",
-        "class": "Class",
-        "instructor": "Instructor"
+        "class": "Class"
       }
     }
   },

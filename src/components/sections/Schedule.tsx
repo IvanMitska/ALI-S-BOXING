@@ -6,55 +6,49 @@ import { Container } from '@/components/ui/Container';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { cn } from '@/lib/utils';
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] as const;
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const;
 
 type Day = (typeof days)[number];
 
 interface ClassSession {
   time: string;
   name: string;
-  instructor: string;
+  highlight?: 'women' | 'kids';
 }
 
 const scheduleData: Record<Day, ClassSession[]> = {
   mon: [
-    { time: '07:00', name: 'Muay Thai', instructor: 'Coach Ali' },
-    { time: '09:00', name: 'Fitness Boxing', instructor: 'Coach Som' },
-    { time: '16:00', name: 'Kids Muay Thai', instructor: 'Coach Noi' },
-    { time: '18:00', name: 'Muay Thai', instructor: 'Coach Ali' },
+    { time: '9:30 - 10:30', name: 'Boxing Conditioning' },
+    { time: '10:30 - 11:45', name: 'Boxing' },
+    { time: '17:00 - 18:00', name: 'Kids Boxing', highlight: 'kids' },
+    { time: '19:00 - 20:30', name: 'Boxing' },
   ],
   tue: [
-    { time: '07:00', name: 'Western Boxing', instructor: 'Coach Mike' },
-    { time: '10:00', name: 'Private Sessions', instructor: 'All Coaches' },
-    { time: '16:00', name: 'Kids Muay Thai', instructor: 'Coach Noi' },
-    { time: '18:00', name: 'Fighter Training', instructor: 'Coach Ali' },
+    { time: '9:30 - 10:30', name: 'Boxing Conditioning & Women\'s Boxing', highlight: 'women' },
+    { time: '10:30 - 11:45', name: 'Boxing Drills Sparring' },
+    { time: '19:00 - 20:30', name: 'Boxing' },
   ],
   wed: [
-    { time: '07:00', name: 'Muay Thai', instructor: 'Coach Ali' },
-    { time: '09:00', name: 'Fitness Boxing', instructor: 'Coach Som' },
-    { time: '16:00', name: 'Kids Muay Thai', instructor: 'Coach Noi' },
-    { time: '18:00', name: 'Muay Thai', instructor: 'Coach Ali' },
+    { time: '9:30 - 10:30', name: 'Boxing Conditioning' },
+    { time: '10:30 - 11:45', name: 'Boxing' },
+    { time: '17:00 - 18:00', name: 'Kids Boxing', highlight: 'kids' },
+    { time: '19:00 - 20:30', name: 'Boxing' },
   ],
   thu: [
-    { time: '07:00', name: 'Western Boxing', instructor: 'Coach Mike' },
-    { time: '10:00', name: 'Private Sessions', instructor: 'All Coaches' },
-    { time: '16:00', name: 'Kids Muay Thai', instructor: 'Coach Noi' },
-    { time: '18:00', name: 'Fighter Training', instructor: 'Coach Ali' },
+    { time: '9:30 - 10:30', name: 'Boxing Conditioning & Women\'s Boxing', highlight: 'women' },
+    { time: '10:30 - 11:45', name: 'Boxing Drills Sparring' },
+    { time: '19:00 - 20:30', name: 'Boxing' },
   ],
   fri: [
-    { time: '07:00', name: 'Muay Thai', instructor: 'Coach Ali' },
-    { time: '09:00', name: 'Fitness Boxing', instructor: 'Coach Som' },
-    { time: '16:00', name: 'Kids Muay Thai', instructor: 'Coach Noi' },
-    { time: '18:00', name: 'Muay Thai', instructor: 'Coach Ali' },
+    { time: '9:30 - 10:30', name: 'Boxing Conditioning' },
+    { time: '10:30 - 11:45', name: 'Boxing' },
+    { time: '17:00 - 18:00', name: 'Kids Boxing', highlight: 'kids' },
+    { time: '19:00 - 20:30', name: 'Boxing' },
   ],
   sat: [
-    { time: '08:00', name: 'Muay Thai', instructor: 'Coach Ali' },
-    { time: '10:00', name: 'Fitness Boxing', instructor: 'Coach Som' },
-    { time: '14:00', name: 'Open Sparring', instructor: 'All Coaches' },
-  ],
-  sun: [
-    { time: '09:00', name: 'Muay Thai', instructor: 'Coach Ali' },
-    { time: '11:00', name: 'Recovery & Stretching', instructor: 'Coach Som' },
+    { time: '10:30 - 11:45', name: 'Boxing' },
+    { time: '12:00 - 13:00', name: 'Sparring' },
+    { time: '19:00 - 20:30', name: 'Boxing' },
   ],
 };
 
@@ -98,7 +92,6 @@ export function Schedule() {
                 <tr className="border-b border-border">
                   <th className="py-4 px-6 text-left font-semibold text-white">{t('headers.time')}</th>
                   <th className="py-4 px-6 text-left font-semibold text-white">{t('headers.class')}</th>
-                  <th className="py-4 px-6 text-left font-semibold text-white">{t('headers.instructor')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -108,25 +101,38 @@ export function Schedule() {
                     className="border-b border-border hover:bg-background-card transition-colors"
                   >
                     <td className="py-4 px-6 font-medium text-white">{session.time}</td>
-                    <td className="py-4 px-6 text-white">{session.name}</td>
-                    <td className="py-4 px-6 text-foreground-muted">{session.instructor}</td>
+                    <td className="py-4 px-6">
+                      <span className={cn(
+                        session.highlight === 'kids' && 'text-cyan-400',
+                        session.highlight === 'women' && 'text-pink-400',
+                        !session.highlight && 'text-white'
+                      )}>
+                        {session.name}
+                      </span>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="md:hidden space-y-4">
+          <div className="md:hidden space-y-3">
             {scheduleData[selectedDay].map((session, index) => (
               <div
                 key={index}
                 className="bg-background-card rounded-lg p-4 border border-border"
               >
-                <div className="flex justify-between items-start mb-2">
-                  <span className="font-semibold text-white">{session.name}</span>
-                  <span className="text-brand-yellow font-medium">{session.time}</span>
+                <div className="flex justify-between items-start gap-4">
+                  <span className={cn(
+                    'font-semibold',
+                    session.highlight === 'kids' && 'text-cyan-400',
+                    session.highlight === 'women' && 'text-pink-400',
+                    !session.highlight && 'text-white'
+                  )}>
+                    {session.name}
+                  </span>
+                  <span className="text-brand-yellow font-medium text-sm whitespace-nowrap">{session.time}</span>
                 </div>
-                <p className="text-sm text-foreground-muted">{session.instructor}</p>
               </div>
             ))}
           </div>
