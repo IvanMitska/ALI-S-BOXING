@@ -102,11 +102,11 @@ export function Footer() {
                 {t('footer.hours')}
               </h4>
               <div className="space-y-3">
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between gap-2 text-sm">
                   <span className="text-foreground-muted">{t('footer.weekday')}</span>
                   <span className="text-white">{siteConfig.hours.weekday}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between gap-2 text-sm">
                   <span className="text-foreground-muted">{t('footer.weekend')}</span>
                   <span className="text-white">{siteConfig.hours.weekend}</span>
                 </div>
