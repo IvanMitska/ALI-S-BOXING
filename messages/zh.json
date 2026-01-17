@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "home": "首页",
+    "classes": "课程",
+    "ourStory": "关于我们",
+    "gallery": "相册",
+    "contact": "联系我们",
+    "bookNow": "立即预约"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "bookClass": "预约课程",
+    "contactUs": "联系我们",
+    "getStarted": "开始",
+    "readMore": "阅读更多"
+  },
+  "home": {
+    "hero": {
+      "title": "像冠军一样训练",
+      "subtitle": "在泰国普吉岛中心体验正宗的泰拳训练",
+      "cta": "开启你的旅程"
+    },
+    "benefits": {
+      "title": "为什么选择我们",
+      "subtitle": "加入数百名在这里训练的拳手",
+      "championship": {
+        "title": "冠军级训练",
+        "description": "与在最高级别比赛过的经验丰富的拳手和教练一起训练"
+      },
+      "community": {
+        "title": "友好的社区",
+        "description": "加入一个欢迎来自世界各地拳手的社区"
+      },
+      "facilities": {
+        "title": "世界级设施",
+        "description": "在配备专业设备的现代化健身房训练"
+      },
+      "location": {
+        "title": "优越位置",
+        "description": "位于美丽的普吉岛，靠近海滩和当地景点"
+      }
+    },
+    "programs": {
+      "title": "我们的课程",
+      "subtitle": "适合所有技能水平的训练课程",
+      "viewAll": "查看所有课程",
+      "learnMore": "了解更多"
+    },
+    "about": {
+      "title": "我们的故事",
+      "subtitle": "冠军的传承",
+      "description": "由泰拳爱好者Ali创立，我们的健身房自成立以来一直在培养拳手。我们将传统泰拳技术与现代训练方法相结合。",
+      "cta": "了解更多关于我们"
+    },
+    "cta": {
+      "title": "准备开始训练了吗？",
+      "subtitle": "今天预约您的第一堂课，开始您的冠军之旅",
+      "button": "预约第一堂课"
+    }
+  },
+  "classes": {
+    "pageTitle": "课程与项目",
+    "pageSubtitle": "找到适合您目标的训练课程",
+    "programs": {
+      "muayThai": {
+        "title": "泰拳",
+        "description": "传统泰拳训练，涵盖八肢艺术的各个方面",
+        "level": "所有级别"
+      },
+      "boxing": {
+        "title": "西式拳击",
+        "description": "经典拳击技术，专注于步法、组合拳和防守",
+        "level": "所有级别"
+      },
+      "fitness": {
+        "title": "健身拳击",
+        "description": "结合拳击技术和有氧训练的高强度锻炼",
+        "level": "适合初学者"
+      },
+      "private": {
+        "title": "私人训练",
+        "description": "根据您的具体目标和时间表量身定制的一对一课程",
+        "level": "个性化"
+      },
+      "kids": {
+        "title": "儿童泰拳",
+        "description": "为6-12岁儿童提供有趣且安全的训练，培养自信和纪律",
+        "level": "6-12岁"
+      },
+      "fighter": {
+        "title": "拳手课程",
+        "description": "为准备比赛或寻求高级技能的人提供的强化训练",
+        "level": "高级"
+      }
+    },
+    "pricing": {
+      "title": "价格",
+      "subtitle": "灵活的选择满足您的训练需求",
+      "dropIn": {
+        "title": "单次",
+        "price": "500",
+        "currency": "泰铢",
+        "period": "每节",
+        "features": ["单次团体课", "包含设备", "淋浴设施", "无需承诺"]
+      },
+      "weekly": {
+        "title": "周卡",
+        "price": "2,500",
+        "currency": "泰铢",
+        "period": "每周",
+        "features": ["无限团体课", "包含设备", "淋浴设施", "储物柜"],
+        "popular": true
+      },
+      "monthly": {
+        "title": "月卡",
+        "price": "8,000",
+        "currency": "泰铢",
+        "period": "每月",
+        "features": ["无限团体课", "包含设备", "淋浴设施", "储物柜", "1节私人课程"]
+      },
+      "cta": "开始"
+    },
+    "schedule": {
+      "title": "课程表",
+      "subtitle": "计划您的训练周",
+      "days": {
+        "mon": "周一",
+        "tue": "周二",
+        "wed": "周三",
+        "thu": "周四",
+        "fri": "周五",
+        "sat": "周六",
+        "sun": "周日"
+      },
+      "headers": {
+        "time": "时间",
+        "class": "课程",
+        "instructor": "教练"
+      }
+    }
+  },
+  "ourStory": {
+    "pageTitle": "我们的故事",
+    "pageSubtitle": "Ali拳击健身房的历程",
+    "history": {
+      "title": "我们的历史",
+      "content": "Ali拳击健身房的创立使命很简单：与世界分享泰拳艺术，同时保留其真正的传统。从一个小型训练空间开始，现已发展成为一个由来自50多个国家的拳手组成的蓬勃发展的社区。"
+    },
+    "mission": {
+      "title": "我们的使命",
+      "content": "我们相信武术训练不仅仅是格斗。它是关于建立性格、纪律和信心。我们的使命是在一个支持性的环境中提供世界级的训练，让每个人都能实现自己的目标。"
+    },
+    "trainers": {
+      "title": "我们的教练",
+      "subtitle": "向最好的学习"
+    },
+    "stats": {
+      "students": "训练学员",
+      "countries": "代表国家",
+      "experience": "年经验",
+      "champions": "培养冠军"
+    }
+  },
+  "gallery": {
+    "pageTitle": "相册",
+    "pageSubtitle": "健身房的精彩瞬间",
+    "filters": {
+      "all": "全部",
+      "gym": "健身房",
+      "training": "训练",
+      "events": "活动"
+    }
+  },
+  "contact": {
+    "pageTitle": "联系我们",
+    "pageSubtitle": "与我们取得联系",
+    "form": {
+      "name": "您的姓名",
+      "email": "电子邮箱",
+      "subject": "主题",
+      "message": "您的留言",
+      "submit": "发送消息",
+      "success": "谢谢！您的消息已成功发送。",
+      "error": "抱歉，出了点问题。请重试。"
+    },
+    "info": {
+      "title": "联系信息",
+      "address": "地址",
+      "phone": "电话",
+      "email": "邮箱",
+      "hours": "营业时间",
+      "weekday": "周一 - 周五",
+      "weekend": "周六 - 周日"
+    },
+    "map": {
+      "title": "找到我们"
+    }
+  },
+  "footer": {
+    "description": "泰国普吉岛的专业泰拳和拳击训练。加入我们来自世界各地的拳手社区。",
+    "quickLinks": "快速链接",
+    "contactUs": "联系我们",
+    "hours": "营业时间",
+    "weekday": "周一 - 周五",
+    "weekend": "周六 - 周日",
+    "copyright": "版权所有。"
+  }
+}

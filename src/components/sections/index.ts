@@ -1,0 +1,12 @@
+export { Hero } from './Hero';
+export { Benefits } from './Benefits';
+export { Programs } from './Programs';
+export { PricingTable } from './PricingTable';
+export { Schedule } from './Schedule';
+export { TrainerCard } from './TrainerCard';
+export { GalleryGrid } from './GalleryGrid';
+export { ContactForm } from './ContactForm';
+export { GoogleMap } from './GoogleMap';
+export { PageHeader } from './PageHeader';
+export { AboutPreview } from './AboutPreview';
+export { CTASection } from './CTASection';

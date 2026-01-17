@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "home": "Home",
+    "classes": "Classes",
+    "ourStory": "Our Story",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "bookClass": "Book a Class",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "readMore": "Read More"
+  },
+  "home": {
+    "hero": {
+      "title": "Train Like a Champion",
+      "subtitle": "Experience authentic Muay Thai training in the heart of Phuket, Thailand",
+      "cta": "Start Your Journey"
+    },
+    "benefits": {
+      "title": "Why Choose Us",
+      "subtitle": "Join hundreds of fighters who have trained with us",
+      "championship": {
+        "title": "Championship Training",
+        "description": "Train with experienced fighters and coaches who have competed at the highest levels"
+      },
+      "community": {
+        "title": "Supportive Community",
+        "description": "Join a welcoming community of fighters from around the world"
+      },
+      "facilities": {
+        "title": "World-Class Facilities",
+        "description": "Train in our modern gym equipped with professional-grade equipment"
+      },
+      "location": {
+        "title": "Prime Location",
+        "description": "Located in beautiful Phuket, close to beaches and local attractions"
+      }
+    },
+    "programs": {
+      "title": "Our Programs",
+      "subtitle": "Training programs for all skill levels",
+      "viewAll": "View All Programs",
+      "learnMore": "Learn More"
+    },
+    "about": {
+      "title": "Our Story",
+      "subtitle": "A legacy of champions",
+      "description": "Founded by Ali, a passionate Muay Thai practitioner, our gym has been shaping fighters since its establishment. We combine traditional Thai boxing techniques with modern training methods.",
+      "cta": "Learn More About Us"
+    },
+    "cta": {
+      "title": "Ready to Start Training?",
+      "subtitle": "Book your first session today and begin your journey to becoming a champion",
+      "button": "Book Your First Class"
+    }
+  },
+  "classes": {
+    "pageTitle": "Classes & Programs",
+    "pageSubtitle": "Find the perfect training program for your goals",
+    "programs": {
+      "muayThai": {
+        "title": "Muay Thai",
+        "description": "Traditional Thai boxing training covering all aspects of the art of eight limbs",
+        "level": "All Levels"
+      },
+      "boxing": {
+        "title": "Western Boxing",
+        "description": "Classic boxing techniques focusing on footwork, combinations, and defense",
+        "level": "All Levels"
+      },
+      "fitness": {
+        "title": "Fitness Boxing",
+        "description": "High-intensity workout combining boxing techniques with cardio training",
+        "level": "Beginner Friendly"
+      },
+      "private": {
+        "title": "Private Training",
+        "description": "One-on-one sessions tailored to your specific goals and schedule",
+        "level": "Personalized"
+      },
+      "kids": {
+        "title": "Kids Muay Thai",
+        "description": "Fun and safe training for children aged 6-12, building confidence and discipline",
+        "level": "Ages 6-12"
+      },
+      "fighter": {
+        "title": "Fighter Program",
+        "description": "Intensive training for those preparing for competition or seeking advanced skills",
+        "level": "Advanced"
+      }
+    },
+    "pricing": {
+      "title": "Pricing",
+      "subtitle": "Flexible options to fit your training needs",
+      "dropIn": {
+        "title": "Drop-in",
+        "price": "500",
+        "currency": "THB",
+        "period": "per session",
+        "features": ["Single group class", "Equipment included", "Shower facilities", "No commitment"]
+      },
+      "weekly": {
+        "title": "Weekly Pass",
+        "price": "2,500",
+        "currency": "THB",
+        "period": "per week",
+        "features": ["Unlimited group classes", "Equipment included", "Shower facilities", "Locker access"],
+        "popular": true
+      },
+      "monthly": {
+        "title": "Monthly Pass",
+        "price": "8,000",
+        "currency": "THB",
+        "period": "per month",
+        "features": ["Unlimited group classes", "Equipment included", "Shower facilities", "Locker access", "1 private session"]
+      },
+      "cta": "Get Started"
+    },
+    "schedule": {
+      "title": "Class Schedule",
+      "subtitle": "Plan your training week",
+      "days": {
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday",
+        "sun": "Sunday"
+      },
+      "headers": {
+        "time": "Time",
+        "class": "Class",
+        "instructor": "Instructor"
+      }
+    }
+  },
+  "ourStory": {
+    "pageTitle": "Our Story",
+    "pageSubtitle": "The journey of Ali's Boxing Gym",
+    "history": {
+      "title": "Our History",
+      "content": "Ali's Boxing Gym was founded with a simple mission: to share the art of Muay Thai with the world while preserving its authentic traditions. What started as a small training space has grown into a thriving community of fighters from over 50 countries."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "We believe that martial arts training is about more than just fighting. It's about building character, discipline, and confidence. Our mission is to provide world-class training in a supportive environment where everyone can achieve their goals."
+    },
+    "trainers": {
+      "title": "Our Trainers",
+      "subtitle": "Learn from the best"
+    },
+    "stats": {
+      "students": "Students Trained",
+      "countries": "Countries Represented",
+      "experience": "Years Experience",
+      "champions": "Champions Produced"
+    }
+  },
+  "gallery": {
+    "pageTitle": "Gallery",
+    "pageSubtitle": "Moments from our gym",
+    "filters": {
+      "all": "All",
+      "gym": "Gym",
+      "training": "Training",
+      "events": "Events"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "Get in touch with us",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Sorry, something went wrong. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Opening Hours",
+      "weekday": "Monday - Friday",
+      "weekend": "Saturday - Sunday"
+    },
+    "map": {
+      "title": "Find Us"
+    }
+  },
+  "footer": {
+    "description": "Professional Muay Thai & Boxing training in Phuket, Thailand. Join our community of fighters from around the world.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "hours": "Opening Hours",
+    "weekday": "Mon - Fri",
+    "weekend": "Sat - Sun",
+    "copyright": "All rights reserved."
+  }
+}
