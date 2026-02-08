@@ -1,10 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Button } from '@/components/ui/Button';
-import { getBookingWhatsAppUrl } from '@/lib/whatsapp';
+import { Link } from '@/i18n/navigation';
 
 export function Hero() {
   const t = useTranslations('home.hero');
@@ -45,7 +44,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-white block">MUAY THAI.</span>
+            <span className="text-white block">BOXING.</span>
             <span className="text-white block">FROM PHUKET.</span>
             <span className="text-[#f5c518] block">WITH PASSION.</span>
           </motion.h1>
@@ -60,22 +59,27 @@ export function Hero() {
             {t('subtitle')}
           </motion.p>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <motion.div
+            className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
-            <Button
-              href={getBookingWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-              size="lg"
-              rightIcon={<ArrowRight className="w-5 h-5" />}
+            <Link
+              href="/checkout"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-colors"
             >
-              {t('cta')}
-            </Button>
+              <ShoppingCart className="w-5 h-5" />
+              Buy Online
+            </Link>
+            <Link
+              href="/classes"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:border-white transition-colors"
+            >
+              View Classes
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </motion.div>
         </div>
 

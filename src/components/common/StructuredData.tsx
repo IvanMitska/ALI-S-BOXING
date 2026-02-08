@@ -40,7 +40,7 @@ export function StructuredData() {
       siteConfig.social.facebook,
       siteConfig.social.youtube,
     ],
-    sport: ['Muay Thai', 'Boxing', 'Fitness Boxing'],
+    sport: ['Boxing', 'Boxing Strength Training', 'Sparring'],
   };
 
   return (

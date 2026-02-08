@@ -14,12 +14,12 @@ interface Program {
 }
 
 const programs: Program[] = [
-  { id: 'muayThai', image: '/images/muay-thai.jpg', hoverColor: '#a3a323' }, // Olive/Yellow-green
   { id: 'boxing', image: '/images/boxing.jpg', hoverColor: '#5b21b6' }, // Dark Purple/Violet
-  { id: 'fitness', image: '/images/fitness.jpg', hoverColor: '#92400e' }, // Warm Brown/Sepia
+  { id: 'strengthTraining', image: '/images/strength.webp', hoverColor: '#a3a323' }, // Olive/Yellow-green
+  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#dc2626' }, // Red
+  { id: 'womensBoxing', image: '/images/womens.jpg', hoverColor: '#d946ef' }, // Pink/Magenta
+  { id: 'proFighter', image: '/images/fighter.jpg', hoverColor: '#92400e' }, // Warm Brown
   { id: 'private', image: '/images/private.jpg', hoverColor: '#1e3a8a' }, // Dark Blue
-  { id: 'kids', image: '/images/kids.jpg', hoverColor: '#d946ef' }, // Pink/Magenta
-  { id: 'fighter', image: '/images/fighter.jpg', hoverColor: '#dc2626' }, // Red/Coral
 ];
 
 interface ProgramsProps {

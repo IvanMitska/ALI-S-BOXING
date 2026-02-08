@@ -143,6 +143,24 @@ body {
   z-index: 1;
 }
 
+/* Lightweight noise for parallax sections (GPU accelerated) */
+.noise-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 2px
+  );
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
 /* Animated gradient border */
 @keyframes gradient-border {
   0%, 100% { background-position: 0% 50%; }

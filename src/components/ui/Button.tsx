@@ -25,19 +25,19 @@ interface ButtonProps {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: `
-    bg-white text-black font-semibold
-    hover:bg-brand-yellow hover:text-white
+    bg-transparent text-white font-semibold
     border border-white
+    hover:text-white
   `,
   secondary: `
-    bg-brand-yellow text-white font-semibold
-    hover:bg-white hover:text-black
-    border border-brand-yellow hover:border-white
+    bg-transparent text-white font-semibold
+    border border-white/50
+    hover:border-white hover:text-white
   `,
   outline: `
     bg-transparent text-white font-semibold
     border border-white
-    hover:bg-white hover:text-black
+    hover:text-white
   `,
   ghost: `
     bg-transparent text-white/80 font-medium
@@ -75,11 +75,12 @@ export const Button = forwardRef<
     ref
   ) => {
     const baseClassName = cn(
-      'relative inline-flex items-center justify-center gap-2',
+      'group relative inline-flex items-center justify-center gap-2',
       'transition-all duration-300 ease-out',
       'focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-background',
       'disabled:opacity-50 disabled:cursor-not-allowed',
       'uppercase tracking-wider',
+      'overflow-hidden',
       variantStyles[variant],
       sizeStyles[size],
       className
@@ -109,10 +110,12 @@ export const Button = forwardRef<
             />
           </svg>
         ) : leftIcon ? (
-          <span>{leftIcon}</span>
+          <span className="relative z-10">{leftIcon}</span>
         ) : null}
-        <span>{children}</span>
-        {rightIcon && !isLoading && <span>{rightIcon}</span>}
+        <span className="relative z-10">{children}</span>
+        {rightIcon && !isLoading && <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">{rightIcon}</span>}
+        {/* Animated underline */}
+        <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-brand-yellow/70 via-brand-yellow to-brand-yellow-dark origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
       </>
     );
 

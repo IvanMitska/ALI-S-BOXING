@@ -62,17 +62,14 @@ export function Header() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-4">
               <LanguageSwitcher />
-              <Button
-                href={getBookingWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outline"
-                size="sm"
+              <Link
+                href="/checkout"
+                className="px-4 py-2 bg-brand-yellow text-black text-sm font-semibold uppercase tracking-wider hover:bg-brand-yellow-dark transition-colors"
               >
-                {t('nav.bookNow')}
-              </Button>
+                Buy Online
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}

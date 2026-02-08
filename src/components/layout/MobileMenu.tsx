@@ -7,8 +7,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { navLinks } from '@/lib/constants';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { Button } from '@/components/ui/Button';
-import { getBookingWhatsAppUrl } from '@/lib/whatsapp';
+import { ShoppingCart } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -91,15 +90,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <LanguageSwitcher />
                 </div>
 
-                <Button
-                  href={getBookingWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
+                <Link
+                  href="/checkout"
                   onClick={onClose}
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-colors"
                 >
-                  {t('nav.bookNow')}
-                </Button>
+                  <ShoppingCart className="w-4 h-4" />
+                  Buy Online
+                </Link>
               </div>
             </div>
           </motion.div>

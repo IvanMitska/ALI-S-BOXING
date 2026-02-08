@@ -15,7 +15,7 @@ export function PageHeader({
   backgroundImage = '/images/page-header-bg.jpg',
 }: PageHeaderProps) {
   return (
-    <section className="relative min-h-[50vh] flex items-end overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-end overflow-hidden">
       {/* Background image - grayscale */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"

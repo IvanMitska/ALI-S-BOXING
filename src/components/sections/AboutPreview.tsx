@@ -18,17 +18,18 @@ export function AboutPreview() {
           {/* Image side */}
           <AnimatedSection direction="left">
             <div className="relative">
-              {/* Main image - grayscale */}
+              {/* Main image */}
               <motion.div
                 className="relative aspect-[4/5] overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.6 }}
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
-                  style={{ backgroundImage: 'url(/images/about-preview.jpg)' }}
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: 'url(/images/mission.jpg)' }}
                 />
                 {/* Overlay */}
+                <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </motion.div>
 

@@ -2,153 +2,163 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { ArrowRight, Star, Zap, Crown } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
-import { getBookingWhatsAppUrl } from '@/lib/whatsapp';
+import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
+import { Package, groupPackages, gymPackages, privatePackages } from '@/lib/packages';
 
-interface PricingItem {
-  name: string;
-  price: string;
-  period?: string;
-  bonus?: string;
-  popular?: boolean;
-}
-
-const groupClasses: PricingItem[] = [
-  { name: 'Drop In', price: '450', period: 'THB' },
-  { name: '10 Sessions', price: '3,500', period: 'THB', popular: true },
-  { name: '1 Month', price: '10,000', period: 'THB', bonus: 'Free T-shirt' },
-  { name: '3 Months', price: '27,000', period: 'THB', bonus: '3 Free T-shirts' },
-];
-
-const openGym: PricingItem[] = [
-  { name: 'For a Day', price: '200', period: 'THB' },
-  { name: '1 Month', price: '2,000', period: 'THB', popular: true },
-];
-
-const privateClasses: PricingItem[] = [
-  { name: 'Boxing', price: '1,500', period: 'THB / Session' },
-  { name: 'Kickboxing', price: '1,000', period: 'THB / Session', popular: true },
-  { name: 'Olympic Weight Lifting', price: '2,000', period: 'THB / Session' },
-  { name: 'Weight Loss/Muscle Gain', price: '1,500', period: 'THB / Session' },
-  { name: 'Kids Class', price: '650', period: 'THB / Session' },
-];
-
-function PricingCard({
-  item,
-  index,
-}: {
-  item: PricingItem;
-  index: number;
-}) {
+function PricingCard({ item, index }: { item: Package; index: number }) {
   return (
     <motion.div
-      className={cn(
-        'relative group',
-        item.popular && 'z-10'
-      )}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
       viewport={{ once: true }}
+      className="h-full group"
     >
-      <div
+      <motion.div
+        whileHover={{ y: -8 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
         className={cn(
-          'relative h-full p-6 border transition-all duration-300',
-          'bg-background-card hover:bg-background-card/80',
-          item.popular
-            ? 'border-brand-yellow shadow-lg shadow-brand-yellow/20'
-            : 'border-border hover:border-brand-yellow/50'
+          'h-full flex flex-col relative overflow-hidden',
+          'bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d]',
+          'border border-white/10',
+          'transition-all duration-500',
+          'hover:border-brand-yellow/50 hover:shadow-[0_0_40px_rgba(212,175,55,0.15)]'
         )}
       >
         {/* Popular badge */}
         {item.popular && (
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span className="inline-flex items-center gap-1 px-3 py-1 bg-brand-yellow text-black text-xs font-bold uppercase tracking-wider">
-              <Star className="w-3 h-3" />
+          <div className="absolute top-0 right-0">
+            <div className="bg-brand-yellow text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1">
               Popular
-            </span>
+            </div>
           </div>
         )}
 
-        {/* Content */}
-        <div className="flex flex-col h-full">
-          <h4 className="text-white font-semibold text-lg mb-4">{item.name}</h4>
-
-          <div className="mb-4">
-            <span className="text-3xl font-bold text-brand-yellow">{item.price}</span>
-            <span className="text-foreground-muted ml-2 text-sm">{item.period}</span>
-          </div>
-
-          {item.bonus && (
-            <div className="mb-4 inline-flex items-center gap-2 text-sm text-green-400">
-              <Zap className="w-4 h-4" />
-              {item.bonus}
-            </div>
-          )}
-
-          <div className="mt-auto pt-4">
-            <a
-              href={getBookingWhatsAppUrl(item.name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'w-full inline-flex items-center justify-center gap-2 px-4 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-300',
-                item.popular
-                  ? 'bg-brand-yellow text-black hover:bg-white'
-                  : 'bg-transparent border border-white text-white hover:bg-white hover:text-black'
-              )}
-            >
-              Book Now
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+        {/* Animated corner accent */}
+        <div className="absolute top-0 left-0 w-16 h-16 overflow-hidden">
+          <motion.div
+            className="absolute -top-8 -left-8 w-16 h-16 bg-brand-yellow/20 rotate-45"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
+            viewport={{ once: true }}
+          />
         </div>
-      </div>
+
+        {/* Header */}
+        <div className="relative p-6 pb-4">
+          <motion.h4
+            className="font-display text-lg font-bold text-white/70 uppercase tracking-wider mb-4"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
+            viewport={{ once: true }}
+          >
+            {item.name}
+          </motion.h4>
+
+          <div className="flex items-baseline gap-2">
+            <motion.span
+              className="text-5xl font-bold text-brand-yellow"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.1 + 0.3, duration: 0.4, type: 'spring' }}
+              viewport={{ once: true }}
+            >
+              {item.priceFormatted}
+            </motion.span>
+            <span className="text-foreground-muted text-sm">/ {item.unit}</span>
+          </div>
+
+          {/* Decorative line */}
+          <motion.div
+            className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ delay: index * 0.1 + 0.4, duration: 0.6 }}
+            viewport={{ once: true }}
+          />
+        </div>
+
+        {/* Body */}
+        <div className="flex-1 p-6 pt-4">
+          {item.features && (
+            <ul className="space-y-3">
+              {item.features.map((feature, i) => (
+                <motion.li
+                  key={i}
+                  className="flex items-center gap-3 text-sm text-foreground-muted"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 + 0.4 + i * 0.1, duration: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.span
+                    className="w-1.5 h-1.5 bg-brand-yellow rounded-full flex-shrink-0"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: index * 0.1 + 0.5 + i * 0.1, duration: 0.2 }}
+                    viewport={{ once: true }}
+                  />
+                  {feature}
+                </motion.li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Footer - Buy Button */}
+        <div className="p-6 pt-0">
+          <Link
+            href={`/checkout?package=${item.id}`}
+            className="group/btn relative flex items-center justify-center gap-2 w-full py-3.5 text-center font-semibold text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden bg-brand-yellow text-black hover:bg-brand-yellow-dark"
+          >
+            <ShoppingCart className="w-4 h-4" />
+            <span>Buy Now</span>
+          </Link>
+        </div>
+
+        {/* Hover glow effect */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-yellow/50 to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-px bg-gradient-to-b from-transparent via-brand-yellow/30 to-transparent" />
+        </div>
+      </motion.div>
     </motion.div>
   );
 }
 
 function PricingSection({
   title,
-  subtitle,
   items,
-  icon: Icon,
-  columns = 4,
 }: {
   title: string;
-  subtitle?: string;
-  items: PricingItem[];
-  icon: React.ElementType;
-  columns?: number;
+  items: Package[];
 }) {
   return (
-    <div className="mb-20 last:mb-0">
-      {/* Section Header */}
-      <div className="text-center mb-10">
-        <div className="inline-flex items-center justify-center gap-3 mb-4">
-          <Icon className="w-6 h-6 text-brand-yellow" />
-          <h3 className="font-display text-2xl lg:text-3xl font-bold text-white uppercase tracking-wider">
-            {title}
-          </h3>
-          <Icon className="w-6 h-6 text-brand-yellow" />
-        </div>
-        {subtitle && (
-          <p className="text-foreground-muted">{subtitle}</p>
-        )}
-      </div>
+    <div className="mb-24 last:mb-0">
+      <motion.h3
+        className="font-display text-3xl lg:text-4xl font-bold text-white uppercase text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        {title}
+      </motion.h3>
 
-      {/* Cards Grid */}
       <div className={cn(
-        'grid gap-4',
-        columns === 4 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
-        columns === 2 && 'grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto',
-        columns === 5 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
+        'grid gap-6',
+        items.length <= 2 && 'grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto',
+        items.length === 4 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
+        items.length === 5 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5',
       )}>
         {items.map((item, index) => (
-          <PricingCard key={item.name} item={item} index={index} />
+          <PricingCard key={item.id} item={item} index={index} />
         ))}
       </div>
     </div>
@@ -159,64 +169,132 @@ export function PricingTable() {
   const t = useTranslations('classes.pricing');
 
   return (
-    <section className="py-20 lg:py-32 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-yellow rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-yellow rounded-full blur-3xl" />
-      </div>
-
-      <Container className="relative z-10">
-        {/* Main Header */}
-        <AnimatedSection className="text-center mb-16">
-          <motion.span
-            className="inline-block px-4 py-2 mb-6 text-xs font-semibold uppercase tracking-widest text-brand-yellow border border-brand-yellow/30"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Pricing Plans
-          </motion.span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase mb-6">
+    <section className="py-24 lg:py-32 bg-background">
+      <Container>
+        {/* Header */}
+        <AnimatedSection className="text-center mb-20">
+          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white uppercase mb-4">
             {t('title')}
           </h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-brand-yellow via-brand-red to-blue-600 mx-auto mb-6" />
           <p className="text-foreground-muted text-lg max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </AnimatedSection>
 
-        {/* Group Classes */}
-        <AnimatedSection delay={0.2}>
-          <PricingSection
-            title="Group Classes"
-            subtitle="Train together, grow together"
-            items={groupClasses}
-            icon={Zap}
-            columns={4}
-          />
-        </AnimatedSection>
+        {/* Pricing Sections */}
+        <PricingSection title="Group Classes" items={groupPackages} />
+        <PricingSection title="Open Gym" items={gymPackages} />
+        <PricingSection title="Private Classes" items={privatePackages} />
 
-        {/* Open Gym */}
-        <AnimatedSection delay={0.3}>
-          <PricingSection
-            title="Open Gym"
-            subtitle="Train on your own schedule"
-            items={openGym}
-            icon={Star}
-            columns={2}
-          />
-        </AnimatedSection>
+        {/* CTA Banner */}
+        <motion.div
+          className="mt-20 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {/* Background with diagonal split */}
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow via-brand-yellow to-brand-yellow-dark" />
+          {/* Darken yellow for better readability */}
+          <div className="absolute inset-0 bg-black/20" style={{ clipPath: 'polygon(0 0, 50% 0, 60% 100%, 0 100%)' }} />
 
-        {/* Private Classes */}
-        <AnimatedSection delay={0.4}>
-          <PricingSection
-            title="Private Classes"
-            subtitle="One-on-one personalized training"
-            items={privateClasses}
-            icon={Crown}
-            columns={5}
+          {/* Photo on right side with diagonal clip */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/images/page-header-bg.jpg)',
+              clipPath: 'polygon(45% 0, 100% 0, 100% 100%, 55% 100%)'
+            }}
           />
-        </AnimatedSection>
+          <div
+            className="absolute inset-0 bg-black/60"
+            style={{
+              clipPath: 'polygon(45% 0, 100% 0, 100% 100%, 55% 100%)'
+            }}
+          />
+
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-40 h-40 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-60 h-60 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3" />
+
+          {/* Content */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
+            {/* Left side - on yellow */}
+            <div className="flex flex-col justify-center">
+              <motion.span
+                className="text-black/60 text-sm font-bold uppercase tracking-[0.2em] mb-3"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Need Help?
+              </motion.span>
+              <motion.h3
+                className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-black leading-[0.95] mb-4"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                Not sure which package fits you?
+              </motion.h3>
+              <motion.p
+                className="text-black/70 text-lg max-w-md"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                Our team will help you choose the perfect training program
+              </motion.p>
+            </div>
+
+            {/* Right side - on dark */}
+            <div className="flex flex-col items-start lg:items-end justify-center gap-4">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <Link
+                  href="/contact"
+                  className="group relative px-8 py-4 bg-white text-black font-semibold uppercase tracking-wider text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+                >
+                  <span className="relative z-10">Contact Us</span>
+                  <div className="absolute inset-0 bg-brand-yellow translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                </Link>
+                <Link
+                  href="/checkout"
+                  className="px-8 py-4 border-2 border-white text-white font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  View All Packages
+                </Link>
+              </motion.div>
+
+              {/* Quick stats */}
+              <motion.div
+                className="flex gap-8 mt-4 pt-4 border-t border-white/20"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-white">1000+</div>
+                  <div className="text-white/60 text-xs uppercase tracking-wider">Students</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-display text-2xl font-bold text-white">8+</div>
+                  <div className="text-white/60 text-xs uppercase tracking-wider">Years</div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
       </Container>
     </section>
   );

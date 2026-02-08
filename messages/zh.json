@@ -18,7 +18,7 @@
   "home": {
     "hero": {
       "title": "像冠军一样训练",
-      "subtitle": "在泰国普吉岛中心体验正宗的泰拳训练",
+      "subtitle": "在泰国普吉岛中心体验正宗的拳击训练",
       "cta": "开启你的旅程"
     },
     "benefits": {
@@ -50,7 +50,7 @@
     "about": {
       "title": "我们的故事",
       "subtitle": "冠军的传承",
-      "description": "由泰拳爱好者Ali创立，我们的健身房自成立以来一直在培养拳手。我们将传统泰拳技术与现代训练方法相结合。",
+      "description": "由拳击教练Ali创立，我们的健身房自成立以来一直在培养拳手。我们将传统拳击技术与现代训练方法相结合。",
       "cta": "了解更多关于我们"
     },
     "cta": {
@@ -63,35 +63,40 @@
     "pageTitle": "课程与项目",
     "pageSubtitle": "找到适合您目标的训练课程",
     "programs": {
-      "muayThai": {
-        "title": "泰拳",
-        "description": "传统泰拳训练，涵盖八肢艺术的各个方面",
-        "level": "所有级别"
-      },
       "boxing": {
-        "title": "西式拳击",
+        "title": "拳击",
         "description": "经典拳击技术，专注于步法、组合拳和防守",
         "level": "所有级别"
       },
-      "fitness": {
-        "title": "健身拳击",
-        "description": "结合拳击技术和有氧训练的高强度锻炼",
-        "level": "适合初学者"
+      "strengthTraining": {
+        "title": "力量训练",
+        "description": "通过拳击力量训练提升力量和耐力",
+        "level": "所有级别"
+      },
+      "drillsSparring": {
+        "title": "技术训练与对练",
+        "description": "练习技术和受控对练以提升技能",
+        "level": "中级"
+      },
+      "womensBoxing": {
+        "title": "女子拳击",
+        "description": "专为各级别女性设计的拳击课程",
+        "level": "所有级别"
+      },
+      "proFighter": {
+        "title": "职业拳手班",
+        "description": "为竞技拳手和寻求高级技能者提供的强化训练",
+        "level": "高级"
+      },
+      "sparring": {
+        "title": "对练",
+        "description": "在安全环境中测试技能的受控对练课程",
+        "level": "中级及以上"
       },
       "private": {
         "title": "私人训练",
         "description": "根据您的具体目标和时间表量身定制的一对一课程",
         "level": "个性化"
-      },
-      "kids": {
-        "title": "儿童泰拳",
-        "description": "为6-12岁儿童提供有趣且安全的训练，培养自信和纪律",
-        "level": "6-12岁"
-      },
-      "fighter": {
-        "title": "拳手课程",
-        "description": "为准备比赛或寻求高级技能的人提供的强化训练",
-        "level": "高级"
       }
     },
     "pricing": {
@@ -120,7 +125,7 @@
     "pageSubtitle": "Ali拳击健身房的历程",
     "history": {
       "title": "我们的历史",
-      "content": "Ali拳击健身房的创立使命很简单：与世界分享泰拳艺术，同时保留其真正的传统。从一个小型训练空间开始，现已发展成为一个由来自50多个国家的拳手组成的蓬勃发展的社区。"
+      "content": "Ali拳击健身房的创立使命很简单：与世界分享拳击艺术并培养冠军。从一个小型训练空间开始，现已发展成为一个由来自50多个国家的拳手组成的蓬勃发展的社区。"
     },
     "mission": {
       "title": "我们的使命",
@@ -173,7 +178,7 @@
     }
   },
   "footer": {
-    "description": "泰国普吉岛的专业泰拳和拳击训练。加入我们来自世界各地的拳手社区。",
+    "description": "泰国普吉岛的专业拳击训练。加入我们来自世界各地的拳手社区。",
     "quickLinks": "快速链接",
     "contactUs": "联系我们",
     "hours": "营业时间",

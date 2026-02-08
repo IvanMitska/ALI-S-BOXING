@@ -18,7 +18,7 @@
   "home": {
     "hero": {
       "title": "Train Like a Champion",
-      "subtitle": "Experience authentic Muay Thai training in the heart of Phuket, Thailand",
+      "subtitle": "Experience authentic Boxing training in the heart of Phuket, Thailand",
       "cta": "Start Your Journey"
     },
     "benefits": {
@@ -50,7 +50,7 @@
     "about": {
       "title": "Our Story",
       "subtitle": "A legacy of champions",
-      "description": "Founded by Ali, a passionate Muay Thai practitioner, our gym has been shaping fighters since its establishment. We combine traditional Thai boxing techniques with modern training methods.",
+      "description": "Founded by Ali, a passionate boxing trainer, our gym has been shaping fighters since its establishment. We combine traditional boxing techniques with modern training methods.",
       "cta": "Learn More About Us"
     },
     "cta": {
@@ -63,35 +63,40 @@
     "pageTitle": "Classes & Programs",
     "pageSubtitle": "Find the perfect training program for your goals",
     "programs": {
-      "muayThai": {
-        "title": "Muay Thai",
-        "description": "Traditional Thai boxing training covering all aspects of the art of eight limbs",
-        "level": "All Levels"
-      },
       "boxing": {
-        "title": "Western Boxing",
-        "description": "Classic boxing techniques focusing on footwork, combinations, and defense",
+        "title": "Boxing",
+        "description": "Classic boxing training covering footwork, combinations, and defense",
         "level": "All Levels"
       },
-      "fitness": {
-        "title": "Fitness Boxing",
-        "description": "High-intensity workout combining boxing techniques with cardio training",
-        "level": "Beginner Friendly"
+      "strengthTraining": {
+        "title": "Boxing Strength Training",
+        "description": "Build power and endurance with boxing-focused strength and conditioning",
+        "level": "All Levels"
+      },
+      "drillsSparring": {
+        "title": "Boxing Drills & Sparring",
+        "description": "Practice techniques and controlled sparring to sharpen your skills",
+        "level": "Intermediate"
+      },
+      "womensBoxing": {
+        "title": "Women's Boxing",
+        "description": "Boxing classes designed specifically for women of all skill levels",
+        "level": "All Levels"
+      },
+      "proFighter": {
+        "title": "Pro Fighter's Class",
+        "description": "Intensive training for competitive fighters and those seeking advanced skills",
+        "level": "Advanced"
+      },
+      "sparring": {
+        "title": "Sparring",
+        "description": "Controlled sparring sessions to test your skills in a safe environment",
+        "level": "Intermediate to Advanced"
       },
       "private": {
         "title": "Private Training",
         "description": "One-on-one sessions tailored to your specific goals and schedule",
         "level": "Personalized"
-      },
-      "kids": {
-        "title": "Kids Muay Thai",
-        "description": "Fun and safe training for children aged 6-12, building confidence and discipline",
-        "level": "Ages 6-12"
-      },
-      "fighter": {
-        "title": "Fighter Program",
-        "description": "Intensive training for those preparing for competition or seeking advanced skills",
-        "level": "Advanced"
       }
     },
     "pricing": {
@@ -117,14 +122,24 @@
   },
   "ourStory": {
     "pageTitle": "Our Story",
-    "pageSubtitle": "The journey of Ali's Boxing Gym",
-    "history": {
-      "title": "Our History",
-      "content": "Ali's Boxing Gym was founded with a simple mission: to share the art of Muay Thai with the world while preserving its authentic traditions. What started as a small training space has grown into a thriving community of fighters from over 50 countries."
+    "pageSubtitle": "This isn't just a boxing gym — it's our home",
+    "welcome": {
+      "title": "Welcome to Ali's Boxing Gym",
+      "subtitle": "When you train with us, you're not just a member, you're family."
     },
-    "mission": {
-      "title": "Our Mission",
-      "content": "We believe that martial arts training is about more than just fighting. It's about building character, discipline, and confidence. Our mission is to provide world-class training in a supportive environment where everyone can achieve their goals."
+    "history": {
+      "title": "How It All Began",
+      "content1": "Ali's Boxing Gym began in 2017, founded by Ali in Rawai, Phuket. What started as a small gym with a big heart quickly became known for its no-nonsense training, strong community values, and the welcoming energy Ali built into everything he did.",
+      "content2": "The vision was clear from day one: create a space where everyone, from complete beginners to pro fighters, could train with discipline, grow with confidence, and feel like family."
+    },
+    "growth": {
+      "title": "Growing the Vision",
+      "content1": "After several strong years in Rawai, the gym moved to a bigger and better location in Chalong, right in the heart of Phuket's fitness street. The move wasn't just about space. It was about continuing to grow the vision and giving fighters and fitness lovers the environment they needed to push themselves further.",
+      "content2": "Ali had already built a trusted name through Ali's BBQ, known for its fresh food and loyal customer base, but boxing was his true passion. A place to pass on what boxing taught him: respect, focus, and resilience."
+    },
+    "today": {
+      "title": "Ali's Boxing Gym Today",
+      "content": "Today, Ali's Boxing Gym stands as a proud, family-run space built on real values. No hype. No shortcuts. Just honest training and a team that's got your back."
     },
     "trainers": {
       "title": "Our Trainers",
@@ -173,7 +188,7 @@
     }
   },
   "footer": {
-    "description": "Professional Muay Thai & Boxing training in Phuket, Thailand. Join our community of fighters from around the world.",
+    "description": "Professional Boxing training in Phuket, Thailand. Join our community of fighters from around the world.",
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
     "hours": "Opening Hours",

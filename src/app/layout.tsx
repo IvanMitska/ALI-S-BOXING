@@ -23,7 +23,7 @@ const notoSansThai = Noto_Sans_Thai({
 
 export const metadata: Metadata = {
   title: "Ali's Boxing Gym",
-  description: 'Professional Muay Thai & Boxing Training in Phuket, Thailand',
+  description: 'Professional Boxing Training in Phuket, Thailand',
 };
 
 export default function RootLayout({

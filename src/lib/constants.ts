@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Ali's Boxing Gym",
-  description: 'Professional Muay Thai & Boxing Training in Phuket, Thailand',
+  description: 'Professional Boxing Training in Phuket, Thailand',
   url: 'https://alisboxinggym.com',
 
   contact: {

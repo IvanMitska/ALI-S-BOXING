@@ -3,6 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { Hero } from '@/components/sections/Hero';
 import { Benefits } from '@/components/sections/Benefits';
 import { Programs } from '@/components/sections/Programs';
+import { ParallaxSection } from '@/components/sections/ParallaxSection';
+import { PricingTable } from '@/components/sections/PricingTable';
 import { AboutPreview } from '@/components/sections/AboutPreview';
 import { CTASection } from '@/components/sections/CTASection';
 
@@ -25,8 +27,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Benefits />
       <Programs />
+      <ParallaxSection image="/images/parallax-gym.jpg" />
+      <PricingTable />
+      <ParallaxSection image="/images/boxing.jpg" words={['Get', 'To', 'Work']} />
+      <Benefits />
       <AboutPreview />
       <CTASection />
     </>

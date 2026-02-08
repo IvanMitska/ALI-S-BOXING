@@ -1,12 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
-import { getBookingWhatsAppUrl } from '@/lib/whatsapp';
+import { Link } from '@/i18n/navigation';
 
 export function CTASection() {
   const t = useTranslations('home.cta');
@@ -17,7 +16,7 @@ export function CTASection() {
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed grayscale"
-          style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
+          style={{ backgroundImage: 'url(/images/futer.jpg)' }}
         />
         <div className="absolute inset-0 bg-black/80" />
       </div>
@@ -45,22 +44,27 @@ export function CTASection() {
                 {t('subtitle')}
               </p>
 
-              <Button
-                href={getBookingWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-                size="lg"
-                rightIcon={<ArrowRight className="w-5 h-5" />}
-              >
-                {t('button')}
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/checkout"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-colors"
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  Buy Online
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:border-white transition-colors"
+                >
+                  Contact Us
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
 
             {/* Stats/features */}
-            <div className="grid grid-cols-2 gap-px bg-border">
+            <div className="grid grid-cols-3 gap-px bg-border">
               {[
-                { value: '24/7', label: 'Training Access' },
                 { value: '5+', label: 'Expert Coaches' },
                 { value: '100%', label: 'Dedication' },
                 { value: '1:1', label: 'Personal Attention' },
