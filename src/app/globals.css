@@ -2,33 +2,33 @@
 
 :root {
   /* Dark theme base */
-  --background: #0a0a0a;
-  --background-secondary: #111111;
-  --background-card: #161616;
+  --background: #000000;
+  --background-secondary: #0a0a0a;
+  --background-card: #111111;
   --foreground: #ffffff;
   --foreground-muted: #a1a1aa;
 
-  /* Brand colors */
-  --brand-red: #e11d48;
-  --brand-red-light: #fb7185;
-  --brand-red-dark: #be123c;
-  --brand-gold: #f5c518;
-  --brand-gold-dark: #d4a017;
-  --brand-yellow: #f5c518;
-  --brand-yellow-light: #ffd700;
-  --brand-yellow-dark: #d4a017;
+  /* Brand colors - New palette */
+  --brand-red: #D50202;
+  --brand-red-light: #FF3333;
+  --brand-red-dark: #A00101;
+  --brand-gold: #FBDF00;
+  --brand-gold-dark: #C9B200;
+  --brand-yellow: #FFFF00;
+  --brand-yellow-light: #FFFF66;
+  --brand-yellow-dark: #CCCC00;
 
   /* Accent */
-  --accent: #e11d48;
+  --accent: #D50202;
   --accent-foreground: #ffffff;
 
   /* Border */
-  --border: #27272a;
-  --border-light: #3f3f46;
+  --border: #1a1a1a;
+  --border-light: #333333;
 
   /* Gradient */
-  --gradient-start: #e11d48;
-  --gradient-end: #7c3aed;
+  --gradient-start: #D50202;
+  --gradient-end: #FBDF00;
 }
 
 @theme inline {
@@ -186,8 +186,8 @@ body {
 
 /* Pulse animation for CTA */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px 0 rgba(245, 197, 24, 0.4); }
-  50% { box-shadow: 0 0 40px 10px rgba(245, 197, 24, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px 0 rgba(251, 223, 0, 0.4); }
+  50% { box-shadow: 0 0 40px 10px rgba(251, 223, 0, 0.6); }
 }
 
 .pulse-glow {
@@ -207,19 +207,13 @@ body {
   line-height: 0.85;
 }
 
-/* Gradient bar - rainbow accent stripe */
+/* Gradient bar - brand accent stripe */
 .gradient-bar {
   background: linear-gradient(90deg,
-    #ff6b6b 0%,
-    #feca57 16%,
-    #48dbfb 33%,
-    #ff9ff3 50%,
-    #54a0ff 66%,
-    #5f27cd 83%,
-    #ff6b6b 100%
+    var(--brand-red) 0%,
+    var(--brand-gold) 50%,
+    var(--brand-yellow) 100%
   );
-  background-size: 200% 100%;
-  animation: gradient-slide 3s linear infinite;
 }
 
 @keyframes gradient-slide {
@@ -255,4 +249,45 @@ body {
 
 .color-overlay:hover::after {
   opacity: 0.7;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

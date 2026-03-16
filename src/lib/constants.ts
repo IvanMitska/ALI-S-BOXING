@@ -4,10 +4,10 @@ export const siteConfig = {
   url: 'https://alisboxinggym.com',
 
   contact: {
-    phone: '+66 XX XXX XXXX',
-    whatsapp: '+66XXXXXXXXXX',
-    email: 'info@alisboxinggym.com',
-    address: 'Rawai, Phuket, Thailand',
+    phone: '+66 99 209 7926',
+    whatsapp: '+66992097926',
+    email: 'boxinggyma@gmail.com',
+    address: 'Soi Ta Ied, Chalong, Phuket, Thailand',
   },
 
   location: {
@@ -19,13 +19,21 @@ export const siteConfig = {
   social: {
     instagram: 'https://instagram.com/alisboxinggym',
     facebook: 'https://facebook.com/alisboxinggym',
-    youtube: 'https://youtube.com/@alisboxinggym',
+    youtube: 'https://www.youtube.com/@alisboxinggym2107',
   },
 
   hours: {
     weekday: '6:00 AM - 8:00 PM',
     weekend: '7:00 AM - 6:00 PM',
   },
+} as const;
+
+// Hero video URLs (Cloudinary)
+export const heroVideo = {
+  // Horizontal video for desktop (16:9)
+  desktop: 'https://res.cloudinary.com/ddvpwul6v/video/upload/Ali_s_Boxing_Gym_-_Website_Video_Horizontal_1_tvjtrp.mp4',
+  // Vertical video for mobile (9:16)
+  mobile: 'https://res.cloudinary.com/ddvpwul6v/video/upload/Ali_s_Boxing_Gym_-_Website_Video_Vertical_1_e2ek4q.mp4',
 } as const;
 
 export const navLinks = [

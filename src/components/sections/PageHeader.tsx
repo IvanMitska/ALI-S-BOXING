@@ -16,9 +16,9 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-      {/* Background image - grayscale */}
+      {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />

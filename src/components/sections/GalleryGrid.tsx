@@ -122,9 +122,9 @@ export function GalleryGrid() {
                   onClick={() => setSelectedImage(image)}
                   className="relative aspect-[4/3] w-full overflow-hidden group"
                 >
-                  {/* Image - grayscale by default */}
+                  {/* Image */}
                   <div
-                    className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url(${image.src})` }}
                   />
                   {/* Overlay */}

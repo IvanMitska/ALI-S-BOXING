@@ -117,9 +117,22 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-border py-6">
-          <p className="text-center text-sm text-foreground-muted">
-            &copy; {new Date().getFullYear()} Ali&apos;s Boxing Gym. {t('footer.copyright')}
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-foreground-muted">
+              &copy; {new Date().getFullYear()} Ali&apos;s Boxing Gym. {t('footer.copyright')}
+            </p>
+            <p className="text-sm text-foreground-muted">
+              Developed by{' '}
+              <a
+                href="https://sintara.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-brand-yellow transition-colors"
+              >
+                Sintara
+              </a>
+            </p>
+          </div>
         </div>
       </Container>
     </footer>

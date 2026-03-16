@@ -11,7 +11,7 @@ export function ParallaxSection({
     <section className="relative h-screen overflow-hidden">
       {/* Parallax background with CSS fixed attachment */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed grayscale"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{ backgroundImage: `url(${image})` }}
       />
 

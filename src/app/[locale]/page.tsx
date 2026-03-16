@@ -23,14 +23,17 @@ export async function generateMetadata({ params }: HomePageProps) {
   });
 }
 
-export default function HomePage() {
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'home.parallax' });
+
   return (
     <>
       <Hero />
       <Programs />
-      <ParallaxSection image="/images/parallax-gym.jpg" />
+      <ParallaxSection image="/images/parallax-gym.jpg" words={[t('discipline'), t('dedication'), t('victory')]} />
       <PricingTable />
-      <ParallaxSection image="/images/boxing.jpg" words={['Get', 'To', 'Work']} />
+      <ParallaxSection image="/images/boxing.jpg" words={[t('train'), t('fight'), t('win')]} />
       <Benefits />
       <AboutPreview />
       <CTASection />

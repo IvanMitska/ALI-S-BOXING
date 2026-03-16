@@ -55,8 +55,58 @@ export default function OurStoryPage() {
               viewport={{ once: true }}
             >
               <span className="w-16 h-1 bg-brand-yellow" />
-              <span className="text-foreground-muted uppercase tracking-wider text-sm">Est. 2017</span>
+              <span className="text-foreground-muted uppercase tracking-wider text-sm">{t('established')}</span>
             </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      {/* About Ali Section */}
+      <section className="py-24 lg:py-32 bg-background-secondary">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Image Side */}
+            <AnimatedSection direction="left">
+              <div className="relative">
+                <div className="aspect-[4/5] bg-background border border-border flex items-center justify-center">
+                  <span className="text-foreground-muted text-sm uppercase tracking-wider">
+                    Ali's Photo
+                  </span>
+                </div>
+                {/* Decorative element */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-yellow/10 -z-10" />
+              </div>
+            </AnimatedSection>
+
+            {/* Content Side */}
+            <AnimatedSection direction="right">
+              <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.2em] mb-4">
+                {t('aboutAli.subtitle')}
+              </span>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-8 leading-[0.95]">
+                {t('aboutAli.title')}
+              </h2>
+              <div className="space-y-6 text-foreground-muted text-lg leading-relaxed">
+                <p>{t('aboutAli.content1')}</p>
+                <p>{t('aboutAli.content2')}</p>
+                <p>{t('aboutAli.content3')}</p>
+                <p>{t('aboutAli.content4')}</p>
+              </div>
+
+              {/* Highlight quote */}
+              <motion.blockquote
+                className="mt-10 relative pl-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-yellow" />
+                <p className="text-white text-xl italic font-light">
+                  {t('aboutAli.highlight')}
+                </p>
+              </motion.blockquote>
+            </AnimatedSection>
           </div>
         </Container>
       </section>
@@ -124,7 +174,7 @@ export default function OurStoryPage() {
             <AnimatedSection direction="right" className="flex items-center">
               <div className="py-12 lg:py-0 lg:pl-16">
                 <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.2em] mb-6">
-                  The Beginning
+                  {t('theBeginning')}
                 </span>
                 <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-8 leading-[0.95]">
                   {t('history.title')}
@@ -144,7 +194,7 @@ export default function OurStoryPage() {
                 >
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-yellow" />
                   <p className="text-white text-xl italic font-light">
-                    "Train with discipline, grow with confidence, feel like family."
+                    "{t('quote')}"
                   </p>
                 </motion.blockquote>
               </div>
@@ -156,7 +206,7 @@ export default function OurStoryPage() {
       {/* Parallax Divider - Full Screen */}
       <section className="relative h-screen overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed grayscale"
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: 'url(/images/boxing.jpg)' }}
         />
         <div className="absolute inset-0 bg-black/50" />
@@ -168,10 +218,10 @@ export default function OurStoryPage() {
             viewport={{ once: true }}
           >
             <span className="font-display text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold text-white">
-              NO HYPE
+              {t('noHype')}
             </span>
             <span className="block font-display text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold text-brand-yellow mt-4">
-              JUST RESULTS
+              {t('justResults')}
             </span>
           </motion.div>
         </div>
@@ -185,7 +235,7 @@ export default function OurStoryPage() {
             <AnimatedSection direction="left" className="flex items-center order-2 lg:order-1">
               <div className="py-12 lg:py-0 lg:pr-16">
                 <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.2em] mb-6">
-                  New Chapter
+                  {t('newChapter')}
                 </span>
                 <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-8 leading-[0.95]">
                   {t('growth.title')}
@@ -210,8 +260,8 @@ export default function OurStoryPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-white font-bold text-lg">Chalong, Phuket</div>
-                    <div className="text-foreground-muted text-sm">Heart of Phuket's Fitness Street</div>
+                    <div className="text-white font-bold text-lg">{t('location.city')}</div>
+                    <div className="text-foreground-muted text-sm">{t('location.description')}</div>
                   </div>
                 </motion.div>
               </div>
@@ -256,7 +306,7 @@ export default function OurStoryPage() {
         <Container className="relative z-10">
           <AnimatedSection className="max-w-4xl mx-auto text-center">
             <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.3em] mb-6">
-              Today
+              {t('todayLabel')}
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-10 leading-[0.95]">
               {t('today.title')}
@@ -275,35 +325,26 @@ export default function OurStoryPage() {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
               <div>
                 <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.2em] mb-4">
-                  What We Stand For
+                  {t('values.subtitle')}
                 </span>
                 <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-[0.95]">
-                  Our Values
+                  {t('values.title')}
                 </h2>
               </div>
               <p className="text-foreground-muted max-w-md lg:text-right">
-                The principles that guide everything we do at Ali's Boxing Gym
+                {t('values.description')}
               </p>
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {[
-              {
-                title: 'Respect',
-                description: 'We treat everyone who walks through our doors with respect, regardless of their skill level or background.',
-              },
-              {
-                title: 'Focus',
-                description: 'Training requires dedication and concentration. We help you develop the mental discipline to achieve your goals.',
-              },
-              {
-                title: 'Resilience',
-                description: 'Boxing teaches you to get back up. We build fighters who never give up, in the ring and in life.',
-              },
+              { titleKey: 'respect', descriptionKey: 'respectDescription' },
+              { titleKey: 'focus', descriptionKey: 'focusDescription' },
+              { titleKey: 'resilience', descriptionKey: 'resilienceDescription' },
             ].map((value, index) => (
               <motion.div
-                key={value.title}
+                key={value.titleKey}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -319,10 +360,10 @@ export default function OurStoryPage() {
                   {/* Content */}
                   <div className="relative pt-8">
                     <h3 className="font-display text-2xl font-bold text-white mb-4 group-hover:text-brand-yellow transition-colors duration-300">
-                      {value.title}
+                      {t(`values.${value.titleKey}`)}
                     </h3>
                     <p className="text-foreground-muted leading-relaxed">
-                      {value.description}
+                      {t(`values.${value.descriptionKey}`)}
                     </p>
                   </div>
 

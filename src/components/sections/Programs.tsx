@@ -16,7 +16,7 @@ interface Program {
 const programs: Program[] = [
   { id: 'boxing', image: '/images/boxing.jpg', hoverColor: '#5b21b6' }, // Dark Purple/Violet
   { id: 'strengthTraining', image: '/images/strength.webp', hoverColor: '#a3a323' }, // Olive/Yellow-green
-  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#dc2626' }, // Red
+  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#D50202' }, // Red
   { id: 'womensBoxing', image: '/images/womens.jpg', hoverColor: '#d946ef' }, // Pink/Magenta
   { id: 'proFighter', image: '/images/fighter.jpg', hoverColor: '#92400e' }, // Warm Brown
   { id: 'private', image: '/images/private.jpg', hoverColor: '#1e3a8a' }, // Dark Blue
@@ -61,9 +61,9 @@ export function Programs({ showAll = false, showViewAllButton = true }: Programs
                 className="group relative block aspect-[4/3] overflow-hidden cursor-pointer"
                 whileHover="hover"
               >
-                {/* Background image - stays grayscale, zooms out on hover */}
+                {/* Background image - zooms out on hover */}
                 <motion.div
-                  className="absolute inset-0 bg-cover bg-center grayscale"
+                  className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${program.image})` }}
                   initial={{ scale: 1.1 }}
                   variants={{
