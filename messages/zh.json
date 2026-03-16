@@ -258,9 +258,10 @@
   "pricing": {
     "popular": "热门",
     "mostPopular": "最受欢迎",
-    "groupClasses": "团体课程",
-    "openGym": "开放健身房",
-    "privateClasses": "私人课程",
+    "dropIn": "单次入场",
+    "weekly": "周卡",
+    "monthly": "月卡",
+    "specialDeal": "特别优惠",
     "needHelp": "需要帮助？",
     "notSure": "不确定哪个套餐适合您？",
     "teamHelp": "我们的团队将帮助您选择完美的训练计划",
@@ -340,17 +341,24 @@
       "perMonth": "每月",
       "valid2Months": "有效期2个月",
       "threeMonths": "3个月",
-      "sixMonths": "6个月"
+      "sixMonths": "6个月",
+      "oneYear": "1年"
     },
     "names": {
       "openGym": "开放健身房",
+      "proFighterClass": "职业拳手课",
       "groupBoxingClass": "团体拳击课",
-      "tenSessions": "10次课程",
-      "oneMonthFullAccess": "1个月全通卡",
-      "threeMonthsFullAccess": "3个月全通卡",
-      "oneMonthOpenGym": "1个月健身房",
+      "conditioningClass": "体能训练课",
+      "womensBoxingClass": "女子拳击课",
       "dayPass": "日卡",
+      "oneWeekOpenGym": "1周健身房",
       "oneWeekAllClasses": "1周全部课程",
+      "tenSessions": "10次课程",
+      "oneMonthOpenGym": "1个月健身房",
+      "oneMonthFullAccess": "1个月全通卡",
+      "sixMonthsOpenGym": "6个月健身房",
+      "oneYearOpenGym": "1年健身房",
+      "threeMonthsFullAccess": "3个月全通卡",
       "sixMonthsFullAccess": "6个月全通卡"
     },
     "features": {
@@ -358,6 +366,9 @@
       "allEquipment": "全部设备",
       "groupTraining": "团体训练",
       "equipmentIncluded": "包含装备",
+      "advancedTraining": "高级训练",
+      "strengthConditioning": "力量与体能",
+      "womenOnly": "仅限女性",
       "tenSessions": "10次课程",
       "flexibleSchedule": "灵活时间",
       "unlimitedClasses": "无限次课程",
@@ -365,7 +376,8 @@
       "fullDayAccess": "全天使用",
       "allClasses": "全部课程",
       "freeAlisSet": "免费Ali's套装",
-      "freeGloves": "免费拳套"
+      "freeGloves": "免费拳套",
+      "bestValue": "超值优惠"
     }
   }
 }

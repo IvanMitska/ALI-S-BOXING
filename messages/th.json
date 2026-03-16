@@ -258,9 +258,10 @@
   "pricing": {
     "popular": "ยอดนิยม",
     "mostPopular": "ยอดนิยมที่สุด",
-    "groupClasses": "คลาสกลุ่ม",
-    "openGym": "ยิมเปิด",
-    "privateClasses": "คลาสส่วนตัว",
+    "dropIn": "เข้าใช้ครั้งเดียว",
+    "weekly": "รายสัปดาห์",
+    "monthly": "รายเดือน",
+    "specialDeal": "ดีลพิเศษ",
     "needHelp": "ต้องการความช่วยเหลือ?",
     "notSure": "ไม่แน่ใจว่าแพ็คเกจไหนเหมาะกับคุณ?",
     "teamHelp": "ทีมของเราจะช่วยคุณเลือกโปรแกรมที่สมบูรณ์แบบ",
@@ -340,17 +341,24 @@
       "perMonth": "ต่อเดือน",
       "valid2Months": "ใช้ได้ 2 เดือน",
       "threeMonths": "3 เดือน",
-      "sixMonths": "6 เดือน"
+      "sixMonths": "6 เดือน",
+      "oneYear": "1 ปี"
     },
     "names": {
       "openGym": "ยิมเปิด",
+      "proFighterClass": "คลาสนักสู้มืออาชีพ",
       "groupBoxingClass": "คลาสมวยกลุ่ม",
-      "tenSessions": "10 เซสชัน",
-      "oneMonthFullAccess": "1 เดือนเต็มรูปแบบ",
-      "threeMonthsFullAccess": "3 เดือนเต็มรูปแบบ",
-      "oneMonthOpenGym": "1 เดือนยิมเปิด",
+      "conditioningClass": "คลาสคอนดิชันนิ่ง",
+      "womensBoxingClass": "คลาสมวยผู้หญิง",
       "dayPass": "บัตรรายวัน",
+      "oneWeekOpenGym": "1 สัปดาห์ยิมเปิด",
       "oneWeekAllClasses": "1 สัปดาห์ทุกคลาส",
+      "tenSessions": "10 เซสชัน",
+      "oneMonthOpenGym": "1 เดือนยิมเปิด",
+      "oneMonthFullAccess": "1 เดือนเต็มรูปแบบ",
+      "sixMonthsOpenGym": "6 เดือนยิมเปิด",
+      "oneYearOpenGym": "1 ปียิมเปิด",
+      "threeMonthsFullAccess": "3 เดือนเต็มรูปแบบ",
       "sixMonthsFullAccess": "6 เดือนเต็มรูปแบบ"
     },
     "features": {
@@ -358,6 +366,9 @@
       "allEquipment": "อุปกรณ์ทั้งหมด",
       "groupTraining": "ฝึกกลุ่ม",
       "equipmentIncluded": "รวมอุปกรณ์",
+      "advancedTraining": "การฝึกขั้นสูง",
+      "strengthConditioning": "ความแข็งแกร่งและคอนดิชันนิ่ง",
+      "womenOnly": "เฉพาะผู้หญิง",
       "tenSessions": "10 เซสชัน",
       "flexibleSchedule": "ตารางยืดหยุ่น",
       "unlimitedClasses": "คลาสไม่จำกัด",
@@ -365,7 +376,8 @@
       "fullDayAccess": "เข้าถึงได้ทั้งวัน",
       "allClasses": "ทุกคลาส",
       "freeAlisSet": "ฟรีชุด Ali's",
-      "freeGloves": "ฟรีนวม"
+      "freeGloves": "ฟรีนวม",
+      "bestValue": "คุ้มค่าที่สุด"
     }
   }
 }

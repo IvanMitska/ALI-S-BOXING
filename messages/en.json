@@ -258,9 +258,10 @@
   "pricing": {
     "popular": "Popular",
     "mostPopular": "Most Popular",
-    "groupClasses": "Group Classes",
-    "openGym": "Open Gym",
-    "privateClasses": "Private Classes",
+    "dropIn": "Drop In",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "specialDeal": "Special Deal",
     "needHelp": "Need Help?",
     "notSure": "Not sure which package fits you?",
     "teamHelp": "Our team will help you choose the perfect training program",
@@ -340,17 +341,24 @@
       "perMonth": "Per Month",
       "valid2Months": "Valid 2 Months",
       "threeMonths": "3 Months",
-      "sixMonths": "6 Months"
+      "sixMonths": "6 Months",
+      "oneYear": "1 Year"
     },
     "names": {
       "openGym": "Open Gym",
+      "proFighterClass": "Pro Fighter Class",
       "groupBoxingClass": "Group Boxing Class",
-      "tenSessions": "10 Sessions",
-      "oneMonthFullAccess": "1 Month Full Access",
-      "threeMonthsFullAccess": "3 Months Full Access",
-      "oneMonthOpenGym": "1 Month Open Gym",
+      "conditioningClass": "Conditioning Class",
+      "womensBoxingClass": "Women's Boxing Class",
       "dayPass": "Day Pass",
+      "oneWeekOpenGym": "1 Week Open Gym",
       "oneWeekAllClasses": "1 Week All Classes",
+      "tenSessions": "10 Sessions",
+      "oneMonthOpenGym": "1 Month Open Gym",
+      "oneMonthFullAccess": "1 Month Full Access",
+      "sixMonthsOpenGym": "6 Months Open Gym",
+      "oneYearOpenGym": "1 Year Open Gym",
+      "threeMonthsFullAccess": "3 Months Full Access",
       "sixMonthsFullAccess": "6 Months Full Access"
     },
     "features": {
@@ -358,6 +366,9 @@
       "allEquipment": "All equipment",
       "groupTraining": "Group training",
       "equipmentIncluded": "Equipment included",
+      "advancedTraining": "Advanced training",
+      "strengthConditioning": "Strength & conditioning",
+      "womenOnly": "Women only class",
       "tenSessions": "10 sessions",
       "flexibleSchedule": "Flexible schedule",
       "unlimitedClasses": "Unlimited classes",
@@ -365,7 +376,8 @@
       "fullDayAccess": "Full day access",
       "allClasses": "All classes",
       "freeAlisSet": "Free Ali's set",
-      "freeGloves": "Free gloves"
+      "freeGloves": "Free gloves",
+      "bestValue": "Best value"
     }
   }
 }

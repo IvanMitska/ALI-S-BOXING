@@ -1,6 +1,6 @@
 export interface Package {
   id: string;
-  category: 'group' | 'gym' | 'private';
+  category: 'dropIn' | 'weekly' | 'monthly' | 'special';
   nameKey: string;
   price: number;
   priceFormatted: string;
@@ -11,53 +11,10 @@ export interface Package {
 }
 
 export const allPackages: Package[] = [
-  // Group Classes
+  // DROP IN
   {
-    id: 'group-drop-in',
-    category: 'group',
-    nameKey: 'groupBoxingClass',
-    price: 450,
-    priceFormatted: '450',
-    unit: 'THB',
-    periodKey: 'perSession',
-    featureKeys: ['groupTraining', 'equipmentIncluded'],
-  },
-  {
-    id: 'group-10-sessions',
-    category: 'group',
-    nameKey: 'tenSessions',
-    price: 3500,
-    priceFormatted: '3,500',
-    unit: 'THB',
-    periodKey: 'valid2Months',
-    featureKeys: ['tenSessions', 'flexibleSchedule', 'equipmentIncluded'],
-    popular: true,
-  },
-  {
-    id: 'group-1-month',
-    category: 'group',
-    nameKey: 'oneMonthFullAccess',
-    price: 10000,
-    priceFormatted: '10,000',
-    unit: 'THB',
-    periodKey: 'perMonth',
-    featureKeys: ['unlimitedClasses', 'gymAccess', 'equipmentIncluded'],
-  },
-  {
-    id: 'group-3-months',
-    category: 'group',
-    nameKey: 'threeMonthsFullAccess',
-    price: 22000,
-    priceFormatted: '22,000',
-    unit: 'THB',
-    periodKey: 'threeMonths',
-    featureKeys: ['unlimitedClasses', 'gymAccess', 'freeAlisSet'],
-  },
-
-  // Open Gym
-  {
-    id: 'gym-day-pass',
-    category: 'gym',
+    id: 'drop-in-open-gym',
+    category: 'dropIn',
     nameKey: 'openGym',
     price: 200,
     priceFormatted: '200',
@@ -66,30 +23,71 @@ export const allPackages: Package[] = [
     featureKeys: ['gymAccess', 'allEquipment'],
   },
   {
-    id: 'gym-1-month',
-    category: 'gym',
-    nameKey: 'oneMonthOpenGym',
-    price: 2500,
-    priceFormatted: '2,500',
+    id: 'drop-in-pro-fighter',
+    category: 'dropIn',
+    nameKey: 'proFighterClass',
+    price: 300,
+    priceFormatted: '300',
     unit: 'THB',
-    periodKey: 'perMonth',
-    featureKeys: ['unlimitedGymAccess', 'allEquipment'],
+    periodKey: 'perSession',
+    featureKeys: ['advancedTraining', 'equipmentIncluded'],
   },
-
-  // Private Classes
   {
-    id: 'private-day-pass',
-    category: 'private',
+    id: 'drop-in-group-boxing',
+    category: 'dropIn',
+    nameKey: 'groupBoxingClass',
+    price: 450,
+    priceFormatted: '450',
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['groupTraining', 'equipmentIncluded'],
+  },
+  {
+    id: 'drop-in-conditioning',
+    category: 'dropIn',
+    nameKey: 'conditioningClass',
+    price: 450,
+    priceFormatted: '450',
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['strengthConditioning', 'equipmentIncluded'],
+  },
+  {
+    id: 'drop-in-womens-boxing',
+    category: 'dropIn',
+    nameKey: 'womensBoxingClass',
+    price: 450,
+    priceFormatted: '450',
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['womenOnly', 'equipmentIncluded'],
+  },
+  {
+    id: 'drop-in-day-pass',
+    category: 'dropIn',
     nameKey: 'dayPass',
     price: 700,
     priceFormatted: '700',
     unit: 'THB',
     periodKey: 'perDay',
     featureKeys: ['fullDayAccess', 'allClasses', 'allEquipment'],
+    popular: true,
+  },
+
+  // WEEKLY
+  {
+    id: 'weekly-open-gym',
+    category: 'weekly',
+    nameKey: 'oneWeekOpenGym',
+    price: 1000,
+    priceFormatted: '1,000',
+    unit: 'THB',
+    periodKey: 'perWeek',
+    featureKeys: ['unlimitedGymAccess', 'allEquipment'],
   },
   {
-    id: 'private-1-week',
-    category: 'private',
+    id: 'weekly-all-classes',
+    category: 'weekly',
     nameKey: 'oneWeekAllClasses',
     price: 3000,
     priceFormatted: '3,000',
@@ -99,8 +97,74 @@ export const allPackages: Package[] = [
     popular: true,
   },
   {
-    id: 'private-6-months-full',
-    category: 'private',
+    id: 'weekly-10-sessions',
+    category: 'weekly',
+    nameKey: 'tenSessions',
+    price: 3500,
+    priceFormatted: '3,500',
+    unit: 'THB',
+    periodKey: 'valid2Months',
+    featureKeys: ['tenSessions', 'flexibleSchedule', 'equipmentIncluded'],
+  },
+
+  // MONTHLY
+  {
+    id: 'monthly-open-gym',
+    category: 'monthly',
+    nameKey: 'oneMonthOpenGym',
+    price: 2500,
+    priceFormatted: '2,500',
+    unit: 'THB',
+    periodKey: 'perMonth',
+    featureKeys: ['unlimitedGymAccess', 'allEquipment'],
+  },
+  {
+    id: 'monthly-full-access',
+    category: 'monthly',
+    nameKey: 'oneMonthFullAccess',
+    price: 10000,
+    priceFormatted: '10,000',
+    unit: 'THB',
+    periodKey: 'perMonth',
+    featureKeys: ['unlimitedClasses', 'gymAccess', 'equipmentIncluded'],
+    popular: true,
+  },
+
+  // SPECIAL DEAL
+  {
+    id: 'special-6-months-gym',
+    category: 'special',
+    nameKey: 'sixMonthsOpenGym',
+    price: 11000,
+    priceFormatted: '11,000',
+    unit: 'THB',
+    periodKey: 'sixMonths',
+    featureKeys: ['unlimitedGymAccess', 'allEquipment', 'bestValue'],
+  },
+  {
+    id: 'special-1-year-gym',
+    category: 'special',
+    nameKey: 'oneYearOpenGym',
+    price: 18000,
+    priceFormatted: '18,000',
+    unit: 'THB',
+    periodKey: 'oneYear',
+    featureKeys: ['unlimitedGymAccess', 'allEquipment', 'bestValue'],
+  },
+  {
+    id: 'special-3-months-full',
+    category: 'special',
+    nameKey: 'threeMonthsFullAccess',
+    price: 22000,
+    priceFormatted: '22,000',
+    unit: 'THB',
+    periodKey: 'threeMonths',
+    featureKeys: ['unlimitedClasses', 'gymAccess', 'freeAlisSet'],
+    popular: true,
+  },
+  {
+    id: 'special-6-months-full',
+    category: 'special',
     nameKey: 'sixMonthsFullAccess',
     price: 40000,
     priceFormatted: '40,000',
@@ -110,9 +174,10 @@ export const allPackages: Package[] = [
   },
 ];
 
-export const groupPackages = allPackages.filter(p => p.category === 'group');
-export const gymPackages = allPackages.filter(p => p.category === 'gym');
-export const privatePackages = allPackages.filter(p => p.category === 'private');
+export const dropInPackages = allPackages.filter(p => p.category === 'dropIn');
+export const weeklyPackages = allPackages.filter(p => p.category === 'weekly');
+export const monthlyPackages = allPackages.filter(p => p.category === 'monthly');
+export const specialPackages = allPackages.filter(p => p.category === 'special');
 
 export function getPackageById(id: string): Package | undefined {
   return allPackages.find(p => p.id === id);

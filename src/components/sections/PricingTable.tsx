@@ -7,7 +7,7 @@ import { Container } from '@/components/ui/Container';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
-import { Package, groupPackages, gymPackages, privatePackages } from '@/lib/packages';
+import { Package, dropInPackages, weeklyPackages, monthlyPackages, specialPackages } from '@/lib/packages';
 
 function PricingCard({ item, index, t, tPackages }: { item: Package; index: number; t: (key: string) => string; tPackages: (key: string) => string }) {
   return (
@@ -161,6 +161,7 @@ function PricingSection({
         items.length === 3 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto',
         items.length === 4 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
         items.length === 5 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5',
+        items.length === 6 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
       )}>
         {items.map((item, index) => (
           <PricingCard key={item.id} item={item} index={index} t={t} tPackages={tPackages} />
@@ -190,9 +191,10 @@ export function PricingTable() {
         </AnimatedSection>
 
         {/* Pricing Sections */}
-        <PricingSection title={t('pricing.groupClasses')} items={groupPackages} t={t} tPackages={tPackages} />
-        <PricingSection title={t('pricing.openGym')} items={gymPackages} t={t} tPackages={tPackages} />
-        <PricingSection title={t('pricing.privateClasses')} items={privatePackages} t={t} tPackages={tPackages} />
+        <PricingSection title={t('pricing.dropIn')} items={dropInPackages} t={t} tPackages={tPackages} />
+        <PricingSection title={t('pricing.weekly')} items={weeklyPackages} t={t} tPackages={tPackages} />
+        <PricingSection title={t('pricing.monthly')} items={monthlyPackages} t={t} tPackages={tPackages} />
+        <PricingSection title={t('pricing.specialDeal')} items={specialPackages} t={t} tPackages={tPackages} />
 
         {/* CTA Banner */}
         <motion.div

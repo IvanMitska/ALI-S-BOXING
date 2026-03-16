@@ -258,9 +258,10 @@
   "pricing": {
     "popular": "Популярное",
     "mostPopular": "Самое популярное",
-    "groupClasses": "Групповые занятия",
-    "openGym": "Открытый зал",
-    "privateClasses": "Персональные занятия",
+    "dropIn": "Разовое посещение",
+    "weekly": "Недельные",
+    "monthly": "Месячные",
+    "specialDeal": "Спецпредложения",
     "needHelp": "Нужна помощь?",
     "notSure": "Не уверены, какой пакет вам подходит?",
     "teamHelp": "Наша команда поможет выбрать идеальную программу",
@@ -340,17 +341,24 @@
       "perMonth": "В месяц",
       "valid2Months": "Действует 2 месяца",
       "threeMonths": "3 месяца",
-      "sixMonths": "6 месяцев"
+      "sixMonths": "6 месяцев",
+      "oneYear": "1 год"
     },
     "names": {
       "openGym": "Открытый зал",
-      "groupBoxingClass": "Групповое занятие",
-      "tenSessions": "10 занятий",
-      "oneMonthFullAccess": "1 месяц полный доступ",
-      "threeMonthsFullAccess": "3 месяца полный доступ",
-      "oneMonthOpenGym": "1 месяц открытый зал",
+      "proFighterClass": "Класс Pro Fighter",
+      "groupBoxingClass": "Групповой бокс",
+      "conditioningClass": "Кондиционная тренировка",
+      "womensBoxingClass": "Женский бокс",
       "dayPass": "Дневной абонемент",
+      "oneWeekOpenGym": "1 неделя открытый зал",
       "oneWeekAllClasses": "1 неделя все занятия",
+      "tenSessions": "10 занятий",
+      "oneMonthOpenGym": "1 месяц открытый зал",
+      "oneMonthFullAccess": "1 месяц полный доступ",
+      "sixMonthsOpenGym": "6 месяцев открытый зал",
+      "oneYearOpenGym": "1 год открытый зал",
+      "threeMonthsFullAccess": "3 месяца полный доступ",
       "sixMonthsFullAccess": "6 месяцев полный доступ"
     },
     "features": {
@@ -358,6 +366,9 @@
       "allEquipment": "Всё оборудование",
       "groupTraining": "Групповые тренировки",
       "equipmentIncluded": "Оборудование включено",
+      "advancedTraining": "Продвинутая тренировка",
+      "strengthConditioning": "Сила и выносливость",
+      "womenOnly": "Только для женщин",
       "tenSessions": "10 занятий",
       "flexibleSchedule": "Гибкое расписание",
       "unlimitedClasses": "Безлимитные занятия",
@@ -365,7 +376,8 @@
       "fullDayAccess": "Доступ на весь день",
       "allClasses": "Все занятия",
       "freeAlisSet": "Набор Ali's в подарок",
-      "freeGloves": "Перчатки в подарок"
+      "freeGloves": "Перчатки в подарок",
+      "bestValue": "Лучшая цена"
     }
   }
 }
