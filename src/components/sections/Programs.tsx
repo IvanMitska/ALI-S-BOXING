@@ -14,24 +14,19 @@ interface Program {
 }
 
 const programs: Program[] = [
-  { id: 'boxing', image: '/images/boxing.jpg', hoverColor: '#5b21b6' }, // Dark Purple/Violet
-  { id: 'strengthTraining', image: '/images/strength.webp', hoverColor: '#a3a323' }, // Olive/Yellow-green
-  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#D50202' }, // Red
-  { id: 'womensBoxing', image: '/images/womens.jpg', hoverColor: '#d946ef' }, // Pink/Magenta
-  { id: 'proFighter', image: '/images/fighter.jpg', hoverColor: '#92400e' }, // Warm Brown
-  { id: 'private', image: '/images/private.jpg', hoverColor: '#1e3a8a' }, // Dark Blue
+  { id: 'westernBoxing', image: '/images/boxing.jpg', hoverColor: '#D4AF37' }, // Brand Gold
+  { id: 'strengthConditioning', image: '/images/strength.webp', hoverColor: '#B8860B' }, // Dark Gold
+  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#DAA520' }, // Goldenrod
+  { id: 'womensBoxing', image: '/images/womens.jpg', hoverColor: '#FFD700' }, // Gold
 ];
 
 interface ProgramsProps {
-  showAll?: boolean;
   showViewAllButton?: boolean;
 }
 
-export function Programs({ showAll = false, showViewAllButton = true }: ProgramsProps) {
+export function Programs({ showViewAllButton = true }: ProgramsProps) {
   const t = useTranslations('classes.programs');
   const tHome = useTranslations('home.programs');
-
-  const displayPrograms = showAll ? programs : programs.slice(0, 4);
 
   return (
     <section className="py-24 lg:py-32 relative bg-background">
@@ -52,7 +47,7 @@ export function Programs({ showAll = false, showViewAllButton = true }: Programs
 
         {/* Programs grid - fenriz style */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {displayPrograms.map((program, index) => (
+          {programs.map((program, index) => (
             <AnimatedSection key={program.id} delay={index * 0.1}>
               <motion.a
                 href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
@@ -118,7 +113,7 @@ export function Programs({ showAll = false, showViewAllButton = true }: Programs
         </div>
 
         {/* View all link */}
-        {showViewAllButton && !showAll && (
+        {showViewAllButton && (
           <AnimatedSection className="mt-12" delay={0.4}>
             <Link
               href="/classes"

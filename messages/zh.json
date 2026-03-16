@@ -71,18 +71,18 @@
     "pageTitle": "课程与项目",
     "pageSubtitle": "找到适合您目标的训练课程",
     "programs": {
-      "boxing": {
-        "title": "拳击",
-        "description": "经典拳击技术，专注于步法、组合拳和防守",
+      "westernBoxing": {
+        "title": "西式拳击",
+        "description": "经典西式拳击技术，专注于步法、组合拳和防守",
         "level": "所有级别"
       },
-      "strengthTraining": {
-        "title": "力量训练",
+      "strengthConditioning": {
+        "title": "力量与体能",
         "description": "通过拳击力量训练提升力量和耐力",
         "level": "所有级别"
       },
       "drillsSparring": {
-        "title": "技术训练与对练",
+        "title": "训练与对练",
         "description": "练习技术和受控对练以提升技能",
         "level": "中级"
       },
@@ -90,21 +90,6 @@
         "title": "女子拳击",
         "description": "专为各级别女性设计的拳击课程",
         "level": "所有级别"
-      },
-      "proFighter": {
-        "title": "职业拳手班",
-        "description": "为竞技拳手和寻求高级技能者提供的强化训练",
-        "level": "高级"
-      },
-      "sparring": {
-        "title": "对练",
-        "description": "在安全环境中测试技能的受控对练课程",
-        "level": "中级及以上"
-      },
-      "private": {
-        "title": "私人训练",
-        "description": "根据您的具体目标和时间表量身定制的一对一课程",
-        "level": "个性化"
       }
     },
     "pricing": {

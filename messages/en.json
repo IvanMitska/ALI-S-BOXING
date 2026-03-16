@@ -71,18 +71,18 @@
     "pageTitle": "Classes & Programs",
     "pageSubtitle": "Find the perfect training program for your goals",
     "programs": {
-      "boxing": {
-        "title": "Boxing",
-        "description": "Classic boxing training covering footwork, combinations, and defense",
+      "westernBoxing": {
+        "title": "Western Boxing",
+        "description": "Classic western boxing training covering footwork, combinations, and defense",
         "level": "All Levels"
       },
-      "strengthTraining": {
-        "title": "Boxing Strength Training",
+      "strengthConditioning": {
+        "title": "Strength & Conditioning",
         "description": "Build power and endurance with boxing-focused strength and conditioning",
         "level": "All Levels"
       },
       "drillsSparring": {
-        "title": "Boxing Drills & Sparring",
+        "title": "Drills & Sparring",
         "description": "Practice techniques and controlled sparring to sharpen your skills",
         "level": "Intermediate"
       },
@@ -90,21 +90,6 @@
         "title": "Women's Boxing",
         "description": "Boxing classes designed specifically for women of all skill levels",
         "level": "All Levels"
-      },
-      "proFighter": {
-        "title": "Pro Fighter's Class",
-        "description": "Intensive training for competitive fighters and those seeking advanced skills",
-        "level": "Advanced"
-      },
-      "sparring": {
-        "title": "Sparring",
-        "description": "Controlled sparring sessions to test your skills in a safe environment",
-        "level": "Intermediate to Advanced"
-      },
-      "private": {
-        "title": "Private Training",
-        "description": "One-on-one sessions tailored to your specific goals and schedule",
-        "level": "Personalized"
       }
     },
     "pricing": {
