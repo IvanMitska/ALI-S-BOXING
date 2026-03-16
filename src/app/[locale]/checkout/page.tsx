@@ -10,13 +10,14 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { Package, allPackages, getPackageById } from '@/lib/packages';
 
-type Category = 'all' | 'group' | 'gym' | 'private';
+type Category = 'all' | 'dropIn' | 'weekly' | 'monthly' | 'special';
 
 const categoryKeys: { id: Category; labelKey: string }[] = [
   { id: 'all', labelKey: 'allPackages' },
-  { id: 'group', labelKey: 'groupClasses' },
-  { id: 'gym', labelKey: 'openGym' },
-  { id: 'private', labelKey: 'privateTraining' },
+  { id: 'dropIn', labelKey: 'dropIn' },
+  { id: 'weekly', labelKey: 'weekly' },
+  { id: 'monthly', labelKey: 'monthly' },
+  { id: 'special', labelKey: 'special' },
 ];
 
 function CheckoutContent() {
@@ -176,9 +177,10 @@ function CheckoutContent() {
                         <div className="absolute top-4 left-4">
                           <span className={cn(
                             'px-2 py-1 text-[10px] font-bold uppercase tracking-wider',
-                            pkg.category === 'group' && 'bg-blue-500/20 text-blue-400',
-                            pkg.category === 'gym' && 'bg-green-500/20 text-green-400',
-                            pkg.category === 'private' && 'bg-purple-500/20 text-purple-400',
+                            pkg.category === 'dropIn' && 'bg-blue-500/20 text-blue-400',
+                            pkg.category === 'weekly' && 'bg-green-500/20 text-green-400',
+                            pkg.category === 'monthly' && 'bg-purple-500/20 text-purple-400',
+                            pkg.category === 'special' && 'bg-amber-500/20 text-amber-400',
                           )}>
                             {t(pkg.category)}
                           </span>
@@ -374,9 +376,10 @@ function CheckoutContent() {
                               <span className="text-white font-medium block">{tPackages(`names.${selectedPackage.nameKey}`)}</span>
                               <span className={cn(
                                 'inline-block mt-1 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider',
-                                selectedPackage.category === 'group' && 'bg-blue-500/20 text-blue-400',
-                                selectedPackage.category === 'gym' && 'bg-green-500/20 text-green-400',
-                                selectedPackage.category === 'private' && 'bg-purple-500/20 text-purple-400',
+                                selectedPackage.category === 'dropIn' && 'bg-blue-500/20 text-blue-400',
+                                selectedPackage.category === 'weekly' && 'bg-green-500/20 text-green-400',
+                                selectedPackage.category === 'monthly' && 'bg-purple-500/20 text-purple-400',
+                                selectedPackage.category === 'special' && 'bg-amber-500/20 text-amber-400',
                               )}>
                                 {t(selectedPackage.category)}
                               </span>
