@@ -92,13 +92,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     <Link
                       href={link.href}
                       onClick={onClose}
-                      className="group flex items-center justify-end gap-4 py-3"
+                      className="group flex items-center justify-center py-3"
                     >
-                      <span className="font-display text-3xl sm:text-4xl font-bold uppercase text-white group-hover:text-brand-yellow transition-colors duration-300 text-right">
+                      <span className="font-display text-3xl sm:text-4xl font-bold uppercase text-white group-hover:text-brand-yellow transition-colors duration-300">
                         {t(link.labelKey)}
-                      </span>
-                      <span className="text-brand-yellow/60 font-mono text-sm w-6">
-                        0{index + 1}
                       </span>
                     </Link>
                   </motion.li>

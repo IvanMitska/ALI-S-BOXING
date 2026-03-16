@@ -195,110 +195,61 @@ export function PricingTable() {
 
         {/* CTA Banner */}
         <motion.div
-          className="mt-20 relative overflow-hidden"
+          className="mt-20 relative overflow-hidden bg-brand-yellow"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          {/* Background with diagonal split */}
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow via-brand-yellow to-brand-yellow-dark" />
-          {/* Darken yellow for better readability */}
-          <div className="absolute inset-0 bg-black/20" style={{ clipPath: 'polygon(0 0, 50% 0, 60% 100%, 0 100%)' }} />
-
-          {/* Photo on right side with diagonal clip */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(/images/page-header-bg.jpg)',
-              clipPath: 'polygon(45% 0, 100% 0, 100% 100%, 55% 100%)'
-            }}
-          />
-          <div
-            className="absolute inset-0 bg-black/60"
-            style={{
-              clipPath: 'polygon(45% 0, 100% 0, 100% 100%, 55% 100%)'
-            }}
-          />
-
-          {/* Decorative elements */}
-          <div className="absolute top-0 left-0 w-40 h-40 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-60 h-60 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3" />
-
           {/* Content */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
-            {/* Left side - on yellow */}
-            <div className="flex flex-col justify-center">
-              <motion.span
-                className="text-black/60 text-sm font-bold uppercase tracking-[0.2em] mb-3"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                {t('pricing.needHelp')}
-              </motion.span>
-              <motion.h3
-                className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-black leading-[0.95] mb-4"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                {t('pricing.notSure')}
-              </motion.h3>
-              <motion.p
-                className="text-black/70 text-lg max-w-md"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                {t('pricing.teamHelp')}
-              </motion.p>
-            </div>
+          <div className="relative z-10 p-8 lg:p-12 text-center">
+            <motion.span
+              className="text-black/60 text-sm font-bold uppercase tracking-[0.2em] mb-3 block"
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              {t('pricing.needHelp')}
+            </motion.span>
+            <motion.h3
+              className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-black leading-tight mb-4"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              {t('pricing.notSure')}
+            </motion.h3>
+            <motion.p
+              className="text-black/70 text-base lg:text-lg max-w-md mx-auto mb-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              {t('pricing.teamHelp')}
+            </motion.p>
 
-            {/* Right side - on dark */}
-            <div className="flex flex-col items-start lg:items-end justify-center gap-4">
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-                viewport={{ once: true }}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-black text-white font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300"
               >
-                <Link
-                  href="/contact"
-                  className="group relative px-8 py-4 bg-white text-black font-semibold uppercase tracking-wider text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-                >
-                  <span className="relative z-10">{t('buttons.contactUs')}</span>
-                  <div className="absolute inset-0 bg-brand-yellow translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                </Link>
-                <Link
-                  href="/checkout"
-                  className="px-8 py-4 border-2 border-white text-white font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300"
-                >
-                  {t('pricing.viewAllPackages')}
-                </Link>
-              </motion.div>
-
-              {/* Quick stats */}
-              <motion.div
-                className="flex gap-8 mt-4 pt-4 border-t border-white/20"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-                viewport={{ once: true }}
+                {t('buttons.contactUs')}
+              </Link>
+              <Link
+                href="/checkout"
+                className="px-8 py-4 border-2 border-black text-black font-semibold uppercase tracking-wider text-sm hover:bg-black hover:text-white transition-all duration-300"
               >
-                <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-white">1000+</div>
-                  <div className="text-white/60 text-xs uppercase tracking-wider">{t('pricing.students')}</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-display text-2xl font-bold text-white">8+</div>
-                  <div className="text-white/60 text-xs uppercase tracking-wider">{t('pricing.years')}</div>
-                </div>
-              </motion.div>
-            </div>
+                {t('pricing.viewAllPackages')}
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </Container>

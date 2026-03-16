@@ -67,9 +67,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-white block">BOXING.</span>
-            <span className="text-white block">FROM PHUKET.</span>
-            <span className="text-brand-gold block">WITH PASSION.</span>
+            <span className="text-white block">TRAIN LIKE</span>
+            <span className="text-white block">A LEGEND,</span>
+            <span className="text-brand-yellow block">FIGHT LIKE ALI.</span>
           </motion.h1>
 
           {/* Subtitle */}

@@ -33,17 +33,6 @@ export function AboutPreview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </motion.div>
 
-              {/* Floating stats card */}
-              <motion.div
-                className="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 p-6 bg-background border border-border"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-              >
-                <div className="font-display text-5xl font-bold text-brand-yellow mb-1">15+</div>
-                <div className="text-foreground-muted text-sm uppercase tracking-wider">Years of Excellence</div>
-              </motion.div>
             </div>
           </AnimatedSection>
 
@@ -61,22 +50,6 @@ export function AboutPreview() {
               <p className="text-foreground-muted text-base lg:text-lg leading-relaxed mb-10">
                 {t('description')}
               </p>
-
-              {/* Stats row */}
-              <div className="grid grid-cols-3 gap-6 mb-10 py-6 border-y border-border">
-                <div>
-                  <div className="font-display text-3xl lg:text-4xl font-bold text-white">1000+</div>
-                  <div className="text-foreground-muted text-xs uppercase tracking-wider mt-1">Students Trained</div>
-                </div>
-                <div>
-                  <div className="font-display text-3xl lg:text-4xl font-bold text-white">50+</div>
-                  <div className="text-foreground-muted text-xs uppercase tracking-wider mt-1">Countries</div>
-                </div>
-                <div>
-                  <div className="font-display text-3xl lg:text-4xl font-bold text-white">5</div>
-                  <div className="text-foreground-muted text-xs uppercase tracking-wider mt-1">Expert Trainers</div>
-                </div>
-              </div>
 
               <Link href="/our-story">
                 <Button variant="outline" size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
