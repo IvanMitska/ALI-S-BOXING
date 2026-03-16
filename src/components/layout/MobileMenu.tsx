@@ -114,7 +114,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 <Link
                   href="/checkout"
                   onClick={onClose}
-                  className="flex items-center justify-center gap-3 w-full py-4 bg-brand-yellow text-black font-bold uppercase tracking-wider hover:bg-white transition-colors duration-300"
+                  className="flex items-center justify-center gap-3 w-full py-4 bg-brand-yellow text-black font-bold uppercase tracking-wider hover:bg-white transition-colors duration-300 rounded-full"
                 >
                   <ShoppingCart className="w-5 h-5" />
                   {t('buttons.buyOnline')}

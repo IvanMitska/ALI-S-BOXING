@@ -334,43 +334,38 @@
   },
   "packages": {
     "periods": {
-      "singleSession": "Single Session",
-      "valid2Months": "Valid 2 Months",
+      "perSession": "Per Session",
+      "perDay": "Per Day",
+      "perWeek": "Per Week",
       "perMonth": "Per Month",
+      "valid2Months": "Valid 2 Months",
       "threeMonths": "3 Months",
-      "singleDay": "Single Day",
-      "perSession": "Per Session"
+      "sixMonths": "6 Months"
     },
     "names": {
-      "dropIn": "Drop-In",
+      "openGym": "Open Gym",
+      "groupBoxingClass": "Group Boxing Class",
       "tenSessions": "10 Sessions",
-      "oneMonthUnlimited": "1 Month Unlimited",
-      "threeMonthsUnlimited": "3 Months Unlimited",
+      "oneMonthFullAccess": "1 Month Full Access",
+      "threeMonthsFullAccess": "3 Months Full Access",
+      "oneMonthOpenGym": "1 Month Open Gym",
       "dayPass": "Day Pass",
-      "gymMonthly": "Monthly Access",
-      "privateBoxing": "Private Boxing",
-      "privateKickboxing": "Private Kickboxing",
-      "weightLifting": "Weight Lifting",
-      "weightLoss": "Weight Loss Program"
+      "oneWeekAllClasses": "1 Week All Classes",
+      "sixMonthsFullAccess": "6 Months Full Access"
     },
     "features": {
-      "singleSession": "Single session",
+      "gymAccess": "Gym access",
+      "allEquipment": "All equipment",
+      "groupTraining": "Group training",
       "equipmentIncluded": "Equipment included",
-      "valid2Months": "Valid for 2 months",
+      "tenSessions": "10 sessions",
+      "flexibleSchedule": "Flexible schedule",
       "unlimitedClasses": "Unlimited classes",
-      "freeTShirt": "Free T-shirt",
-      "threeTShirts": "3 Free T-shirts",
+      "unlimitedGymAccess": "Unlimited gym access",
       "fullDayAccess": "Full day access",
-      "allEquipment": "All equipment included",
-      "unlimitedAccess": "Unlimited access",
-      "oneOnOneTraining": "1-on-1 training",
-      "sixtyMinutes": "60 minutes",
-      "personalizedCoaching": "Personalized coaching",
-      "olympicStyle": "Olympic style training",
-      "ninetyMinutes": "90 minutes",
-      "expertGuidance": "Expert guidance",
-      "personalizedProgram": "Personalized program",
-      "nutritionAdvice": "Nutrition advice"
+      "allClasses": "All classes",
+      "freeAlisSet": "Free Ali's set",
+      "freeGloves": "Free gloves"
     }
   }
 }

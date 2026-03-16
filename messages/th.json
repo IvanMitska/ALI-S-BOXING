@@ -334,43 +334,38 @@
   },
   "packages": {
     "periods": {
-      "singleSession": "เซสชันเดียว",
-      "valid2Months": "ใช้ได้ 2 เดือน",
+      "perSession": "ต่อเซสชัน",
+      "perDay": "ต่อวัน",
+      "perWeek": "ต่อสัปดาห์",
       "perMonth": "ต่อเดือน",
+      "valid2Months": "ใช้ได้ 2 เดือน",
       "threeMonths": "3 เดือน",
-      "singleDay": "วันเดียว",
-      "perSession": "ต่อเซสชัน"
+      "sixMonths": "6 เดือน"
     },
     "names": {
-      "dropIn": "คลาสเดียว",
+      "openGym": "ยิมเปิด",
+      "groupBoxingClass": "คลาสมวยกลุ่ม",
       "tenSessions": "10 เซสชัน",
-      "oneMonthUnlimited": "1 เดือนไม่จำกัด",
-      "threeMonthsUnlimited": "3 เดือนไม่จำกัด",
+      "oneMonthFullAccess": "1 เดือนเต็มรูปแบบ",
+      "threeMonthsFullAccess": "3 เดือนเต็มรูปแบบ",
+      "oneMonthOpenGym": "1 เดือนยิมเปิด",
       "dayPass": "บัตรรายวัน",
-      "gymMonthly": "รายเดือน",
-      "privateBoxing": "มวยส่วนตัว",
-      "privateKickboxing": "คิกบ็อกซิ่งส่วนตัว",
-      "weightLifting": "ยกน้ำหนัก",
-      "weightLoss": "โปรแกรมลดน้ำหนัก"
+      "oneWeekAllClasses": "1 สัปดาห์ทุกคลาส",
+      "sixMonthsFullAccess": "6 เดือนเต็มรูปแบบ"
     },
     "features": {
-      "singleSession": "เซสชันเดียว",
+      "gymAccess": "เข้าใช้ยิม",
+      "allEquipment": "อุปกรณ์ทั้งหมด",
+      "groupTraining": "ฝึกกลุ่ม",
       "equipmentIncluded": "รวมอุปกรณ์",
-      "valid2Months": "ใช้ได้ 2 เดือน",
+      "tenSessions": "10 เซสชัน",
+      "flexibleSchedule": "ตารางยืดหยุ่น",
       "unlimitedClasses": "คลาสไม่จำกัด",
-      "freeTShirt": "เสื้อยืดฟรี",
-      "threeTShirts": "เสื้อยืดฟรี 3 ตัว",
+      "unlimitedGymAccess": "เข้าใช้ยิมไม่จำกัด",
       "fullDayAccess": "เข้าถึงได้ทั้งวัน",
-      "allEquipment": "รวมอุปกรณ์ทั้งหมด",
-      "unlimitedAccess": "เข้าถึงไม่จำกัด",
-      "oneOnOneTraining": "ฝึกตัวต่อตัว",
-      "sixtyMinutes": "60 นาที",
-      "personalizedCoaching": "โค้ชส่วนบุคคล",
-      "olympicStyle": "สไตล์โอลิมปิก",
-      "ninetyMinutes": "90 นาที",
-      "expertGuidance": "คำแนะนำจากผู้เชี่ยวชาญ",
-      "personalizedProgram": "โปรแกรมส่วนบุคคล",
-      "nutritionAdvice": "คำแนะนำด้านโภชนาการ"
+      "allClasses": "ทุกคลาส",
+      "freeAlisSet": "ฟรีชุด Ali's",
+      "freeGloves": "ฟรีนวม"
     }
   }
 }

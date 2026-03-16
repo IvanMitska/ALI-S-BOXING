@@ -81,6 +81,7 @@ export const Button = forwardRef<
       'disabled:opacity-50 disabled:cursor-not-allowed',
       'uppercase tracking-wider',
       'overflow-hidden',
+      'rounded-full',
       variantStyles[variant],
       sizeStyles[size],
       className

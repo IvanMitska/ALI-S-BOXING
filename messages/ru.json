@@ -334,43 +334,38 @@
   },
   "packages": {
     "periods": {
-      "singleSession": "Одно занятие",
-      "valid2Months": "Действует 2 месяца",
+      "perSession": "За занятие",
+      "perDay": "За день",
+      "perWeek": "За неделю",
       "perMonth": "В месяц",
+      "valid2Months": "Действует 2 месяца",
       "threeMonths": "3 месяца",
-      "singleDay": "Один день",
-      "perSession": "За занятие"
+      "sixMonths": "6 месяцев"
     },
     "names": {
-      "dropIn": "Разовое занятие",
+      "openGym": "Открытый зал",
+      "groupBoxingClass": "Групповое занятие",
       "tenSessions": "10 занятий",
-      "oneMonthUnlimited": "1 месяц безлимит",
-      "threeMonthsUnlimited": "3 месяца безлимит",
+      "oneMonthFullAccess": "1 месяц полный доступ",
+      "threeMonthsFullAccess": "3 месяца полный доступ",
+      "oneMonthOpenGym": "1 месяц открытый зал",
       "dayPass": "Дневной абонемент",
-      "gymMonthly": "Месячный доступ",
-      "privateBoxing": "Персональный бокс",
-      "privateKickboxing": "Персональный кикбоксинг",
-      "weightLifting": "Тяжёлая атлетика",
-      "weightLoss": "Программа похудения"
+      "oneWeekAllClasses": "1 неделя все занятия",
+      "sixMonthsFullAccess": "6 месяцев полный доступ"
     },
     "features": {
-      "singleSession": "Одно занятие",
+      "gymAccess": "Доступ в зал",
+      "allEquipment": "Всё оборудование",
+      "groupTraining": "Групповые тренировки",
       "equipmentIncluded": "Оборудование включено",
-      "valid2Months": "Действует 2 месяца",
+      "tenSessions": "10 занятий",
+      "flexibleSchedule": "Гибкое расписание",
       "unlimitedClasses": "Безлимитные занятия",
-      "freeTShirt": "Бесплатная футболка",
-      "threeTShirts": "3 бесплатные футболки",
+      "unlimitedGymAccess": "Безлимитный доступ в зал",
       "fullDayAccess": "Доступ на весь день",
-      "allEquipment": "Всё оборудование включено",
-      "unlimitedAccess": "Безлимитный доступ",
-      "oneOnOneTraining": "Индивидуальная тренировка",
-      "sixtyMinutes": "60 минут",
-      "personalizedCoaching": "Персональный коучинг",
-      "olympicStyle": "Олимпийский стиль",
-      "ninetyMinutes": "90 минут",
-      "expertGuidance": "Экспертное руководство",
-      "personalizedProgram": "Персональная программа",
-      "nutritionAdvice": "Консультации по питанию"
+      "allClasses": "Все занятия",
+      "freeAlisSet": "Набор Ali's в подарок",
+      "freeGloves": "Перчатки в подарок"
     }
   }
 }

@@ -115,7 +115,7 @@ function PricingCard({ item, index, t, tPackages }: { item: Package; index: numb
         <div className="p-6 pt-0">
           <Link
             href={`/checkout?package=${item.id}`}
-            className="group/btn relative flex items-center justify-center gap-2 w-full py-3.5 text-center font-semibold text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden bg-brand-yellow text-black hover:bg-brand-yellow-dark"
+            className="group/btn relative flex items-center justify-center gap-2 w-full py-3.5 text-center font-semibold text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden bg-brand-yellow text-black hover:bg-brand-yellow-dark rounded-full"
           >
             <ShoppingCart className="w-4 h-4" />
             <span>{t('buttons.buyNow')}</span>
@@ -239,13 +239,13 @@ export function PricingTable() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-black text-white font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300"
+                className="px-8 py-4 bg-black text-white font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300 rounded-full"
               >
                 {t('buttons.contactUs')}
               </Link>
               <Link
                 href="/checkout"
-                className="px-8 py-4 border-2 border-black text-black font-semibold uppercase tracking-wider text-sm hover:bg-black hover:text-white transition-all duration-300"
+                className="px-8 py-4 border-2 border-black text-black font-semibold uppercase tracking-wider text-sm hover:bg-black hover:text-white transition-all duration-300 rounded-full"
               >
                 {t('pricing.viewAllPackages')}
               </Link>

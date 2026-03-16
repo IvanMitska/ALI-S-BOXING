@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_Thai, Oswald } from 'next/font/google';
+import { Inter, Noto_Sans_Thai, Oswald, Alfa_Slab_One } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -21,6 +21,13 @@ const notoSansThai = Noto_Sans_Thai({
   display: 'swap',
 });
 
+const alfaSlabOne = Alfa_Slab_One({
+  variable: '--font-alfa-slab',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+});
+
 export const metadata: Metadata = {
   title: "Ali's Boxing Gym",
   description: 'Professional Boxing Training in Phuket, Thailand',
@@ -33,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${oswald.variable} ${notoSansThai.variable} antialiased`}>
+      <body className={`${inter.variable} ${oswald.variable} ${notoSansThai.variable} ${alfaSlabOne.variable} antialiased`}>
         {children}
       </body>
     </html>

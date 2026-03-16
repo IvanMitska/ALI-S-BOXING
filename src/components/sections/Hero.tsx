@@ -91,14 +91,14 @@ export function Hero() {
           >
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-colors rounded-full"
             >
               <ShoppingCart className="w-5 h-5" />
               {t('buttons.buyOnline')}
             </Link>
             <Link
               href="/classes"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:border-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:border-white transition-colors rounded-full"
             >
               {t('buttons.viewClasses')}
               <ArrowRight className="w-5 h-5" />

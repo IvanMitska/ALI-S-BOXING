@@ -334,43 +334,38 @@
   },
   "packages": {
     "periods": {
-      "singleSession": "单次",
-      "valid2Months": "有效期2个月",
+      "perSession": "每次",
+      "perDay": "每天",
+      "perWeek": "每周",
       "perMonth": "每月",
+      "valid2Months": "有效期2个月",
       "threeMonths": "3个月",
-      "singleDay": "单日",
-      "perSession": "每次"
+      "sixMonths": "6个月"
     },
     "names": {
-      "dropIn": "单次课程",
+      "openGym": "开放健身房",
+      "groupBoxingClass": "团体拳击课",
       "tenSessions": "10次课程",
-      "oneMonthUnlimited": "1个月无限次",
-      "threeMonthsUnlimited": "3个月无限次",
+      "oneMonthFullAccess": "1个月全通卡",
+      "threeMonthsFullAccess": "3个月全通卡",
+      "oneMonthOpenGym": "1个月健身房",
       "dayPass": "日卡",
-      "gymMonthly": "月卡",
-      "privateBoxing": "私人拳击",
-      "privateKickboxing": "私人自由搏击",
-      "weightLifting": "举重训练",
-      "weightLoss": "减重计划"
+      "oneWeekAllClasses": "1周全部课程",
+      "sixMonthsFullAccess": "6个月全通卡"
     },
     "features": {
-      "singleSession": "单次课程",
+      "gymAccess": "健身房使用",
+      "allEquipment": "全部设备",
+      "groupTraining": "团体训练",
       "equipmentIncluded": "包含装备",
-      "valid2Months": "有效期2个月",
+      "tenSessions": "10次课程",
+      "flexibleSchedule": "灵活时间",
       "unlimitedClasses": "无限次课程",
-      "freeTShirt": "免费T恤",
-      "threeTShirts": "3件免费T恤",
+      "unlimitedGymAccess": "无限次健身房",
       "fullDayAccess": "全天使用",
-      "allEquipment": "包含所有设备",
-      "unlimitedAccess": "无限次使用",
-      "oneOnOneTraining": "一对一训练",
-      "sixtyMinutes": "60分钟",
-      "personalizedCoaching": "个性化指导",
-      "olympicStyle": "奥林匹克式训练",
-      "ninetyMinutes": "90分钟",
-      "expertGuidance": "专业指导",
-      "personalizedProgram": "个性化计划",
-      "nutritionAdvice": "营养建议"
+      "allClasses": "全部课程",
+      "freeAlisSet": "免费Ali's套装",
+      "freeGloves": "免费拳套"
     }
   }
 }
