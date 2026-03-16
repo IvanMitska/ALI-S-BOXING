@@ -1,12 +1,12 @@
 export interface Package {
   id: string;
   category: 'group' | 'gym' | 'private';
-  name: string;
+  nameKey: string;
   price: number;
   priceFormatted: string;
   unit: string;
-  period: string;
-  features: string[];
+  periodKey: string;
+  featureKeys: string[];
   popular?: boolean;
 }
 
@@ -15,107 +15,107 @@ export const allPackages: Package[] = [
   {
     id: 'group-drop-in',
     category: 'group',
-    name: 'Drop In',
+    nameKey: 'dropIn',
     price: 450,
     priceFormatted: '450',
     unit: 'THB',
-    period: 'single session',
-    features: ['Single session', 'All equipment included'],
+    periodKey: 'singleSession',
+    featureKeys: ['singleSession', 'equipmentIncluded'],
   },
   {
     id: 'group-10-sessions',
     category: 'group',
-    name: '10 Sessions',
+    nameKey: 'tenSessions',
     price: 3500,
     priceFormatted: '3,500',
     unit: 'THB',
-    period: 'valid 2 months',
-    features: ['Valid for 2 months', 'All equipment included'],
+    periodKey: 'valid2Months',
+    featureKeys: ['valid2Months', 'equipmentIncluded'],
     popular: true,
   },
   {
     id: 'group-1-month',
     category: 'group',
-    name: '1 Month Unlimited',
+    nameKey: 'oneMonthUnlimited',
     price: 10000,
     priceFormatted: '10,000',
     unit: 'THB',
-    period: 'per month',
-    features: ['Unlimited classes', 'Free T-shirt', 'All equipment included'],
+    periodKey: 'perMonth',
+    featureKeys: ['unlimitedClasses', 'freeTShirt', 'equipmentIncluded'],
   },
   {
     id: 'group-3-months',
     category: 'group',
-    name: '3 Months Unlimited',
+    nameKey: 'threeMonthsUnlimited',
     price: 27000,
     priceFormatted: '27,000',
     unit: 'THB',
-    period: '3 months',
-    features: ['Unlimited classes', '3 Free T-shirts', 'All equipment included'],
+    periodKey: 'threeMonths',
+    featureKeys: ['unlimitedClasses', 'threeTShirts', 'equipmentIncluded'],
   },
 
   // Open Gym
   {
     id: 'gym-day-pass',
     category: 'gym',
-    name: 'Day Pass',
+    nameKey: 'dayPass',
     price: 200,
     priceFormatted: '200',
     unit: 'THB',
-    period: 'single day',
-    features: ['Full day access', 'All equipment'],
+    periodKey: 'singleDay',
+    featureKeys: ['fullDayAccess', 'allEquipment'],
   },
   {
     id: 'gym-1-month',
     category: 'gym',
-    name: 'Gym Monthly',
+    nameKey: 'gymMonthly',
     price: 2000,
     priceFormatted: '2,000',
     unit: 'THB',
-    period: 'per month',
-    features: ['Unlimited access', 'All equipment'],
+    periodKey: 'perMonth',
+    featureKeys: ['unlimitedAccess', 'allEquipment'],
   },
 
   // Private Classes
   {
     id: 'private-boxing',
     category: 'private',
-    name: 'Private Boxing',
+    nameKey: 'privateBoxing',
     price: 1500,
     priceFormatted: '1,500',
-    unit: 'THB / Session',
-    period: '60 minutes',
-    features: ['1-on-1 training', '60 minutes', 'Personalized coaching'],
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['oneOnOneTraining', 'sixtyMinutes', 'personalizedCoaching'],
   },
   {
     id: 'private-kickboxing',
     category: 'private',
-    name: 'Private Kickboxing',
+    nameKey: 'privateKickboxing',
     price: 1000,
     priceFormatted: '1,000',
-    unit: 'THB / Session',
-    period: '60 minutes',
-    features: ['1-on-1 training', '60 minutes', 'Personalized coaching'],
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['oneOnOneTraining', 'sixtyMinutes', 'personalizedCoaching'],
   },
   {
     id: 'private-weightlifting',
     category: 'private',
-    name: 'Weight Lifting',
+    nameKey: 'weightLifting',
     price: 2000,
     priceFormatted: '2,000',
-    unit: 'THB / Session',
-    period: '90 minutes',
-    features: ['Olympic style', '90 minutes', 'Expert guidance'],
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['olympicStyle', 'ninetyMinutes', 'expertGuidance'],
   },
   {
     id: 'private-weightloss',
     category: 'private',
-    name: 'Weight Loss',
+    nameKey: 'weightLoss',
     price: 1500,
     priceFormatted: '1,500',
-    unit: 'THB / Session',
-    period: '60 minutes',
-    features: ['Personalized program', '60 minutes', 'Nutrition advice'],
+    unit: 'THB',
+    periodKey: 'perSession',
+    featureKeys: ['personalizedProgram', 'sixtyMinutes', 'nutritionAdvice'],
   },
 ];
 

@@ -4,6 +4,7 @@ import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, CreditCard, Shield, Zap, Filter } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
@@ -11,16 +12,18 @@ import { Package, allPackages, getPackageById } from '@/lib/packages';
 
 type Category = 'all' | 'group' | 'gym' | 'private';
 
-const categories: { id: Category; label: string }[] = [
-  { id: 'all', label: 'All Packages' },
-  { id: 'group', label: 'Group Classes' },
-  { id: 'gym', label: 'Open Gym' },
-  { id: 'private', label: 'Private Training' },
+const categoryKeys: { id: Category; labelKey: string }[] = [
+  { id: 'all', labelKey: 'allPackages' },
+  { id: 'group', labelKey: 'groupClasses' },
+  { id: 'gym', labelKey: 'openGym' },
+  { id: 'private', labelKey: 'privateTraining' },
 ];
 
 function CheckoutContent() {
   const searchParams = useSearchParams();
   const preselectedId = searchParams.get('package');
+  const t = useTranslations('checkout');
+  const tPackages = useTranslations('packages');
 
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
   const [step, setStep] = useState<'select' | 'payment'>('select');
@@ -66,15 +69,15 @@ function CheckoutContent() {
             className="max-w-3xl"
           >
             <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.3em] mb-4">
-              Secure Checkout
+              {t('secureCheckout')}
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              {step === 'select' ? 'Choose Your Package' : 'Complete Payment'}
+              {step === 'select' ? t('choosePackage') : t('completePayment')}
             </h1>
             <p className="text-foreground-muted text-lg">
               {step === 'select'
-                ? 'Select the training package that fits your goals'
-                : 'Secure payment powered by Stripe'
+                ? t('selectDescription')
+                : t('paymentDescription')
               }
             </p>
           </motion.div>
@@ -91,7 +94,7 @@ function CheckoutContent() {
               )}>
                 {step === 'payment' ? <Check className="w-4 h-4" /> : '1'}
               </span>
-              Select Package
+              {t('selectPackage')}
             </div>
             <div className="w-12 h-px bg-border" />
             <div className={cn(
@@ -104,7 +107,7 @@ function CheckoutContent() {
               )}>
                 2
               </span>
-              Payment
+              {t('payment')}
             </div>
           </div>
         </Container>
@@ -124,7 +127,7 @@ function CheckoutContent() {
                 {/* Category Filter */}
                 <div className="flex flex-wrap items-center gap-2 mb-10">
                   <Filter className="w-4 h-4 text-foreground-muted mr-2" />
-                  {categories.map((cat) => (
+                  {categoryKeys.map((cat) => (
                     <button
                       key={cat.id}
                       onClick={() => setActiveCategory(cat.id)}
@@ -135,7 +138,7 @@ function CheckoutContent() {
                           : 'bg-background border border-border text-foreground-muted hover:border-brand-yellow/50 hover:text-white'
                       )}
                     >
-                      {cat.label}
+                      {t(cat.labelKey)}
                     </button>
                   ))}
                 </div>
@@ -164,7 +167,7 @@ function CheckoutContent() {
                         {pkg.popular && (
                           <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
                             <span className="px-4 py-1 bg-brand-yellow text-black text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-                              Most Popular
+                              {t('mostPopular')}
                             </span>
                           </div>
                         )}
@@ -177,7 +180,7 @@ function CheckoutContent() {
                             pkg.category === 'gym' && 'bg-green-500/20 text-green-400',
                             pkg.category === 'private' && 'bg-purple-500/20 text-purple-400',
                           )}>
-                            {pkg.category === 'group' ? 'Group' : pkg.category === 'gym' ? 'Gym' : 'Private'}
+                            {t(pkg.category)}
                           </span>
                         </div>
 
@@ -193,10 +196,10 @@ function CheckoutContent() {
                         <div className="p-6 pt-12">
                           {/* Name */}
                           <h3 className="font-display text-xl font-bold text-white mb-1">
-                            {pkg.name}
+                            {tPackages(`names.${pkg.nameKey}`)}
                           </h3>
                           <p className="text-foreground-muted text-sm mb-4">
-                            {pkg.period}
+                            {tPackages(`periods.${pkg.periodKey}`)}
                           </p>
 
                           {/* Price */}
@@ -210,10 +213,10 @@ function CheckoutContent() {
 
                           {/* Features */}
                           <ul className="space-y-2">
-                            {pkg.features.slice(0, 3).map((feature, i) => (
+                            {pkg.featureKeys.slice(0, 3).map((featureKey, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm text-foreground-muted">
                                 <Check className="w-4 h-4 text-brand-yellow flex-shrink-0 mt-0.5" />
-                                {feature}
+                                {tPackages(`features.${featureKey}`)}
                               </li>
                             ))}
                           </ul>
@@ -239,18 +242,18 @@ function CheckoutContent() {
                   <div>
                     {selectedPackage ? (
                       <div className="text-center sm:text-left">
-                        <p className="text-foreground-muted text-sm">Selected package</p>
-                        <p className="text-white font-bold text-lg">{selectedPackage.name}</p>
+                        <p className="text-foreground-muted text-sm">{t('selectedPackage')}</p>
+                        <p className="text-white font-bold text-lg">{tPackages(`names.${selectedPackage.nameKey}`)}</p>
                       </div>
                     ) : (
-                      <p className="text-foreground-muted">Select a package to continue</p>
+                      <p className="text-foreground-muted">{t('selectToContinue')}</p>
                     )}
                   </div>
 
                   <div className="flex items-center gap-4">
                     {selectedPackage && (
                       <div className="text-right">
-                        <p className="text-foreground-muted text-sm">Total</p>
+                        <p className="text-foreground-muted text-sm">{t('total')}</p>
                         <p className="text-brand-yellow font-bold text-2xl">
                           ฿{selectedPackage.price.toLocaleString()}
                         </p>
@@ -263,7 +266,7 @@ function CheckoutContent() {
                       onClick={handleProceedToPayment}
                       rightIcon={<CreditCard className="w-5 h-5" />}
                     >
-                      Continue to Payment
+                      {t('continueToPayment')}
                     </Button>
                   </div>
                 </motion.div>
@@ -280,13 +283,13 @@ function CheckoutContent() {
                 <div className="lg:col-span-2">
                   <div className="bg-background border border-border p-8">
                     <h2 className="font-display text-2xl font-bold text-white mb-6">
-                      Payment Details
+                      {t('paymentDetails')}
                     </h2>
 
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-medium text-white mb-2">
-                          Email Address
+                          {t('emailAddress')}
                         </label>
                         <input
                           type="email"
@@ -299,7 +302,7 @@ function CheckoutContent() {
 
                       <div>
                         <label className="block text-sm font-medium text-white mb-2">
-                          Full Name
+                          {t('fullName')}
                         </label>
                         <input
                           type="text"
@@ -312,17 +315,17 @@ function CheckoutContent() {
 
                       <div>
                         <label className="block text-sm font-medium text-white mb-2">
-                          Card Information
+                          {t('cardInformation')}
                         </label>
                         {/* Stripe Card Element placeholder */}
                         <div className="w-full px-4 py-4 bg-background-secondary border border-border text-foreground-muted">
                           <div className="flex items-center gap-2">
                             <CreditCard className="w-5 h-5" />
-                            <span className="text-sm">Stripe payment form will be integrated here</span>
+                            <span className="text-sm">{t('stripeIntegration')}</span>
                           </div>
                         </div>
                         <p className="text-foreground-muted text-xs mt-2">
-                          Your payment is secured with 256-bit SSL encryption
+                          {t('secureEncryption')}
                         </p>
                       </div>
 
@@ -332,17 +335,17 @@ function CheckoutContent() {
                         className="w-full"
                         rightIcon={<Shield className="w-5 h-5" />}
                       >
-                        Pay ฿{selectedPackage?.price.toLocaleString()}
+                        {t('pay')} ฿{selectedPackage?.price.toLocaleString()}
                       </Button>
 
                       <div className="flex items-center justify-center gap-6 pt-4 border-t border-border">
                         <div className="flex items-center gap-2 text-foreground-muted text-sm">
                           <Shield className="w-4 h-4 text-brand-yellow" />
-                          Secure Payment
+                          {t('securePayment')}
                         </div>
                         <div className="flex items-center gap-2 text-foreground-muted text-sm">
                           <Zap className="w-4 h-4 text-brand-yellow" />
-                          Instant Access
+                          {t('instantAccess')}
                         </div>
                       </div>
                     </div>
@@ -352,7 +355,7 @@ function CheckoutContent() {
                     onClick={() => setStep('select')}
                     className="mt-4 text-foreground-muted hover:text-white text-sm transition-colors"
                   >
-                    ← Back to package selection
+                    {t('backToSelection')}
                   </button>
                 </div>
 
@@ -360,7 +363,7 @@ function CheckoutContent() {
                 <div className="lg:col-span-1">
                   <div className="bg-background border border-border p-6 sticky top-24">
                     <h3 className="font-display text-xl font-bold text-white mb-6">
-                      Order Summary
+                      {t('orderSummary')}
                     </h3>
 
                     {selectedPackage && (
@@ -368,33 +371,33 @@ function CheckoutContent() {
                         <div className="pb-6 border-b border-border">
                           <div className="flex justify-between items-start mb-2">
                             <div>
-                              <span className="text-white font-medium block">{selectedPackage.name}</span>
+                              <span className="text-white font-medium block">{tPackages(`names.${selectedPackage.nameKey}`)}</span>
                               <span className={cn(
                                 'inline-block mt-1 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider',
                                 selectedPackage.category === 'group' && 'bg-blue-500/20 text-blue-400',
                                 selectedPackage.category === 'gym' && 'bg-green-500/20 text-green-400',
                                 selectedPackage.category === 'private' && 'bg-purple-500/20 text-purple-400',
                               )}>
-                                {selectedPackage.category}
+                                {t(selectedPackage.category)}
                               </span>
                             </div>
                             <span className="text-white">฿{selectedPackage.price.toLocaleString()}</span>
                           </div>
-                          <span className="text-foreground-muted text-sm">{selectedPackage.period}</span>
+                          <span className="text-foreground-muted text-sm">{tPackages(`periods.${selectedPackage.periodKey}`)}</span>
                         </div>
 
                         <div className="py-6 border-b border-border space-y-3">
-                          {selectedPackage.features.map((feature, i) => (
+                          {selectedPackage.featureKeys.map((featureKey, i) => (
                             <div key={i} className="flex items-center gap-2 text-sm text-foreground-muted">
                               <Check className="w-4 h-4 text-brand-yellow flex-shrink-0" />
-                              {feature}
+                              {tPackages(`features.${featureKey}`)}
                             </div>
                           ))}
                         </div>
 
                         <div className="pt-6">
                           <div className="flex justify-between items-center pt-4 border-t border-border">
-                            <span className="text-white font-bold text-lg">Total</span>
+                            <span className="text-white font-bold text-lg">{t('total')}</span>
                             <span className="text-brand-yellow font-bold text-2xl">
                               ฿{selectedPackage.price.toLocaleString()}
                             </span>
@@ -416,15 +419,15 @@ function CheckoutContent() {
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
             <div className="flex items-center gap-3 text-foreground-muted">
               <Shield className="w-6 h-6 text-brand-yellow" />
-              <span className="text-sm">SSL Secured</span>
+              <span className="text-sm">{t('sslSecured')}</span>
             </div>
             <div className="flex items-center gap-3 text-foreground-muted">
               <CreditCard className="w-6 h-6 text-brand-yellow" />
-              <span className="text-sm">Powered by Stripe</span>
+              <span className="text-sm">{t('poweredByStripe')}</span>
             </div>
             <div className="flex items-center gap-3 text-foreground-muted">
               <Zap className="w-6 h-6 text-brand-yellow" />
-              <span className="text-sm">Instant Confirmation</span>
+              <span className="text-sm">{t('instantConfirmation')}</span>
             </div>
           </div>
         </Container>

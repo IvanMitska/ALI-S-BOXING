@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { navLinks } from '@/lib/constants';
@@ -41,8 +42,16 @@ export function Header() {
       >
         <Container>
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo - Text only, minimal like fenriz-gym */}
-            <Link href="/" className="group">
+            {/* Logo */}
+            <Link href="/" className="group flex items-center gap-3">
+              <Image
+                src="/images/logo.png"
+                alt="Ali's Boxing Gym"
+                width={64}
+                height={64}
+                className="w-14 h-14 lg:w-16 lg:h-16 object-contain"
+                priority
+              />
               <span className="font-display text-xl lg:text-2xl font-bold uppercase tracking-[0.15em] text-white group-hover:text-brand-yellow transition-colors">
                 ALI&apos;S BOXING
               </span>
@@ -68,7 +77,7 @@ export function Header() {
                 href="/checkout"
                 className="px-4 py-2 bg-brand-yellow text-black text-sm font-semibold uppercase tracking-wider hover:bg-brand-yellow-dark transition-colors"
               >
-                Buy Online
+                {t('buttons.buyOnline')}
               </Link>
             </div>
 

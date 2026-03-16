@@ -3,7 +3,7 @@
     "home": "首页",
     "classes": "课程",
     "ourStory": "关于我们",
-    "gallery": "相册",
+    "gallery": "我们的社区",
     "contact": "联系我们",
     "bookNow": "立即预约"
   },
@@ -20,6 +20,14 @@
       "title": "像冠军一样训练",
       "subtitle": "在泰国普吉岛中心体验正宗的拳击训练",
       "cta": "开启你的旅程"
+    },
+    "parallax": {
+      "discipline": "纪律",
+      "dedication": "奉献",
+      "victory": "胜利",
+      "train": "训练",
+      "fight": "战斗",
+      "win": "胜利"
     },
     "benefits": {
       "title": "为什么选择我们",
@@ -122,14 +130,55 @@
   },
   "ourStory": {
     "pageTitle": "我们的故事",
-    "pageSubtitle": "Ali拳击健身房的历程",
-    "history": {
-      "title": "我们的历史",
-      "content": "Ali拳击健身房的创立使命很简单：与世界分享拳击艺术并培养冠军。从一个小型训练空间开始，现已发展成为一个由来自50多个国家的拳手组成的蓬勃发展的社区。"
+    "pageSubtitle": "这不仅仅是一个拳击馆——这是我们的家",
+    "established": "创立于2017年",
+    "theBeginning": "起源",
+    "quote": "以纪律训练，以自信成长，感受家的温暖。",
+    "noHype": "没有炒作",
+    "justResults": "只有成果",
+    "newChapter": "新篇章",
+    "todayLabel": "今天",
+    "location": {
+      "city": "普吉岛查龙",
+      "description": "普吉岛健身街的中心"
     },
-    "mission": {
-      "title": "我们的使命",
-      "content": "我们相信武术训练不仅仅是格斗。它是关于建立性格、纪律和信心。我们的使命是在一个支持性的环境中提供世界级的训练，让每个人都能实现自己的目标。"
+    "values": {
+      "title": "我们的价值观",
+      "subtitle": "我们的信念",
+      "description": "指导Ali拳击健身房一切行动的原则",
+      "respect": "尊重",
+      "respectDescription": "我们尊重每一位走进我们大门的人，无论他们的技能水平或背景如何。",
+      "focus": "专注",
+      "focusDescription": "训练需要奉献和专注。我们帮助你培养实现目标所需的心理纪律。",
+      "resilience": "韧性",
+      "resilienceDescription": "拳击教会你跌倒后重新站起来。我们培养在擂台上和生活中永不放弃的斗士。"
+    },
+    "welcome": {
+      "title": "欢迎来到Ali拳击健身房",
+      "subtitle": "当你与我们一起训练时，你不只是会员，你是家人。"
+    },
+    "aboutAli": {
+      "title": "关于Ali",
+      "subtitle": "健身房背后的男人",
+      "content1": "作为他的热门烧烤王国Ali's BBQ的创始人而闻名，Ali一直对训练和武术有着浓厚的兴趣。凭借超过20场比赛的经验，他每天在店铺开门前训练，并将武术视为生活中不可或缺的一部分。",
+      "content2": "这种热情促使他于2017年在拉威开设了自己的拳击馆。他吸引了来自各地的人来训练。2023年，他将健身房搬到了查龙Soi Ta Ied的健身街，那里已成为不同年龄和技能水平的西方拳击手的热门训练场所。",
+      "content3": "氛围将严肃的训练与热情好客的社区相结合，反映了Ali在商业与运动之间的平衡。",
+      "content4": "多年来，健身房培训了来自世界各地的运动员，他们来普吉岛提升技能。自从从拉威搬到查龙的健身街以来，许多职业拳击手和UFC选手都在Ali拳击健身房训练或将其作为训练营的一部分。",
+      "highlight": "不仅仅是一个训练空间，健身房体现了Ali的信念：拳击培养纪律、韧性和品格。"
+    },
+    "history": {
+      "title": "一切如何开始",
+      "content1": "Ali拳击健身房于2017年由Ali在普吉岛拉威创立。这个拥有大心脏的小健身房很快以其严肃的训练、强烈的社区价值观和Ali融入一切的热情好客氛围而闻名。",
+      "content2": "从第一天起，愿景就很清晰：创造一个空间，让每个人，从完全的初学者到职业拳手，都能以纪律训练，以自信成长，并感受到家的温暖。"
+    },
+    "growth": {
+      "title": "发展愿景",
+      "content1": "在拉威度过几年成功岁月后，健身房搬到了查龙更大更好的位置，正位于普吉岛健身街的中心。这次搬迁不仅仅是为了空间。这是为了继续发展愿景，为拳手和健身爱好者提供他们需要的环境，推动自己更进一步。",
+      "content2": "Ali已经通过Ali's BBQ建立了值得信赖的名声，以新鲜食物和忠实客户群而闻名，但拳击是他真正的热情所在。这是一个传承拳击教给他的东西的地方：尊重、专注和韧性。"
+    },
+    "today": {
+      "title": "今天的Ali拳击健身房",
+      "content": "今天，Ali拳击健身房是一个建立在真实价值观上的骄傲的家族经营空间。没有炒作。没有捷径。只有诚实的训练和一个永远支持你的团队。"
     },
     "trainers": {
       "title": "我们的教练",
@@ -143,8 +192,21 @@
     }
   },
   "gallery": {
-    "pageTitle": "相册",
-    "pageSubtitle": "健身房的精彩瞬间",
+    "pageTitle": "我们的社区",
+    "pageSubtitle": "不同年龄、国籍、目标和经验水平 - 都在同一屋檐下训练",
+    "intro": "Ali拳击健身房汇集了来自世界各地的人。有人来竞技，有人来健身，有人只是想第一次尝试拳击。连接每个人的是心态：努力工作，相互尊重，不断进步。",
+    "support": {
+      "title": "支持性环境",
+      "content": "健身房里有强烈的支持感。会员们在训练中互相推动，庆祝进步，共同成长。氛围既有动力、专注，又热情友好。"
+    },
+    "events": {
+      "title": "活动与搏击之夜",
+      "content": "我们举办了四次搏击之夜、定期开放擂台训练和健身房活动，让大家在日常训练之外聚在一起。这些时刻建立了真正的联系，让健身房感觉像一个大家庭。"
+    },
+    "atmosphere": {
+      "title": "家庭式氛围",
+      "content": "氛围正是你对家庭式健身房的期望。亲切、亲力亲为、真诚。这是一个建立在纪律、鼓励和共同努力基础上的社区——你一走进来就能感受到。"
+    },
     "filters": {
       "all": "全部",
       "gym": "健身房",
@@ -185,5 +247,130 @@
     "weekday": "周一 - 周五",
     "weekend": "周六 - 周日",
     "copyright": "版权所有。"
+  },
+  "buttons": {
+    "buyOnline": "在线购买",
+    "viewClasses": "查看课程",
+    "buyNow": "立即购买",
+    "contactUs": "联系我们",
+    "joinCommunity": "加入社区"
+  },
+  "pricing": {
+    "popular": "热门",
+    "mostPopular": "最受欢迎",
+    "groupClasses": "团体课程",
+    "openGym": "开放健身房",
+    "privateClasses": "私人课程",
+    "needHelp": "需要帮助？",
+    "notSure": "不确定哪个套餐适合您？",
+    "teamHelp": "我们的团队将帮助您选择完美的训练计划",
+    "viewAllPackages": "查看所有套餐",
+    "students": "学员",
+    "years": "年"
+  },
+  "community": {
+    "whatMakesUsDifferent": "我们的与众不同",
+    "moreThanGym": "不只是健身房",
+    "seriousTrainingDescription": "一个严肃训练与真诚社区相遇的地方。在这里，每个人都推动彼此变得更好。",
+    "ourPhilosophy": "我们的理念",
+    "builtOn": "建立在纪律、鼓励和共同努力之上",
+    "youFeelIt": "你一走进来就能感受到",
+    "moments": "瞬间",
+    "lifeAtGym": "健身房生活",
+    "trainingDescription": "训练课程、搏击之夜，以及两者之间的一切",
+    "photosComingSoon": "社区照片即将推出",
+    "becomePartOf": "成为",
+    "ourFamily": "我们大家庭的一员",
+    "whetherBeginner": "无论你是完全的初学者还是职业拳手，这里都有你的位置。",
+    "fightNights": "搏击之夜",
+    "countries": "国家",
+    "athletes": "运动员",
+    "yearsStrong": "年发展"
+  },
+  "about": {
+    "yearsOfExcellence": "年卓越",
+    "studentsTrained": "训练学员"
+  },
+  "cta": {
+    "limitedSpots": "名额有限",
+    "expertCoaches": "专业教练",
+    "dedication": "专注",
+    "personalAttention": "个人关注"
+  },
+  "checkout": {
+    "secureCheckout": "安全结账",
+    "choosePackage": "选择您的套餐",
+    "completePayment": "完成付款",
+    "selectDescription": "选择适合您目标的训练套餐",
+    "paymentDescription": "由Stripe提供安全支付",
+    "selectPackage": "选择套餐",
+    "payment": "付款",
+    "allPackages": "所有套餐",
+    "groupClasses": "团体课程",
+    "openGym": "开放健身房",
+    "privateTraining": "私人训练",
+    "mostPopular": "最受欢迎",
+    "group": "团体",
+    "gym": "健身房",
+    "private": "私人",
+    "selectedPackage": "已选套餐",
+    "selectToContinue": "请选择套餐以继续",
+    "total": "总计",
+    "continueToPayment": "继续付款",
+    "paymentDetails": "付款详情",
+    "emailAddress": "电子邮箱",
+    "fullName": "全名",
+    "cardInformation": "卡片信息",
+    "stripeIntegration": "Stripe支付表单将集成在这里",
+    "secureEncryption": "您的付款由256位SSL加密保护",
+    "pay": "支付",
+    "securePayment": "安全支付",
+    "instantAccess": "即时访问",
+    "backToSelection": "← 返回套餐选择",
+    "orderSummary": "订单摘要",
+    "sslSecured": "SSL安全",
+    "poweredByStripe": "由Stripe提供支持",
+    "instantConfirmation": "即时确认"
+  },
+  "packages": {
+    "periods": {
+      "singleSession": "单次",
+      "valid2Months": "有效期2个月",
+      "perMonth": "每月",
+      "threeMonths": "3个月",
+      "singleDay": "单日",
+      "perSession": "每次"
+    },
+    "names": {
+      "dropIn": "单次课程",
+      "tenSessions": "10次课程",
+      "oneMonthUnlimited": "1个月无限次",
+      "threeMonthsUnlimited": "3个月无限次",
+      "dayPass": "日卡",
+      "gymMonthly": "月卡",
+      "privateBoxing": "私人拳击",
+      "privateKickboxing": "私人自由搏击",
+      "weightLifting": "举重训练",
+      "weightLoss": "减重计划"
+    },
+    "features": {
+      "singleSession": "单次课程",
+      "equipmentIncluded": "包含装备",
+      "valid2Months": "有效期2个月",
+      "unlimitedClasses": "无限次课程",
+      "freeTShirt": "免费T恤",
+      "threeTShirts": "3件免费T恤",
+      "fullDayAccess": "全天使用",
+      "allEquipment": "包含所有设备",
+      "unlimitedAccess": "无限次使用",
+      "oneOnOneTraining": "一对一训练",
+      "sixtyMinutes": "60分钟",
+      "personalizedCoaching": "个性化指导",
+      "olympicStyle": "奥林匹克式训练",
+      "ninetyMinutes": "90分钟",
+      "expertGuidance": "专业指导",
+      "personalizedProgram": "个性化计划",
+      "nutritionAdvice": "营养建议"
+    }
   }
 }

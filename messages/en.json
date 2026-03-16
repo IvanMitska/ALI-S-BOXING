@@ -3,7 +3,7 @@
     "home": "Home",
     "classes": "Classes",
     "ourStory": "Our Story",
-    "gallery": "Gallery",
+    "gallery": "Our Community",
     "contact": "Contact",
     "bookNow": "Book Now"
   },
@@ -20,6 +20,14 @@
       "title": "Train Like a Champion",
       "subtitle": "Experience authentic Boxing training in the heart of Phuket, Thailand",
       "cta": "Start Your Journey"
+    },
+    "parallax": {
+      "discipline": "Discipline",
+      "dedication": "Dedication",
+      "victory": "Victory",
+      "train": "Train",
+      "fight": "Fight",
+      "win": "Win"
     },
     "benefits": {
       "title": "Why Choose Us",
@@ -123,9 +131,40 @@
   "ourStory": {
     "pageTitle": "Our Story",
     "pageSubtitle": "This isn't just a boxing gym — it's our home",
+    "established": "Est. 2017",
+    "theBeginning": "The Beginning",
+    "quote": "Train with discipline, grow with confidence, feel like family.",
+    "noHype": "NO HYPE",
+    "justResults": "JUST RESULTS",
+    "newChapter": "New Chapter",
+    "todayLabel": "Today",
+    "location": {
+      "city": "Chalong, Phuket",
+      "description": "Heart of Phuket's Fitness Street"
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "What We Stand For",
+      "description": "The principles that guide everything we do at Ali's Boxing Gym",
+      "respect": "Respect",
+      "respectDescription": "We treat everyone who walks through our doors with respect, regardless of their skill level or background.",
+      "focus": "Focus",
+      "focusDescription": "Training requires dedication and concentration. We help you develop the mental discipline to achieve your goals.",
+      "resilience": "Resilience",
+      "resilienceDescription": "Boxing teaches you to get back up. We build fighters who never give up, in the ring and in life."
+    },
     "welcome": {
       "title": "Welcome to Ali's Boxing Gym",
       "subtitle": "When you train with us, you're not just a member, you're family."
+    },
+    "aboutAli": {
+      "title": "About Ali",
+      "subtitle": "The Man Behind the Gym",
+      "content1": "Best known as the founder of his popular BBQ kingdom, Ali's BBQ, Ali always had a soft spot for training and martial arts. With over 20 fights, he trained daily before his shop opened and considered martial arts an essential part of his life.",
+      "content2": "That passion led him to open his own boxing gym in 2017, located in Rawai. He attracted people from all over to train. In 2023, he moved the gym to the fitness street on Soi Ta Ied in Chalong, where it has become a popular training spot for western boxers of different ages and skill levels.",
+      "content3": "The atmosphere combines serious training with a welcoming community, reflecting Ali's own balance between business and sport.",
+      "content4": "Over the years, the gym has trained athletes from around the world who come to Phuket to sharpen their skills. Since relocating from Rawai to the fitness street in Chalong, many professional boxers and UFC fighters have trained at or used Ali's Boxing Gym as part of their training camps.",
+      "highlight": "More than just a training space, the gym reflects Ali's belief that boxing builds discipline, resilience, and character."
     },
     "history": {
       "title": "How It All Began",
@@ -153,8 +192,21 @@
     }
   },
   "gallery": {
-    "pageTitle": "Gallery",
-    "pageSubtitle": "Moments from our gym",
+    "pageTitle": "Our Community",
+    "pageSubtitle": "Different ages, nationalities, goals, and experience levels - all training under the same roof",
+    "intro": "Ali's Boxing Gym brings together people from all over the world. Some come to compete. Some come to get fit. Some just want to try boxing for the first time. What connects everyone is the mindset: work hard, respect each other, and keep improving.",
+    "support": {
+      "title": "A Supportive Environment",
+      "content": "There's a strong sense of support in the gym. Members push each other during sessions, celebrate progress, and grow together. The atmosphere is motivating, focused, and welcoming at the same time."
+    },
+    "events": {
+      "title": "Events & Fight Nights",
+      "content": "We've hosted four fight nights, regular open ring sessions, and gym events that bring everyone together outside of daily training. Those moments build real connections and make the gym feel like a big family."
+    },
+    "atmosphere": {
+      "title": "Family-Run Atmosphere",
+      "content": "The atmosphere is exactly what you'd expect from a family-run gym. It's personal, hands-on, and genuine. It's a community built on discipline, encouragement, and shared effort — and you feel it the moment you walk in."
+    },
     "filters": {
       "all": "All",
       "gym": "Gym",
@@ -195,5 +247,130 @@
     "weekday": "Mon - Fri",
     "weekend": "Sat - Sun",
     "copyright": "All rights reserved."
+  },
+  "buttons": {
+    "buyOnline": "Buy Online",
+    "viewClasses": "View Classes",
+    "buyNow": "Buy Now",
+    "contactUs": "Contact Us",
+    "joinCommunity": "Join the Community"
+  },
+  "pricing": {
+    "popular": "Popular",
+    "mostPopular": "Most Popular",
+    "groupClasses": "Group Classes",
+    "openGym": "Open Gym",
+    "privateClasses": "Private Classes",
+    "needHelp": "Need Help?",
+    "notSure": "Not sure which package fits you?",
+    "teamHelp": "Our team will help you choose the perfect training program",
+    "viewAllPackages": "View All Packages",
+    "students": "Students",
+    "years": "Years"
+  },
+  "community": {
+    "whatMakesUsDifferent": "What Makes Us Different",
+    "moreThanGym": "More Than a Gym",
+    "seriousTrainingDescription": "A place where serious training meets genuine community. Where everyone pushes each other to be better.",
+    "ourPhilosophy": "Our Philosophy",
+    "builtOn": "Built on Discipline, Encouragement, and Shared Effort",
+    "youFeelIt": "You feel it the moment you walk in",
+    "moments": "Moments",
+    "lifeAtGym": "Life at the Gym",
+    "trainingDescription": "Training sessions, fight nights, and everything in between",
+    "photosComingSoon": "Community photos coming soon",
+    "becomePartOf": "Become Part of",
+    "ourFamily": "Our Family",
+    "whetherBeginner": "Whether you're a complete beginner or a professional fighter, there's a place for you here.",
+    "fightNights": "Fight Nights",
+    "countries": "Countries",
+    "athletes": "Athletes",
+    "yearsStrong": "Years Strong"
+  },
+  "about": {
+    "yearsOfExcellence": "Years of Excellence",
+    "studentsTrained": "Students Trained"
+  },
+  "cta": {
+    "limitedSpots": "Limited Spots Available",
+    "expertCoaches": "Expert Coaches",
+    "dedication": "Dedication",
+    "personalAttention": "Personal Attention"
+  },
+  "checkout": {
+    "secureCheckout": "Secure Checkout",
+    "choosePackage": "Choose Your Package",
+    "completePayment": "Complete Payment",
+    "selectDescription": "Select the training package that fits your goals",
+    "paymentDescription": "Secure payment powered by Stripe",
+    "selectPackage": "Select Package",
+    "payment": "Payment",
+    "allPackages": "All Packages",
+    "groupClasses": "Group Classes",
+    "openGym": "Open Gym",
+    "privateTraining": "Private Training",
+    "mostPopular": "Most Popular",
+    "group": "Group",
+    "gym": "Gym",
+    "private": "Private",
+    "selectedPackage": "Selected package",
+    "selectToContinue": "Select a package to continue",
+    "total": "Total",
+    "continueToPayment": "Continue to Payment",
+    "paymentDetails": "Payment Details",
+    "emailAddress": "Email Address",
+    "fullName": "Full Name",
+    "cardInformation": "Card Information",
+    "stripeIntegration": "Stripe payment form will be integrated here",
+    "secureEncryption": "Your payment is secured with 256-bit SSL encryption",
+    "pay": "Pay",
+    "securePayment": "Secure Payment",
+    "instantAccess": "Instant Access",
+    "backToSelection": "← Back to package selection",
+    "orderSummary": "Order Summary",
+    "sslSecured": "SSL Secured",
+    "poweredByStripe": "Powered by Stripe",
+    "instantConfirmation": "Instant Confirmation"
+  },
+  "packages": {
+    "periods": {
+      "singleSession": "Single Session",
+      "valid2Months": "Valid 2 Months",
+      "perMonth": "Per Month",
+      "threeMonths": "3 Months",
+      "singleDay": "Single Day",
+      "perSession": "Per Session"
+    },
+    "names": {
+      "dropIn": "Drop-In",
+      "tenSessions": "10 Sessions",
+      "oneMonthUnlimited": "1 Month Unlimited",
+      "threeMonthsUnlimited": "3 Months Unlimited",
+      "dayPass": "Day Pass",
+      "gymMonthly": "Monthly Access",
+      "privateBoxing": "Private Boxing",
+      "privateKickboxing": "Private Kickboxing",
+      "weightLifting": "Weight Lifting",
+      "weightLoss": "Weight Loss Program"
+    },
+    "features": {
+      "singleSession": "Single session",
+      "equipmentIncluded": "Equipment included",
+      "valid2Months": "Valid for 2 months",
+      "unlimitedClasses": "Unlimited classes",
+      "freeTShirt": "Free T-shirt",
+      "threeTShirts": "3 Free T-shirts",
+      "fullDayAccess": "Full day access",
+      "allEquipment": "All equipment included",
+      "unlimitedAccess": "Unlimited access",
+      "oneOnOneTraining": "1-on-1 training",
+      "sixtyMinutes": "60 minutes",
+      "personalizedCoaching": "Personalized coaching",
+      "olympicStyle": "Olympic style training",
+      "ninetyMinutes": "90 minutes",
+      "expertGuidance": "Expert guidance",
+      "personalizedProgram": "Personalized program",
+      "nutritionAdvice": "Nutrition advice"
+    }
   }
 }

@@ -9,7 +9,7 @@ import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { Package, groupPackages, gymPackages, privatePackages } from '@/lib/packages';
 
-function PricingCard({ item, index }: { item: Package; index: number }) {
+function PricingCard({ item, index, t, tPackages }: { item: Package; index: number; t: (key: string) => string; tPackages: (key: string) => string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -33,7 +33,7 @@ function PricingCard({ item, index }: { item: Package; index: number }) {
         {item.popular && (
           <div className="absolute top-0 right-0">
             <div className="bg-brand-yellow text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1">
-              Popular
+              {t('pricing.popular')}
             </div>
           </div>
         )}
@@ -58,7 +58,7 @@ function PricingCard({ item, index }: { item: Package; index: number }) {
             transition={{ delay: index * 0.1 + 0.2, duration: 0.4 }}
             viewport={{ once: true }}
           >
-            {item.name}
+            {tPackages(`names.${item.nameKey}`)}
           </motion.h4>
 
           <div className="flex items-baseline gap-2">
@@ -86,9 +86,9 @@ function PricingCard({ item, index }: { item: Package; index: number }) {
 
         {/* Body */}
         <div className="flex-1 p-6 pt-4">
-          {item.features && (
+          {item.featureKeys && (
             <ul className="space-y-3">
-              {item.features.map((feature, i) => (
+              {item.featureKeys.map((featureKey, i) => (
                 <motion.li
                   key={i}
                   className="flex items-center gap-3 text-sm text-foreground-muted"
@@ -104,7 +104,7 @@ function PricingCard({ item, index }: { item: Package; index: number }) {
                     transition={{ delay: index * 0.1 + 0.5 + i * 0.1, duration: 0.2 }}
                     viewport={{ once: true }}
                   />
-                  {feature}
+                  {tPackages(`features.${featureKey}`)}
                 </motion.li>
               ))}
             </ul>
@@ -118,7 +118,7 @@ function PricingCard({ item, index }: { item: Package; index: number }) {
             className="group/btn relative flex items-center justify-center gap-2 w-full py-3.5 text-center font-semibold text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden bg-brand-yellow text-black hover:bg-brand-yellow-dark"
           >
             <ShoppingCart className="w-4 h-4" />
-            <span>Buy Now</span>
+            <span>{t('buttons.buyNow')}</span>
           </Link>
         </div>
 
@@ -135,9 +135,13 @@ function PricingCard({ item, index }: { item: Package; index: number }) {
 function PricingSection({
   title,
   items,
+  t,
+  tPackages,
 }: {
   title: string;
   items: Package[];
+  t: (key: string) => string;
+  tPackages: (key: string) => string;
 }) {
   return (
     <div className="mb-24 last:mb-0">
@@ -158,7 +162,7 @@ function PricingSection({
         items.length === 5 && 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5',
       )}>
         {items.map((item, index) => (
-          <PricingCard key={item.id} item={item} index={index} />
+          <PricingCard key={item.id} item={item} index={index} t={t} tPackages={tPackages} />
         ))}
       </div>
     </div>
@@ -166,7 +170,9 @@ function PricingSection({
 }
 
 export function PricingTable() {
-  const t = useTranslations('classes.pricing');
+  const tPricing = useTranslations('classes.pricing');
+  const t = useTranslations();
+  const tPackages = useTranslations('packages');
 
   return (
     <section className="py-24 lg:py-32 bg-background">
@@ -174,18 +180,18 @@ export function PricingTable() {
         {/* Header */}
         <AnimatedSection className="text-center mb-20">
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-white uppercase mb-4">
-            {t('title')}
+            {tPricing('title')}
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-brand-yellow via-brand-red to-blue-600 mx-auto mb-6" />
+          <div className="w-32 h-1 bg-brand-yellow mx-auto mb-6" />
           <p className="text-foreground-muted text-lg max-w-2xl mx-auto">
-            {t('subtitle')}
+            {tPricing('subtitle')}
           </p>
         </AnimatedSection>
 
         {/* Pricing Sections */}
-        <PricingSection title="Group Classes" items={groupPackages} />
-        <PricingSection title="Open Gym" items={gymPackages} />
-        <PricingSection title="Private Classes" items={privatePackages} />
+        <PricingSection title={t('pricing.groupClasses')} items={groupPackages} t={t} tPackages={tPackages} />
+        <PricingSection title={t('pricing.openGym')} items={gymPackages} t={t} tPackages={tPackages} />
+        <PricingSection title={t('pricing.privateClasses')} items={privatePackages} t={t} tPackages={tPackages} />
 
         {/* CTA Banner */}
         <motion.div
@@ -229,7 +235,7 @@ export function PricingTable() {
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Need Help?
+                {t('pricing.needHelp')}
               </motion.span>
               <motion.h3
                 className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-black leading-[0.95] mb-4"
@@ -238,7 +244,7 @@ export function PricingTable() {
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                Not sure which package fits you?
+                {t('pricing.notSure')}
               </motion.h3>
               <motion.p
                 className="text-black/70 text-lg max-w-md"
@@ -247,7 +253,7 @@ export function PricingTable() {
                 transition={{ delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                Our team will help you choose the perfect training program
+                {t('pricing.teamHelp')}
               </motion.p>
             </div>
 
@@ -264,14 +270,14 @@ export function PricingTable() {
                   href="/contact"
                   className="group relative px-8 py-4 bg-white text-black font-semibold uppercase tracking-wider text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                 >
-                  <span className="relative z-10">Contact Us</span>
+                  <span className="relative z-10">{t('buttons.contactUs')}</span>
                   <div className="absolute inset-0 bg-brand-yellow translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </Link>
                 <Link
                   href="/checkout"
                   className="px-8 py-4 border-2 border-white text-white font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300"
                 >
-                  View All Packages
+                  {t('pricing.viewAllPackages')}
                 </Link>
               </motion.div>
 
@@ -285,11 +291,11 @@ export function PricingTable() {
               >
                 <div className="text-center">
                   <div className="font-display text-2xl font-bold text-white">1000+</div>
-                  <div className="text-white/60 text-xs uppercase tracking-wider">Students</div>
+                  <div className="text-white/60 text-xs uppercase tracking-wider">{t('pricing.students')}</div>
                 </div>
                 <div className="text-center">
                   <div className="font-display text-2xl font-bold text-white">8+</div>
-                  <div className="text-white/60 text-xs uppercase tracking-wider">Years</div>
+                  <div className="text-white/60 text-xs uppercase tracking-wider">{t('pricing.years')}</div>
                 </div>
               </motion.div>
             </div>
