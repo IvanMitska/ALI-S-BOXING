@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 
@@ -16,10 +17,15 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <section className="relative min-h-[70vh] flex items-end overflow-hidden">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+      {/* Background image - optimized */}
+      <Image
+        src={backgroundImage}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        priority
+        quality={75}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
 

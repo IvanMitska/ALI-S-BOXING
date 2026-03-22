@@ -1,9 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
-import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { Link } from '@/i18n/navigation';
 import { getBookingWhatsAppUrl } from '@/lib/whatsapp';
 
@@ -14,10 +13,10 @@ interface Program {
 }
 
 const programs: Program[] = [
-  { id: 'westernBoxing', image: '/images/boxing.jpg', hoverColor: '#D4AF37' }, // Brand Gold
-  { id: 'strengthConditioning', image: '/images/strength.webp', hoverColor: '#B8860B' }, // Dark Gold
-  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#DAA520' }, // Goldenrod
-  { id: 'womensBoxing', image: '/images/womens.jpg', hoverColor: '#FFD700' }, // Gold
+  { id: 'westernBoxing', image: '/images/boxing.jpg', hoverColor: '#D4AF37' },
+  { id: 'strengthConditioning', image: '/images/strength.webp', hoverColor: '#B8860B' },
+  { id: 'drillsSparring', image: '/images/sparring.png', hoverColor: '#DAA520' },
+  { id: 'womensBoxing', image: '/images/womens.jpg', hoverColor: '#FFD700' },
 ];
 
 interface ProgramsProps {
@@ -31,8 +30,8 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
   return (
     <section className="py-24 lg:py-32 relative bg-background">
       <Container>
-        {/* Section header - minimal style */}
-        <AnimatedSection className="mb-16">
+        {/* Section header */}
+        <div className="mb-16">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-white leading-[0.9]">
@@ -43,78 +42,57 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
               {tHome('subtitle')}
             </p>
           </div>
-        </AnimatedSection>
+        </div>
 
-        {/* Programs grid - fenriz style */}
+        {/* Programs grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {programs.map((program, index) => (
-            <AnimatedSection key={program.id} delay={index * 0.1}>
-              <motion.a
-                href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block aspect-[4/3] overflow-hidden cursor-pointer"
-                whileHover="hover"
-              >
-                {/* Background image - zooms out on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${program.image})` }}
-                  initial={{ scale: 1.1 }}
-                  variants={{
-                    hover: { scale: 1 }
-                  }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
+            <a
+              key={program.id}
+              href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block aspect-[4/3] overflow-hidden cursor-pointer"
+            >
+              {/* Background image */}
+              <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
+                <Image
+                  src={program.image}
+                  alt={t(`${program.id}.title`)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority={index < 2}
+                  quality={75}
                 />
+              </div>
 
-                {/* Color overlay on hover */}
-                <motion.div
-                  className="absolute inset-0"
-                  style={{ backgroundColor: program.hoverColor }}
-                  initial={{ opacity: 0 }}
-                  variants={{
-                    hover: { opacity: 0.6 }
-                  }}
-                  transition={{ duration: 0.25 }}
-                />
+              {/* Color overlay on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-300"
+                style={{ backgroundColor: program.hoverColor }}
+              />
 
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-black/40" />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/40" />
 
-                {/* Content - centered */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
-                  {/* Title - moves up on hover */}
-                  <motion.h3
-                    className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-white leading-tight text-center"
-                    initial={{ y: 0 }}
-                    variants={{
-                      hover: { y: -20 }
-                    }}
-                    transition={{ duration: 0.2, ease: 'easeOut' }}
-                  >
-                    {t(`${program.id}.title`)}
-                  </motion.h3>
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-white leading-tight text-center transition-transform duration-300 group-hover:-translate-y-4">
+                  {t(`${program.id}.title`)}
+                </h3>
 
-                  {/* Button - appears on hover */}
-                  <motion.span
-                    className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider"
-                    initial={{ opacity: 0, y: 20 }}
-                    variants={{
-                      hover: { opacity: 1, y: 0 }
-                    }}
-                    transition={{ duration: 0.2, delay: 0.05, ease: 'easeOut' }}
-                  >
-                    {tHome('learnMore')}
-                  </motion.span>
-                </div>
-              </motion.a>
-            </AnimatedSection>
+                <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  {tHome('learnMore')}
+                </span>
+              </div>
+            </a>
           ))}
         </div>
 
         {/* View all link */}
         {showViewAllButton && (
-          <AnimatedSection className="mt-12" delay={0.4}>
+          <div className="mt-12">
             <Link
               href="/classes"
               className="inline-flex items-center gap-3 text-white hover:text-brand-yellow transition-colors group"
@@ -129,7 +107,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-          </AnimatedSection>
+          </div>
         )}
       </Container>
     </section>

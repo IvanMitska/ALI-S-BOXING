@@ -28,7 +28,7 @@ export default async function ClassesPage({ params }: ClassesPageProps) {
   return (
     <>
       <PageHeader title={t('pageTitle')} subtitle={t('pageSubtitle')} />
-      <Programs showAll showViewAllButton={false} />
+      <Programs showViewAllButton={false} />
       <Schedule />
       <CTASection />
     </>

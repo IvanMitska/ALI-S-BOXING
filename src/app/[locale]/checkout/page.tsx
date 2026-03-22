@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, CreditCard, Shield, Zap, Filter } from 'lucide-react';
@@ -43,9 +43,12 @@ function CheckoutContent() {
     }
   }, [preselectedId]);
 
-  const filteredPackages = activeCategory === 'all'
-    ? allPackages
-    : allPackages.filter(p => p.category === activeCategory);
+  const filteredPackages = useMemo(() =>
+    activeCategory === 'all'
+      ? allPackages
+      : allPackages.filter(p => p.category === activeCategory),
+    [activeCategory]
+  );
 
   const handleSelectPackage = (pkg: Package) => {
     setSelectedPackage(pkg);
@@ -147,14 +150,14 @@ function CheckoutContent() {
                 {/* Package Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   <AnimatePresence mode="popLayout">
-                    {filteredPackages.map((pkg, index) => (
+                    {filteredPackages.map((pkg) => (
                       <motion.div
                         key={pkg.id}
                         layout
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ delay: index * 0.05 }}
+                        transition={{ duration: 0.2 }}
                         onClick={() => handleSelectPackage(pkg)}
                         className={cn(
                           'relative cursor-pointer group',
@@ -236,41 +239,40 @@ function CheckoutContent() {
 
                 {/* Continue Button */}
                 <motion.div
-                  className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 bg-background border border-border"
+                  className="mt-12 flex flex-col items-center gap-4 p-6 bg-background border border-border"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <div>
-                    {selectedPackage ? (
-                      <div className="text-center sm:text-left">
+                  {selectedPackage ? (
+                    <>
+                      <div className="text-center">
                         <p className="text-foreground-muted text-sm">{t('selectedPackage')}</p>
                         <p className="text-white font-bold text-lg">{tPackages(`names.${selectedPackage.nameKey}`)}</p>
                       </div>
-                    ) : (
-                      <p className="text-foreground-muted">{t('selectToContinue')}</p>
-                    )}
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    {selectedPackage && (
-                      <div className="text-right">
+                      <div className="text-center">
                         <p className="text-foreground-muted text-sm">{t('total')}</p>
                         <p className="text-brand-yellow font-bold text-2xl">
                           ฿{selectedPackage.price.toLocaleString()}
                         </p>
                       </div>
+                    </>
+                  ) : (
+                    <p className="text-foreground-muted">{t('selectToContinue')}</p>
+                  )}
+                  <button
+                    disabled={!selectedPackage}
+                    onClick={handleProceedToPayment}
+                    className={cn(
+                      'inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-300',
+                      selectedPackage
+                        ? 'bg-brand-yellow text-black hover:bg-brand-yellow-dark'
+                        : 'bg-white/10 text-white/50 cursor-not-allowed'
                     )}
-                    <Button
-                      variant="primary"
-                      size="lg"
-                      disabled={!selectedPackage}
-                      onClick={handleProceedToPayment}
-                      rightIcon={<CreditCard className="w-5 h-5" />}
-                    >
-                      {t('continueToPayment')}
-                    </Button>
-                  </div>
+                  >
+                    {t('continueToPayment')}
+                    <CreditCard className="w-4 h-4" />
+                  </button>
                 </motion.div>
               </motion.div>
             ) : (

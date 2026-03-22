@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/sections/PageHeader';
@@ -149,9 +150,14 @@ export default function OurStoryPage() {
             {/* Image Side */}
             <AnimatedSection direction="left" className="relative">
               <div className="relative h-[500px] lg:h-[700px]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: 'url(/images/history.jpg)' }}
+                <Image
+                  src="/images/history.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                  loading="lazy"
+                  quality={75}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background lg:to-background" />
 
@@ -205,9 +211,14 @@ export default function OurStoryPage() {
 
       {/* Parallax Divider - Full Screen */}
       <section className="relative h-screen overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: 'url(/images/boxing.jpg)' }}
+        <Image
+          src="/images/boxing.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          loading="lazy"
+          quality={75}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -270,9 +281,14 @@ export default function OurStoryPage() {
             {/* Image Side */}
             <AnimatedSection direction="right" className="relative order-1 lg:order-2">
               <div className="relative h-[500px] lg:h-[700px]">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: 'url(/images/mission.jpg)' }}
+                <Image
+                  src="/images/mission.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                  loading="lazy"
+                  quality={75}
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background-secondary lg:to-background-secondary" />
 

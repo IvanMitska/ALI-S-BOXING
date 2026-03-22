@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_Thai, Oswald, Alfa_Slab_One } from 'next/font/google';
+import { Inter, Noto_Sans_Thai, Oswald, Alfa_Slab_One, Anton } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -12,7 +12,7 @@ const oswald = Oswald({
   variable: '--font-oswald',
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['500', '700'],
 });
 
 const notoSansThai = Noto_Sans_Thai({
@@ -23,6 +23,14 @@ const notoSansThai = Noto_Sans_Thai({
 
 const alfaSlabOne = Alfa_Slab_One({
   variable: '--font-alfa-slab',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+});
+
+// Anton - Bold impact-style font for Hero headlines
+const anton = Anton({
+  variable: '--font-anton',
   subsets: ['latin'],
   display: 'swap',
   weight: '400',
@@ -40,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${oswald.variable} ${notoSansThai.variable} ${alfaSlabOne.variable} antialiased`}>
+      <body className={`${inter.variable} ${oswald.variable} ${notoSansThai.variable} ${alfaSlabOne.variable} ${anton.variable} antialiased`}>
         {children}
       </body>
     </html>

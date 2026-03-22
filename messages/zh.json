@@ -27,7 +27,9 @@
       "victory": "胜利",
       "train": "训练",
       "fight": "战斗",
-      "win": "胜利"
+      "win": "胜利",
+      "aliQuote": "如果我的头脑能够构想它，我的心灵能够相信它——那么我就能够实现它。",
+      "tysonQuote": "每个人都认为这是硬汉的运动。这不是硬汉的运动。这是思考者的运动。硬汉在这项运动中会受到严重伤害。"
     },
     "benefits": {
       "title": "为什么选择我们",
@@ -215,7 +217,9 @@
       "title": "联系信息",
       "address": "地址",
       "phone": "电话",
-      "email": "邮箱",
+      "whatsapp": "WhatsApp",
+      "whatsappText": "通过WhatsApp联系我们",
+      "instagram": "Instagram",
       "hours": "营业时间",
       "weekday": "周一 - 周五",
       "weekend": "周六 - 周日"
@@ -265,8 +269,8 @@
     "lifeAtGym": "健身房生活",
     "trainingDescription": "训练课程、搏击之夜，以及两者之间的一切",
     "photosComingSoon": "社区照片即将推出",
-    "becomePartOf": "成为",
-    "ourFamily": "我们大家庭的一员",
+    "becomePartOf": "成为我们",
+    "ourFamily": "社区的一员",
     "whetherBeginner": "无论你是完全的初学者还是职业拳手，这里都有你的位置。",
     "fightNights": "搏击之夜",
     "countries": "国家",
@@ -300,7 +304,7 @@
     "selectedPackage": "已选套餐",
     "selectToContinue": "请选择套餐以继续",
     "total": "总计",
-    "continueToPayment": "继续付款",
+    "continueToPayment": "继续",
     "paymentDetails": "付款详情",
     "emailAddress": "电子邮箱",
     "fullName": "全名",

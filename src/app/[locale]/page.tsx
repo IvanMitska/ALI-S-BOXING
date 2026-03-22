@@ -31,9 +31,19 @@ export default async function HomePage({ params }: HomePageProps) {
     <>
       <Hero />
       <Programs />
-      <ParallaxSection image="/images/parallax-gym.jpg" words={[t('discipline'), t('dedication'), t('victory')]} />
+      <ParallaxSection
+        image="/images/ali-images.jpg"
+        quote={t('aliQuote')}
+        author="Muhammad Ali"
+        grainy
+      />
       <PricingTable />
-      <ParallaxSection image="/images/boxing.jpg" words={[t('train'), t('fight'), t('win')]} />
+      <ParallaxSection
+        image="/images/mike-tyson.jpg"
+        quote={t('tysonQuote')}
+        author="Mike Tyson"
+        grainy
+      />
       <Benefits />
       <AboutPreview />
       <CTASection />

@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { cn } from '@/lib/utils';
@@ -36,9 +37,12 @@ export function GalleryGrid() {
 
   const filters: Filter[] = ['all', 'gym', 'training', 'events'];
 
-  const filteredImages = filter === 'all'
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === filter);
+  const filteredImages = useMemo(() =>
+    filter === 'all'
+      ? galleryImages
+      : galleryImages.filter((img) => img.category === filter),
+    [filter]
+  );
 
   const currentIndex = selectedImage
     ? filteredImages.findIndex((img) => img.id === selectedImage.id)
@@ -116,16 +120,20 @@ export function GalleryGrid() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.3 }}
               >
                 <button
                   onClick={() => setSelectedImage(image)}
                   className="relative aspect-[4/3] w-full overflow-hidden group"
                 >
-                  {/* Image */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${image.src})` }}
+                  {/* Image - optimized with next/image */}
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-brand-yellow/40 transition-colors duration-300" />
@@ -197,13 +205,16 @@ export function GalleryGrid() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="max-w-5xl max-h-[80vh] mx-4"
+              className="relative max-w-5xl w-full max-h-[80vh] mx-4 aspect-[4/3]"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                className="max-w-full max-h-[80vh] object-contain"
+                fill
+                sizes="90vw"
+                className="object-contain"
+                priority
               />
             </motion.div>
 

@@ -27,7 +27,9 @@
       "victory": "Victory",
       "train": "Train",
       "fight": "Fight",
-      "win": "Win"
+      "win": "Win",
+      "aliQuote": "If my mind can conceive it, and my heart can believe it – then I can achieve it.",
+      "tysonQuote": "Everybody thinks this is a tough man's sport. This is not a tough man's sport. This is a thinking man's sport. A tough man is gonna get hurt real bad in this sport."
     },
     "benefits": {
       "title": "Why Choose Us",
@@ -215,7 +217,9 @@
       "title": "Contact Information",
       "address": "Address",
       "phone": "Phone",
-      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "whatsappText": "Message us on WhatsApp",
+      "instagram": "Instagram",
       "hours": "Opening Hours",
       "weekday": "Monday - Friday",
       "weekend": "Saturday - Sunday"
@@ -265,8 +269,8 @@
     "lifeAtGym": "Life at the Gym",
     "trainingDescription": "Training sessions, fight nights, and everything in between",
     "photosComingSoon": "Community photos coming soon",
-    "becomePartOf": "Become Part of",
-    "ourFamily": "Our Family",
+    "becomePartOf": "Become a Part of Our",
+    "ourFamily": "Community",
     "whetherBeginner": "Whether you're a complete beginner or a professional fighter, there's a place for you here.",
     "fightNights": "Fight Nights",
     "countries": "Countries",
@@ -300,7 +304,7 @@
     "selectedPackage": "Selected package",
     "selectToContinue": "Select a package to continue",
     "total": "Total",
-    "continueToPayment": "Continue to Payment",
+    "continueToPayment": "Continue",
     "paymentDetails": "Payment Details",
     "emailAddress": "Email Address",
     "fullName": "Full Name",

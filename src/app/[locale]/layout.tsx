@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/common/WhatsAppButton';
 import { StructuredData } from '@/components/common/StructuredData';
+import { ScrollToTop } from '@/components/common/ScrollToTop';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <ScrollToTop />
       <StructuredData />
       <div className="overflow-x-hidden">
         <Header />

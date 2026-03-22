@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/sections/PageHeader';
@@ -17,19 +18,16 @@ export default function CommunityPage() {
       icon: Users,
       titleKey: 'support.title',
       contentKey: 'support.content',
-      color: '#5b21b6',
     },
     {
       icon: Trophy,
       titleKey: 'events.title',
       contentKey: 'events.content',
-      color: '#D50202',
     },
     {
       icon: Heart,
       titleKey: 'atmosphere.title',
       contentKey: 'atmosphere.content',
-      color: '#FBDF00',
     },
   ];
 
@@ -102,93 +100,77 @@ export default function CommunityPage() {
         </Container>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 lg:py-32 bg-background-secondary relative overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-yellow/20 to-transparent" />
+      {/* Features Section - Boxing Style */}
+      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+        {/* Background diagonal stripes */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 50px, white 50px, white 51px)'
+          }} />
+        </div>
 
-        <Container>
-          <AnimatedSection className="mb-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+        <Container className="relative z-10">
+          {/* Header */}
+          <AnimatedSection className="mb-16 lg:mb-24">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
               <div>
                 <motion.div
-                  className="inline-flex items-center gap-3 mb-6"
+                  className="flex items-center gap-4 mb-6"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-12 h-12 bg-brand-yellow flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-black" />
-                  </div>
+                  <div className="h-px w-12 bg-brand-yellow" />
                   <span className="text-brand-yellow text-sm font-bold uppercase tracking-[0.2em]">
                     {tCommunity('whatMakesUsDifferent')}
                   </span>
                 </motion.div>
-                <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.9]">
+                <h2 className="hero-headline text-5xl lg:text-6xl xl:text-7xl text-white">
                   {tCommunity('moreThanGym')}
                 </h2>
               </div>
-              <div className="lg:text-right">
-                <p className="text-foreground-muted text-xl leading-relaxed max-w-md lg:ml-auto">
-                  {tCommunity('seriousTrainingDescription')}
-                </p>
-              </div>
+              <p className="text-foreground-muted text-lg lg:text-xl leading-relaxed max-w-md lg:text-right">
+                {tCommunity('seriousTrainingDescription')}
+              </p>
             </div>
           </AnimatedSection>
 
-          {/* Feature Cards - Large Format */}
-          <div className="space-y-6">
+          {/* Feature Cards - Boxing Style */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.titleKey}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
+                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group"
+                className="group relative"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 bg-background border border-border hover:border-brand-yellow/30 transition-all duration-500 overflow-hidden">
-                  {/* Number & Icon */}
-                  <div className="lg:col-span-2 p-8 lg:p-10 flex lg:flex-col items-center lg:items-start gap-6 lg:gap-4 border-b lg:border-b-0 lg:border-r border-border">
-                    <span
-                      className="font-display text-6xl lg:text-7xl font-bold"
-                      style={{ color: feature.color }}
-                    >
-                      0{index + 1}
-                    </span>
-                    <div
-                      className="w-14 h-14 flex items-center justify-center"
-                      style={{ backgroundColor: `${feature.color}15` }}
-                    >
-                      <feature.icon className="w-7 h-7" style={{ color: feature.color }} />
-                    </div>
-                  </div>
+                {/* Card */}
+                <div className="relative bg-background-secondary h-full overflow-hidden border border-border group-hover:border-brand-yellow/30 transition-colors duration-300">
+                  {/* Top accent bar */}
+                  <div className="h-1 w-full bg-brand-yellow" />
 
                   {/* Content */}
-                  <div className="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center">
-                    <h3 className="font-display text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-brand-yellow transition-colors">
+                  <div className="p-8 lg:p-10">
+                    {/* Icon */}
+                    <div className="w-16 h-16 mb-8 flex items-center justify-center bg-brand-yellow/10 group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-8 h-8 text-brand-yellow" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-brand-yellow transition-colors">
                       {tGallery(feature.titleKey)}
                     </h3>
-                    <p className="text-foreground-muted text-lg leading-relaxed">
+
+                    {/* Description */}
+                    <p className="text-foreground-muted leading-relaxed">
                       {tGallery(feature.contentKey)}
                     </p>
                   </div>
 
-                  {/* Visual/Image placeholder */}
-                  <div className="lg:col-span-3 relative min-h-[200px] lg:min-h-0">
-                    <div
-                      className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity"
-                      style={{
-                        background: `linear-gradient(135deg, ${feature.color}40 0%, transparent 100%)`
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <feature.icon
-                        className="w-20 h-20 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500"
-                        style={{ color: feature.color }}
-                      />
-                    </div>
-                  </div>
+                  {/* Bottom corner accent */}
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-brand-yellow/[0.08] clip-corner group-hover:w-28 group-hover:h-28 transition-all duration-500" />
                 </div>
               </motion.div>
             ))}
@@ -198,9 +180,14 @@ export default function CommunityPage() {
 
       {/* Full-width Image/Quote Section */}
       <section className="relative h-[60vh] lg:h-[80vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: 'url(/images/parallax-community.jpg)' }}
+        <Image
+          src="/images/parallax-community.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          loading="lazy"
+          quality={75}
         />
         <div className="absolute inset-0 bg-black/60" />
 
@@ -289,36 +276,17 @@ export default function CommunityPage() {
 
       {/* Join CTA */}
       <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute -top-1/2 -left-1/2 w-full h-full bg-brand-yellow/5 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{ duration: 8, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-brand-yellow/5 rounded-full blur-3xl"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.5, 0.3, 0.5],
-            }}
-            transition={{ duration: 8, repeat: Infinity }}
-          />
+        {/* Static gradient background - lightweight */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-yellow/[0.03] rounded-full" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-yellow/[0.03] rounded-full" />
         </div>
 
         <Container className="relative z-10">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mx-auto mb-8"
-            >
+            <div className="w-20 h-20 bg-brand-yellow/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <Users className="w-10 h-10 text-brand-yellow" />
-            </motion.div>
+            </div>
 
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {tCommunity('becomePartOf')}{' '}
@@ -328,22 +296,15 @@ export default function CommunityPage() {
               {tCommunity('whetherBeginner')}
             </p>
 
-            <motion.a
+            <a
               href="https://wa.me/66992097926"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors group rounded-full"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-brand-yellow text-black font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors rounded-full"
             >
               <span>{t('buttons.joinCommunity')}</span>
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </motion.a>
+              <span>→</span>
+            </a>
           </AnimatedSection>
         </Container>
       </section>
