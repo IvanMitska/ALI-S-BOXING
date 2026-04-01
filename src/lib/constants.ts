@@ -23,8 +23,8 @@ export const siteConfig = {
   },
 
   hours: {
-    weekday: '6:00 AM - 8:00 PM',
-    weekend: '7:00 AM - 6:00 PM',
+    weekday: '8:00 AM - 8:00 PM',
+    weekend: 'Closed',
   },
 } as const;
 

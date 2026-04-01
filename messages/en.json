@@ -74,17 +74,17 @@
     "pageSubtitle": "Find the perfect training program for your goals",
     "programs": {
       "westernBoxing": {
-        "title": "Western Boxing",
+        "title": "Boxing",
         "description": "Classic western boxing training covering footwork, combinations, and defense",
         "level": "All Levels"
       },
       "strengthConditioning": {
-        "title": "Strength & Conditioning",
+        "title": "Strength Conditioning",
         "description": "Build power and endurance with boxing-focused strength and conditioning",
         "level": "All Levels"
       },
       "drillsSparring": {
-        "title": "Drills & Sparring",
+        "title": "Drills and Sparring",
         "description": "Practice techniques and controlled sparring to sharpen your skills",
         "level": "Intermediate"
       },
@@ -92,7 +92,8 @@
         "title": "Women's Boxing",
         "description": "Boxing classes designed specifically for women of all skill levels",
         "level": "All Levels"
-      }
+      },
+      "viewSchedule": "View Class Schedule"
     },
     "pricing": {
       "title": "Pricing",
@@ -221,8 +222,8 @@
       "whatsappText": "Message us on WhatsApp",
       "instagram": "Instagram",
       "hours": "Opening Hours",
-      "weekday": "Monday - Friday",
-      "weekend": "Saturday - Sunday"
+      "weekday": "Monday - Saturday",
+      "weekend": "Sunday"
     },
     "map": {
       "title": "Find Us"
@@ -233,8 +234,8 @@
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
     "hours": "Opening Hours",
-    "weekday": "Mon - Fri",
-    "weekend": "Sat - Sun",
+    "weekday": "Mon - Sat",
+    "weekend": "Sun",
     "copyright": "All rights reserved."
   },
   "buttons": {

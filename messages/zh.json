@@ -74,12 +74,12 @@
     "pageSubtitle": "找到适合您目标的训练课程",
     "programs": {
       "westernBoxing": {
-        "title": "西式拳击",
+        "title": "拳击",
         "description": "经典西式拳击技术，专注于步法、组合拳和防守",
         "level": "所有级别"
       },
       "strengthConditioning": {
-        "title": "力量与体能",
+        "title": "力量训练",
         "description": "通过拳击力量训练提升力量和耐力",
         "level": "所有级别"
       },
@@ -92,7 +92,8 @@
         "title": "女子拳击",
         "description": "专为各级别女性设计的拳击课程",
         "level": "所有级别"
-      }
+      },
+      "viewSchedule": "查看课程表"
     },
     "pricing": {
       "title": "价格",
@@ -221,8 +222,8 @@
       "whatsappText": "通过WhatsApp联系我们",
       "instagram": "Instagram",
       "hours": "营业时间",
-      "weekday": "周一 - 周五",
-      "weekend": "周六 - 周日"
+      "weekday": "周一 - 周六",
+      "weekend": "周日"
     },
     "map": {
       "title": "找到我们"
@@ -233,8 +234,8 @@
     "quickLinks": "快速链接",
     "contactUs": "联系我们",
     "hours": "营业时间",
-    "weekday": "周一 - 周五",
-    "weekend": "周六 - 周日",
+    "weekday": "周一 - 周六",
+    "weekend": "周日",
     "copyright": "版权所有。"
   },
   "buttons": {
