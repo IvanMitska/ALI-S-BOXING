@@ -6,7 +6,7 @@ export const siteConfig = {
   contact: {
     phone: '+66 99 209 7926',
     whatsapp: '+66992097926',
-    email: 'boxinggyma@gmail.com',
+    email: 'alisboxinggym@gmail.com',
     address: 'Soi Ta Ied, Chalong, Phuket, Thailand',
   },
 
@@ -20,6 +20,7 @@ export const siteConfig = {
     instagram: 'https://instagram.com/alisboxinggym',
     facebook: 'https://facebook.com/alisboxinggym',
     youtube: 'https://www.youtube.com/@alisboxinggym2107',
+    tiktok: 'https://www.tiktok.com/@alisboxinggym',
   },
 
   hours: {
@@ -42,6 +43,6 @@ export const navLinks = [
   { href: '/', labelKey: 'nav.home' },
   { href: '/classes', labelKey: 'nav.classes' },
   { href: '/our-story', labelKey: 'nav.ourStory' },
-  { href: '/gallery', labelKey: 'nav.gallery' },
+  { href: '/facilities', labelKey: 'nav.facilities' },
   { href: '/contact', labelKey: 'nav.contact' },
 ] as const;

@@ -1,7 +1,25 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Instagram, Facebook, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, type LucideProps } from 'lucide-react';
+
+// Custom TikTok icon (not available in lucide-react)
+function TikTok(props: LucideProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+}
 import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { siteConfig, navLinks } from '@/lib/constants';
@@ -13,6 +31,7 @@ export function Footer() {
     { href: siteConfig.social.instagram, icon: Instagram, label: 'Instagram' },
     { href: siteConfig.social.facebook, icon: Facebook, label: 'Facebook' },
     { href: siteConfig.social.youtube, icon: Youtube, label: 'YouTube' },
+    { href: siteConfig.social.tiktok, icon: TikTok, label: 'TikTok' },
   ];
 
   return (

@@ -21,9 +21,9 @@ function PricingCard({ item, t, tPackages }: { item: Package; t: (key: string) =
       >
         {/* Popular badge */}
         {item.popular && (
-          <div className="absolute top-0 right-0">
-            <div className="bg-brand-yellow text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1">
-              {t('pricing.popular')}
+          <div className="absolute -top-px -right-px">
+            <div className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] text-black text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 shadow-[0_0_20px_rgba(212,175,55,0.5)]">
+              <span className="relative z-10">★ {t('pricing.popular')}</span>
             </div>
           </div>
         )}

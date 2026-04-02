@@ -3,3 +3,4 @@ export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 export { Container } from './Container';
 export { Badge } from './Badge';
 export { Input, Textarea } from './Input';
+export { ImageLightbox } from './ImageLightbox';

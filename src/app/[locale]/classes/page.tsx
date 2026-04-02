@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
-import { PageHeader } from '@/components/sections/PageHeader';
+import { ClassesHero } from '@/components/sections/ClassesHero';
 import { Programs } from '@/components/sections/Programs';
 import { Schedule } from '@/components/sections/Schedule';
 import { CTASection } from '@/components/sections/CTASection';
@@ -27,7 +27,7 @@ export default async function ClassesPage({ params }: ClassesPageProps) {
 
   return (
     <>
-      <PageHeader title={t('pageTitle')} subtitle={t('pageSubtitle')} />
+      <ClassesHero subtitle={t('pageSubtitle')} />
       <Programs showViewAllButton={false} />
       <Schedule />
       <CTASection />

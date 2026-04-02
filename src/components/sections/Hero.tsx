@@ -53,8 +53,8 @@ export function Hero() {
             Phuket, Thailand
           </p>
 
-          {/* Main headline - Sprint Sports Font */}
-          <h1 className="hero-headline text-[clamp(3.5rem,12vw,9rem)] mb-8">
+          {/* Main headline */}
+          <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-bold uppercase leading-[0.9] tracking-tight mb-8" style={{ fontFamily: 'Oswald, system-ui, sans-serif' }}>
             <span className="text-white block">TRAIN LIKE</span>
             <span className="text-white block">A LEGEND,</span>
             <span className="text-brand-yellow block">FIGHT LIKE ALI.</span>

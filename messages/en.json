@@ -3,8 +3,9 @@
     "home": "Home",
     "classes": "Classes",
     "ourStory": "Our Story",
+    "facilities": "Our Facilities",
     "gallery": "Our Community",
-    "contact": "Contact",
+    "contact": "Contact Us",
     "bookNow": "Book Now"
   },
   "common": {
@@ -65,7 +66,7 @@
     },
     "cta": {
       "title": "Ready to Start Training?",
-      "subtitle": "Book your first session today and begin your journey to becoming a champion",
+      "subtitle": "Book your first session today and begin your boxing journey in paradise, Phuket Thailand. Become confident in your skills and hidden abilities.",
       "button": "Book Your First Class"
     }
   },
@@ -177,6 +178,42 @@
       "countries": "Countries Represented",
       "experience": "Years Experience",
       "champions": "Champions Produced"
+    }
+  },
+  "facilities": {
+    "pageTitle": "Our Facilities",
+    "pageSubtitle": "World-class equipment in the heart of Phuket",
+    "intro": "Our gym is equipped with everything you need for professional boxing training. From heavy bags to a full-size ring, we've created an environment where fighters of all levels can train, improve, and reach their goals.",
+    "whatWeOffer": "What We Offer",
+    "facilitiesTitle": "Training Facilities",
+    "equipment": {
+      "title": "Professional Equipment",
+      "description": "Heavy bags, speed bags, double-end bags, and all the boxing equipment you need for a complete workout."
+    },
+    "ringArea": {
+      "title": "Boxing Ring",
+      "description": "Full-size boxing ring for sparring, training, and competitions. The heart of our gym."
+    },
+    "hours": {
+      "title": "Flexible Hours",
+      "description": "Open Monday to Saturday, 8am to 8pm. Train when it fits your schedule."
+    },
+    "safety": {
+      "title": "Safety First",
+      "description": "Clean, well-maintained equipment and facilities. Your safety is our priority."
+    },
+    "amenities": {
+      "title": "Modern Amenities",
+      "description": "Changing rooms, lockers, and all the basics you need for a comfortable training session."
+    },
+    "climate": {
+      "title": "Climate Controlled",
+      "description": "Fans and ventilation throughout the gym to keep you cool during intense training sessions."
+    },
+    "gallery": {
+      "label": "Take a Look",
+      "title": "Inside the Gym",
+      "comingSoon": "Facility photos coming soon"
     }
   },
   "gallery": {

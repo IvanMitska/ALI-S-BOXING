@@ -3,6 +3,7 @@
     "home": "首页",
     "classes": "课程",
     "ourStory": "关于我们",
+    "facilities": "我们的设施",
     "gallery": "我们的社区",
     "contact": "联系我们",
     "bookNow": "立即预约"
@@ -177,6 +178,42 @@
       "countries": "代表国家",
       "experience": "年经验",
       "champions": "培养冠军"
+    }
+  },
+  "facilities": {
+    "pageTitle": "我们的设施",
+    "pageSubtitle": "普吉岛中心的世界级设备",
+    "intro": "我们的健身房配备了专业拳击训练所需的一切。从重型沙袋到全尺寸拳击台，我们创造了一个让各级别拳手都能训练、进步和实现目标的环境。",
+    "whatWeOffer": "我们提供",
+    "facilitiesTitle": "训练设施",
+    "equipment": {
+      "title": "专业设备",
+      "description": "重型沙袋、速度球、双头球和完整训练所需的所有拳击设备。"
+    },
+    "ringArea": {
+      "title": "拳击台",
+      "description": "全尺寸拳击台，用于对练、训练和比赛。我们健身房的核心。"
+    },
+    "hours": {
+      "title": "灵活时间",
+      "description": "周一至周六开放，早8点至晚8点。按照您的时间安排训练。"
+    },
+    "safety": {
+      "title": "安全第一",
+      "description": "干净、维护良好的设备和设施。您的安全是我们的首要任务。"
+    },
+    "amenities": {
+      "title": "现代设施",
+      "description": "更衣室、储物柜和舒适训练所需的所有基础设施。"
+    },
+    "climate": {
+      "title": "气候控制",
+      "description": "整个健身房配有风扇和通风设备，让您在高强度训练中保持凉爽。"
+    },
+    "gallery": {
+      "label": "看一看",
+      "title": "健身房内部",
+      "comingSoon": "设施照片即将推出"
     }
   },
   "gallery": {

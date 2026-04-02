@@ -3,6 +3,7 @@
 import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { Link } from '@/i18n/navigation';
 
@@ -11,23 +12,45 @@ export function CTASection() {
   const t = useTranslations();
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/futer.jpg"
-          alt=""
-          fill
-          className="object-cover"
-          quality={75}
-        />
-        <div className="absolute inset-0 bg-black/80" />
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-background">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background to-background-secondary" />
+
+      {/* Background watermark */}
+      <div className="absolute inset-0 flex items-center justify-end overflow-hidden pointer-events-none">
+        <span className="font-display text-[200px] md:text-[300px] lg:text-[400px] font-bold text-white/[0.02] whitespace-nowrap -mr-20">
+          ALI
+        </span>
       </div>
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text content */}
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Ali Illustration - Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative h-[450px] sm:h-[550px] lg:h-[700px] xl:h-[750px] order-2 lg:order-1"
+          >
+            <Image
+              src="/images/illustrations/ali-knockout.png"
+              alt="Muhammad Ali"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain object-center lg:object-left"
+              quality={90}
+            />
+          </motion.div>
+
+          {/* Text content - Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2"
+          >
             <span className="inline-block text-brand-yellow text-sm font-semibold uppercase tracking-[0.2em] mb-6">
               {t('cta.limitedSpots')}
             </span>
@@ -56,28 +79,7 @@ export function CTASection() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-          </div>
-
-          {/* Stats/features */}
-          <div className="grid grid-cols-3 gap-px bg-border">
-            {[
-              { value: '5+', labelKey: 'cta.expertCoaches' },
-              { value: '100%', labelKey: 'cta.dedication' },
-              { value: '1:1', labelKey: 'cta.personalAttention' },
-            ].map((stat) => (
-              <div
-                key={stat.labelKey}
-                className="bg-background p-8 text-center"
-              >
-                <div className="font-display text-3xl lg:text-4xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-foreground-muted text-xs uppercase tracking-wider">
-                  {t(stat.labelKey)}
-                </div>
-              </div>
-            ))}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>
