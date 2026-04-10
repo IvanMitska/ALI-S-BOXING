@@ -27,7 +27,7 @@ export function ClassesHero({ subtitle }: ClassesHeroProps) {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <span className="inline-block text-brand-yellow text-sm font-bold uppercase tracking-[0.3em]">
+            <span className="inline-block text-white text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-[0.3em]">
               Our Classes
             </span>
           </motion.div>

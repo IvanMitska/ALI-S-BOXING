@@ -8,12 +8,16 @@ interface PageHeaderProps {
   title: string;
   subtitle?: string;
   backgroundImage?: string;
+  grayscale?: boolean;
+  objectPosition?: string;
 }
 
 export function PageHeader({
   title,
   subtitle,
   backgroundImage = '/images/page-header-bg.jpg',
+  grayscale = false,
+  objectPosition = 'center',
 }: PageHeaderProps) {
   return (
     <section className="relative min-h-[70vh] flex items-end overflow-hidden">
@@ -23,7 +27,8 @@ export function PageHeader({
         alt=""
         fill
         sizes="100vw"
-        className="object-cover object-center"
+        style={{ objectPosition }}
+        className={`object-cover ${grayscale ? 'grayscale' : ''}`}
         priority
         quality={75}
       />

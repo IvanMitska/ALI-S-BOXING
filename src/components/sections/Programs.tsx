@@ -15,8 +15,8 @@ interface Program {
 const programs: Program[] = [
   { id: 'westernBoxing', image: '/images/Boxing-section-_4_-_1_-_1_.webp', hoverColor: '#D4AF37' },
   { id: 'strengthConditioning', image: '/images/s_c-_1_.webp', hoverColor: '#B8860B' },
-  { id: 'drillsSparring', image: '/images/drills-and-sparring-_1_.webp', hoverColor: '#DAA520' },
   { id: 'womensBoxing', image: '/images/womens-boxing-_1_.webp', hoverColor: '#FFD700' },
+  { id: 'drillsSparring', image: '/images/drills-and-sparring-_1_.webp', hoverColor: '#DAA520' },
 ];
 
 interface ProgramsProps {
@@ -83,17 +83,10 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                   </h3>
 
                   <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    {tHome('learnMore')}
+                    {t('viewSchedule')}
                   </span>
                 </div>
               </a>
-              {/* View Class Schedule link */}
-              <Link
-                href="/classes"
-                className="mt-4 text-center text-foreground-muted hover:text-brand-yellow transition-colors text-sm uppercase tracking-wider"
-              >
-                {t('viewSchedule')}
-              </Link>
             </div>
           ))}
         </div>

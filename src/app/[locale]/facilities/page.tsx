@@ -180,6 +180,26 @@ export default function FacilitiesPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* Video tour */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-16 lg:mt-20"
+          >
+            <div className="relative w-full aspect-video overflow-hidden border border-border bg-background-secondary">
+              <iframe
+                src="https://www.youtube.com/embed/66Dd6RUnRag"
+                title="Ali's Boxing Gym tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </motion.div>
         </Container>
       </section>
 

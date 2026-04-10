@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { generatePageMetadata } from '@/lib/metadata';
-import { PageHeader } from '@/components/sections/PageHeader';
 import { ContactForm } from '@/components/sections/ContactForm';
 import { GoogleMap } from '@/components/sections/GoogleMap';
 import { Container } from '@/components/ui/Container';
@@ -48,7 +48,25 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
   return (
     <>
-      <PageHeader title={t('pageTitle')} subtitle={t('pageSubtitle')} />
+      {/* Hero illustration */}
+      <section className="relative bg-black pt-24 lg:pt-32">
+        <div className="relative w-full aspect-[16/9] md:aspect-[2/1] lg:aspect-[5/2] max-h-[80vh]">
+          <Image
+            src="/images/illustrations/ali-for-contacts.png"
+            alt="Ali's Boxing Gym"
+            fill
+            sizes="100vw"
+            className="object-contain object-center"
+            priority
+            quality={90}
+          />
+        </div>
+        <div className="text-center mt-6 lg:mt-8 pb-4">
+          <p className="text-foreground-muted text-xl md:text-2xl">
+            {t('pageSubtitle')}
+          </p>
+        </div>
+      </section>
 
       <section className="py-16 lg:py-24">
         <Container>

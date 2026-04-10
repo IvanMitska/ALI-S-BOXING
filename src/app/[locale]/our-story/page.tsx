@@ -1,13 +1,27 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/sections/PageHeader';
 import { Container } from '@/components/ui/Container';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { AliPhotoSlider } from '@/components/common/AliPhotoSlider';
 import { CTASection } from '@/components/sections/CTASection';
-import { Users, Trophy, Heart, Globe, Dumbbell, Calendar } from 'lucide-react';
+import { ImageLightbox } from '@/components/ui/ImageLightbox';
+import { Users, Trophy, Heart, PlayCircle, ExternalLink } from 'lucide-react';
+
+const lifeAtGymPhotos = [
+  '/images/life-at-gym/life-1.webp',
+  '/images/life-at-gym/life-2.webp',
+  '/images/life-at-gym/life-3.webp',
+  '/images/life-at-gym/life-4.webp',
+  '/images/life-at-gym/life-5.webp',
+  '/images/life-at-gym/life-6.webp',
+  '/images/life-at-gym/life-7.webp',
+  '/images/life-at-gym/life-8.webp',
+];
 
 const stats = [
   { value: '1000+', labelKey: 'students' },
@@ -22,12 +36,8 @@ const communityFeatures = [
   { icon: Heart, titleKey: 'atmosphere.title', contentKey: 'atmosphere.content' },
 ];
 
-const communityStats = [
-  { value: '4', labelKey: 'fightNights', icon: Trophy },
-  { value: '50+', labelKey: 'countries', icon: Globe },
-  { value: '100s', labelKey: 'athletes', icon: Dumbbell },
-  { value: '7', labelKey: 'yearsStrong', icon: Calendar },
-];
+const FIGHT_NIGHTS_PLAYLIST_URL =
+  'https://youtube.com/playlist?list=PLwdN-JFBCB5gFP6xndFt_y2clRyVVxXa5';
 
 export default function OurStoryPage() {
   const t = useTranslations('ourStory');
@@ -35,9 +45,23 @@ export default function OurStoryPage() {
   const tGallery = useTranslations('gallery');
   const tCommunity = useTranslations('community');
 
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLifeLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <>
-      <PageHeader title={t('pageTitle')} subtitle={t('pageSubtitle')} />
+      <PageHeader
+        title={t('pageTitle')}
+        subtitle={t('pageSubtitle')}
+        backgroundImage="/images/parallax-community.jpg"
+        grayscale
+        objectPosition="center 30%"
+      />
 
       {/* Welcome Section - Big Statement */}
       <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
@@ -85,15 +109,7 @@ export default function OurStoryPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image Side */}
             <AnimatedSection direction="left">
-              <div className="relative">
-                <div className="aspect-[4/5] bg-background border border-border flex items-center justify-center">
-                  <span className="text-foreground-muted text-sm uppercase tracking-wider">
-                    Ali's Photo
-                  </span>
-                </div>
-                {/* Decorative element */}
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-yellow/10 -z-10" />
-              </div>
+              <AliPhotoSlider />
             </AnimatedSection>
 
             {/* Content Side */}
@@ -322,79 +338,87 @@ export default function OurStoryPage() {
       </section>
 
       {/* Our Community - Big Statement Section */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
-        {/* Large background text */}
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
-          <span className="font-display text-[200px] md:text-[350px] lg:text-[450px] font-bold text-white/[0.02] whitespace-nowrap">
-            FAMILY
-          </span>
-        </div>
+      <section className="py-32 lg:py-48 min-h-[80vh] lg:min-h-[90vh] flex items-center relative overflow-hidden">
+        {/* Background illustration */}
+        <Image
+          src="/images/illustrations/girls-ill.png"
+          alt="Katie Taylor vs Amanda Serrano 2022"
+          fill
+          sizes="100vw"
+          className="object-cover object-center -z-10"
+          quality={90}
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/75 -z-10" />
 
         <Container className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Text Side */}
-            <AnimatedSection direction="left">
-              <motion.p
-                className="text-2xl md:text-3xl lg:text-4xl text-white font-light leading-relaxed"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-brand-yellow font-bold">Ali&apos;s Boxing Gym</span> brings together people from all over the world.{' '}
-                <span className="text-foreground-muted">Some come to compete. Some come to get fit. Some just want to try boxing for the first time.</span>{' '}
-                What connects everyone is the mindset:{' '}
-                <span className="text-brand-yellow">work hard, respect each other, and keep improving.</span>
-              </motion.p>
-            </AnimatedSection>
-
-            {/* Illustration Side */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+          <AnimatedSection className="max-w-4xl mx-auto text-center">
+            <motion.p
+              className="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="relative h-[350px] sm:h-[400px] lg:h-[500px]"
             >
-              <Image
-                src="/images/illustrations/ill-tayson.png"
-                alt="Boxing sparring illustration"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain object-center"
-                quality={90}
-              />
-            </motion.div>
-          </div>
+              <span className="text-brand-yellow">Ali&apos;s Boxing Gym</span> brings together people from all over the world.{' '}
+              <span className="text-white/80">Some come to compete. Some come to get fit. Some just want to try boxing for the first time.</span>{' '}
+              What connects everyone is the mindset:{' '}
+              <span className="text-brand-yellow">work hard, respect each other, and keep improving.</span>
+            </motion.p>
+          </AnimatedSection>
         </Container>
+
+        {/* Fight caption pinned to bottom of the section */}
+        <p className="absolute bottom-6 left-0 right-0 text-center text-foreground-muted text-xs sm:text-sm uppercase tracking-[0.2em] z-10">
+          Katie Taylor vs Amanda Serrano (2022)
+        </p>
       </section>
 
-      {/* Community Stats */}
-      <section className="pb-24 lg:pb-32 bg-background">
+      {/* Fight Nights CTA */}
+      <section className="py-20 lg:py-28 bg-background">
         <Container>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 -mt-12 relative z-20">
-            {communityStats.map((stat, index) => (
-              <motion.div
-                key={stat.labelKey}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                className="group"
-              >
-                <div className="bg-background-secondary border border-border p-6 lg:p-8 text-center hover:border-brand-yellow/50 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <stat.icon className="w-6 h-6 text-brand-yellow mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <div className="font-display text-4xl lg:text-5xl font-bold text-white mb-1 relative">
-                    {stat.value}
-                  </div>
-                  <div className="text-foreground-muted uppercase tracking-wider text-xs font-medium">
-                    {tCommunity(stat.labelKey)}
-                  </div>
+          <motion.a
+            href={FIGHT_NIGHTS_PLAYLIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="group block max-w-3xl mx-auto bg-background-secondary border border-border hover:border-brand-yellow transition-colors duration-300 overflow-hidden"
+            aria-label="Watch our 4 Fight Nights on YouTube"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-yellow/0 via-brand-yellow/5 to-brand-yellow/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 p-8 lg:p-10 text-center sm:text-left">
+              {/* Icon */}
+              <div className="w-20 h-20 lg:w-24 lg:h-24 flex-shrink-0 bg-brand-yellow/10 flex items-center justify-center group-hover:bg-brand-yellow/20 group-hover:scale-105 transition-all duration-300">
+                <Trophy className="w-10 h-10 lg:w-12 lg:h-12 text-brand-yellow" />
+              </div>
+
+              {/* Text */}
+              <div className="flex-1">
+                <div className="flex items-baseline justify-center sm:justify-start gap-3 mb-2">
+                  <span className="font-display text-5xl lg:text-6xl font-bold text-white leading-none">
+                    4
+                  </span>
+                  <span className="font-display text-2xl lg:text-3xl font-bold text-white uppercase">
+                    {tCommunity('fightNights')}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <p className="text-foreground-muted text-sm lg:text-base">
+                  Watch every Fight Night on our YouTube playlist
+                </p>
+              </div>
+
+              {/* CTA */}
+              <div className="flex-shrink-0 flex items-center gap-2 px-5 py-3 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-xs lg:text-sm rounded-full group-hover:bg-white transition-colors">
+                <PlayCircle className="w-5 h-5" />
+                <span>Watch on YouTube</span>
+                <ExternalLink className="w-4 h-4" />
+              </div>
+            </div>
+          </motion.a>
         </Container>
       </section>
 
@@ -518,39 +542,37 @@ export default function OurStoryPage() {
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { span: 'col-span-2 row-span-2', aspect: 'aspect-square' },
-              { span: 'col-span-1', aspect: 'aspect-square' },
-              { span: 'col-span-1', aspect: 'aspect-square' },
-              { span: 'col-span-1 row-span-2', aspect: 'aspect-[3/4]' },
-              { span: 'col-span-1', aspect: 'aspect-square' },
-              { span: 'col-span-2', aspect: 'aspect-video' },
-            ].map((item, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {lifeAtGymPhotos.map((src, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.05 }}
                 viewport={{ once: true }}
-                className={`${item.span} relative group overflow-hidden`}
+                onClick={() => openLifeLightbox(i)}
+                className="group relative overflow-hidden cursor-pointer aspect-square"
               >
-                <div className={`${item.aspect} bg-background border border-border flex items-center justify-center group-hover:border-brand-yellow/50 transition-all duration-300 relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-foreground-muted text-sm uppercase tracking-wider relative z-10">
-                    Photo {i + 1}
-                  </span>
-                  <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-brand-yellow/20 border-l-[40px] border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Image
+                  src={src}
+                  alt={`Life at Ali's Boxing Gym ${i + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  quality={80}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-12 h-12 bg-black/50 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          <AnimatedSection className="text-center mt-12">
-            <p className="text-foreground-muted italic">
-              {tCommunity('photosComingSoon')}
-            </p>
-          </AnimatedSection>
         </Container>
       </section>
 
@@ -587,6 +609,14 @@ export default function OurStoryPage() {
           </AnimatedSection>
         </Container>
       </section>
+
+      {/* Lightbox for Life at Gym photos */}
+      <ImageLightbox
+        images={lifeAtGymPhotos}
+        initialIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </>
   );
 }

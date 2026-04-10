@@ -35,12 +35,15 @@ export function CTASection() {
           >
             <Image
               src="/images/illustrations/ali-knockout.png"
-              alt="Muhammad Ali"
+              alt="Muhammad Ali vs Sonny Liston (1965)"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-contain object-center lg:object-left"
               quality={90}
             />
+            <p className="absolute bottom-0 left-0 right-0 text-center lg:text-left text-foreground-muted text-xs sm:text-sm uppercase tracking-[0.2em]">
+              Muhammad Ali vs Sonny Liston (1965)
+            </p>
           </motion.div>
 
           {/* Text content - Right */}
