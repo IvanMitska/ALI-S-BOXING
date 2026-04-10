@@ -50,20 +50,21 @@ export default function FacilitiesPage() {
   return (
     <>
       {/* Custom Header with Ali's Gym Banner */}
-      <section className="relative bg-black pt-16 lg:pt-20 border-0">
-        <div className="w-full py-8 lg:py-12">
+      <section className="relative bg-black pt-16 lg:pt-20 border-0 min-h-[60vh] lg:min-h-[70vh] flex items-center">
+        <div className="w-full">
           <div className="relative w-full aspect-[3/1] md:aspect-[4/1] lg:aspect-[5/1]">
             <Image
               src="/images/facilities/alisgym_no_bg.png"
               alt="Ali's Gym"
               fill
               sizes="100vw"
+              style={{ transform: 'translateX(-2%)' }}
               className="object-contain object-center"
               priority
               quality={90}
             />
           </div>
-          <div className="text-center mt-6 lg:mt-8">
+          <div className="text-center mt-4 lg:mt-6">
             <p className="text-foreground-muted text-xl md:text-2xl">
               {t('pageSubtitle')}
             </p>
@@ -72,7 +73,7 @@ export default function FacilitiesPage() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+      <section className="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-background relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
           <span className="font-display text-[200px] md:text-[350px] lg:text-[450px] font-bold text-white/[0.02] whitespace-nowrap">
             GYM
