@@ -24,6 +24,7 @@ function CheckoutContent() {
   const searchParams = useSearchParams();
   const preselectedId = searchParams.get('package');
   const t = useTranslations('checkout');
+  const tRoot = useTranslations();
   const tPackages = useTranslations('packages');
 
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
@@ -63,7 +64,7 @@ function CheckoutContent() {
         pkg: selectedPackage,
         packageName: tPackages(`names.${selectedPackage.nameKey}`),
         period: tPackages(`periods.${selectedPackage.periodKey}`),
-        template: t('whatsapp.purchaseMessage'),
+        template: tRoot('whatsapp.purchaseMessage'),
       })
     : '#';
 
