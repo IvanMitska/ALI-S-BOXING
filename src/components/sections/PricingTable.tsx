@@ -1,13 +1,21 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ShoppingCart } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { Package, dropInPackages, weeklyPackages, monthlyPackages, specialPackages } from '@/lib/packages';
+import { getPackagePurchaseWhatsAppUrl } from '@/lib/whatsapp';
 
 function PricingCard({ item, t, tPackages }: { item: Package; t: (key: string) => string; tPackages: (key: string) => string }) {
+  const whatsappUrl = getPackagePurchaseWhatsAppUrl({
+    pkg: item,
+    packageName: tPackages(`names.${item.nameKey}`),
+    period: tPackages(`periods.${item.periodKey}`),
+    template: t('whatsapp.purchaseMessage'),
+  });
+
   return (
     <div className="h-full group">
       <div
@@ -67,15 +75,17 @@ function PricingCard({ item, t, tPackages }: { item: Package; t: (key: string) =
           )}
         </div>
 
-        {/* Footer - Buy Button */}
+        {/* Footer - WhatsApp CTA (online payments temporarily disabled) */}
         <div className="p-6 pt-0">
-          <Link
-            href={`/checkout?package=${item.id}`}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3.5 text-center font-semibold text-sm uppercase tracking-wider transition-all duration-300 bg-brand-yellow text-black hover:bg-brand-yellow-dark rounded-full"
           >
-            <ShoppingCart className="w-4 h-4" />
-            <span>{t('buttons.buyNow')}</span>
-          </Link>
+            <MessageCircle className="w-4 h-4" />
+            <span>{t('buttons.bookViaWhatsApp')}</span>
+          </a>
         </div>
 
         {/* Hover glow effect */}

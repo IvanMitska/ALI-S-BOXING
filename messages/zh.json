@@ -279,8 +279,12 @@
     "buyOnline": "在线购买",
     "viewClasses": "查看课程",
     "buyNow": "立即购买",
+    "bookViaWhatsApp": "通过WhatsApp预订",
     "contactUs": "联系我们",
     "joinCommunity": "加入社区"
+  },
+  "whatsapp": {
+    "purchaseMessage": "您好！我想在Ali's Boxing Gym预订\"{package}\"套餐（{period}），价格{price}。请确认是否还有名额以及下一步流程，谢谢！"
   },
   "pricing": {
     "popular": "热门",
@@ -333,6 +337,24 @@
     "paymentDescription": "由Stripe提供安全支付",
     "selectPackage": "选择套餐",
     "payment": "付款",
+    "contactStep": "联系",
+    "contactStepTitle": "联系我们以确认预订",
+    "contactStepDescription": "我们将通过WhatsApp确认您的预订，您可在到店时当面付款。",
+    "contactDetailsTitle": "通过WhatsApp预订您的套餐",
+    "contactDetailsSubtitle": "点击下方按钮 — 我们将打开聊天，您所选套餐的详细信息已为您填写好。",
+    "contactStep1": "点击下方的WhatsApp按钮 — 您的套餐详情会自动填入。",
+    "contactStep2": "我们的团队将确认名额并回答您的任何问题。",
+    "contactStep3": "首次到店时安全地当面支付，然后开始训练。",
+    "contactViaWhatsApp": "通过WhatsApp联系",
+    "directContact": "直接联系",
+    "quickReply": "快速回复",
+    "flexibleBooking": "灵活预订",
+    "continueToContact": "继续",
+    "maintenance": {
+      "title": "在线支付暂时不可用。",
+      "message": "我们正在升级支付系统。在此期间，请通过WhatsApp预订您的套餐 — 我们将亲自为您确认所有细节。",
+      "checkoutNote": "在我们的支付服务商完成验证之前，在线刷卡支付暂停使用。您仍可立即通过WhatsApp预订套餐，并在到店时付款。"
+    },
     "allPackages": "所有套餐",
     "dropIn": "单次",
     "weekly": "周卡",
@@ -348,7 +370,9 @@
     "fullName": "全名",
     "cardInformation": "卡片信息",
     "stripeIntegration": "Stripe支付表单将集成在这里",
+    "redirectToStripe": "您将被重定向到Stripe以安全地完成付款",
     "secureEncryption": "您的付款由256位SSL加密保护",
+    "processing": "处理中…",
     "pay": "支付",
     "securePayment": "安全支付",
     "instantAccess": "即时访问",
@@ -357,6 +381,23 @@
     "sslSecured": "SSL安全",
     "poweredByStripe": "由Stripe提供支持",
     "instantConfirmation": "即时确认"
+  },
+  "checkoutSuccess": {
+    "title": "支付成功",
+    "subtitle": "欢迎来到Ali's Boxing Gym！您的预订已确认。",
+    "orderSummary": "订单摘要",
+    "package": "套餐",
+    "amount": "支付金额",
+    "receiptSentTo": "收据已发送至",
+    "emailNote": "我们已向您发送包含收据和说明的确认邮件。首次到访时请携带有效证件，并提前10分钟到达。",
+    "backHome": "返回首页",
+    "contactUs": "联系我们"
+  },
+  "checkoutCancel": {
+    "title": "支付已取消",
+    "subtitle": "您的付款未完成，您未被收费。您可以再试一次或联系我们寻求帮助。",
+    "tryAgain": "再试一次",
+    "needHelp": "需要帮助？"
   },
   "packages": {
     "periods": {

@@ -279,8 +279,12 @@
     "buyOnline": "Buy Online",
     "viewClasses": "View Classes",
     "buyNow": "Buy Now",
+    "bookViaWhatsApp": "Book via WhatsApp",
     "contactUs": "Contact Us",
     "joinCommunity": "Join the Community"
+  },
+  "whatsapp": {
+    "purchaseMessage": "Hi! I'd like to book the \"{package}\" package ({period}) for {price} at Ali's Boxing Gym. Could you confirm availability and next steps?"
   },
   "pricing": {
     "popular": "Popular",
@@ -333,6 +337,24 @@
     "paymentDescription": "Secure payment powered by Stripe",
     "selectPackage": "Select Package",
     "payment": "Payment",
+    "contactStep": "Contact",
+    "contactStepTitle": "Contact Us to Confirm",
+    "contactStepDescription": "We'll confirm your booking via WhatsApp and arrange payment in person at the gym.",
+    "contactDetailsTitle": "Book Your Package via WhatsApp",
+    "contactDetailsSubtitle": "Tap the button below — we'll open a chat with all the details of your selected package already filled in.",
+    "contactStep1": "Tap the WhatsApp button below — your package details will be pre-filled.",
+    "contactStep2": "Our team will confirm availability and answer any questions.",
+    "contactStep3": "Pay securely in person on your first visit and start training.",
+    "contactViaWhatsApp": "Contact via WhatsApp",
+    "directContact": "Direct contact",
+    "quickReply": "Quick reply",
+    "flexibleBooking": "Flexible booking",
+    "continueToContact": "Continue",
+    "maintenance": {
+      "title": "Online payments temporarily unavailable.",
+      "message": "We're upgrading our payment system. In the meantime, please book your package via WhatsApp — we'll confirm everything personally.",
+      "checkoutNote": "Online card payments are paused while our payment processor finishes verification. You can still reserve your package now via WhatsApp and pay at the gym."
+    },
     "allPackages": "All Packages",
     "dropIn": "Drop In",
     "weekly": "Weekly",
@@ -348,7 +370,9 @@
     "fullName": "Full Name",
     "cardInformation": "Card Information",
     "stripeIntegration": "Stripe payment form will be integrated here",
+    "redirectToStripe": "You will be redirected to Stripe to complete your payment securely",
     "secureEncryption": "Your payment is secured with 256-bit SSL encryption",
+    "processing": "Processing…",
     "pay": "Pay",
     "securePayment": "Secure Payment",
     "instantAccess": "Instant Access",
@@ -357,6 +381,23 @@
     "sslSecured": "SSL Secured",
     "poweredByStripe": "Powered by Stripe",
     "instantConfirmation": "Instant Confirmation"
+  },
+  "checkoutSuccess": {
+    "title": "Payment Successful",
+    "subtitle": "Welcome to Ali's Boxing Gym! Your booking is confirmed.",
+    "orderSummary": "Order Summary",
+    "package": "Package",
+    "amount": "Amount Paid",
+    "receiptSentTo": "Receipt sent to",
+    "emailNote": "A confirmation email with your receipt and instructions has been sent. Bring a valid ID on your first visit and arrive 10 minutes early.",
+    "backHome": "Back to Home",
+    "contactUs": "Contact Us"
+  },
+  "checkoutCancel": {
+    "title": "Payment Cancelled",
+    "subtitle": "Your payment was not completed and you have not been charged. You can try again or contact us if you need help.",
+    "tryAgain": "Try Again",
+    "needHelp": "Need Help?"
   },
   "packages": {
     "periods": {

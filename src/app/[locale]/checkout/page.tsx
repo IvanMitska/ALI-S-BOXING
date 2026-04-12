@@ -3,12 +3,12 @@
 import { Suspense, useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, CreditCard, Shield, Zap, Filter } from 'lucide-react';
+import { AlertTriangle, Check, Filter, MessageCircle, Shield, Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { Package, allPackages, getPackageById } from '@/lib/packages';
+import { getPackagePurchaseWhatsAppUrl } from '@/lib/whatsapp';
 
 type Category = 'all' | 'dropIn' | 'weekly' | 'monthly' | 'special';
 
@@ -27,10 +27,8 @@ function CheckoutContent() {
   const tPackages = useTranslations('packages');
 
   const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
-  const [step, setStep] = useState<'select' | 'payment'>('select');
+  const [step, setStep] = useState<'select' | 'contact'>('select');
   const [activeCategory, setActiveCategory] = useState<Category>('all');
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
 
   // Preselect package from URL
   useEffect(() => {
@@ -56,9 +54,18 @@ function CheckoutContent() {
 
   const handleProceedToPayment = () => {
     if (selectedPackage) {
-      setStep('payment');
+      setStep('contact');
     }
   };
+
+  const whatsappUrl = selectedPackage
+    ? getPackagePurchaseWhatsAppUrl({
+        pkg: selectedPackage,
+        packageName: tPackages(`names.${selectedPackage.nameKey}`),
+        period: tPackages(`periods.${selectedPackage.periodKey}`),
+        template: t('whatsapp.purchaseMessage'),
+      })
+    : '#';
 
   return (
     <>
@@ -76,18 +83,27 @@ function CheckoutContent() {
               {t('secureCheckout')}
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              {step === 'select' ? t('choosePackage') : t('completePayment')}
+              {step === 'select' ? t('choosePackage') : t('contactStepTitle')}
             </h1>
             <p className="text-foreground-muted text-lg">
               {step === 'select'
                 ? t('selectDescription')
-                : t('paymentDescription')
+                : t('contactStepDescription')
               }
             </p>
           </motion.div>
 
+          {/* Maintenance banner */}
+          <div className="mt-8 flex items-start gap-3 px-4 py-3 border border-amber-500/40 bg-amber-500/10 text-amber-200">
+            <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
+            <p className="text-sm leading-relaxed">
+              <span className="font-semibold">{t('maintenance.title')} </span>
+              {t('maintenance.message')}
+            </p>
+          </div>
+
           {/* Progress Steps */}
-          <div className="flex items-center gap-4 mt-10">
+          <div className="flex items-center gap-4 mt-8">
             <div className={cn(
               'flex items-center gap-2 text-sm font-medium',
               step === 'select' ? 'text-brand-yellow' : 'text-foreground-muted'
@@ -96,22 +112,22 @@ function CheckoutContent() {
                 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold',
                 step === 'select' ? 'bg-brand-yellow text-black' : 'bg-brand-yellow/20 text-brand-yellow'
               )}>
-                {step === 'payment' ? <Check className="w-4 h-4" /> : '1'}
+                {step === 'contact' ? <Check className="w-4 h-4" /> : '1'}
               </span>
               {t('selectPackage')}
             </div>
             <div className="w-12 h-px bg-border" />
             <div className={cn(
               'flex items-center gap-2 text-sm font-medium',
-              step === 'payment' ? 'text-brand-yellow' : 'text-foreground-muted'
+              step === 'contact' ? 'text-brand-yellow' : 'text-foreground-muted'
             )}>
               <span className={cn(
                 'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold',
-                step === 'payment' ? 'bg-brand-yellow text-black' : 'bg-white/10 text-white/50'
+                step === 'contact' ? 'bg-brand-yellow text-black' : 'bg-white/10 text-white/50'
               )}>
                 2
               </span>
-              {t('payment')}
+              {t('contactStep')}
             </div>
           </div>
         </Container>
@@ -270,87 +286,72 @@ function CheckoutContent() {
                         : 'bg-white/10 text-white/50 cursor-not-allowed'
                     )}
                   >
-                    {t('continueToPayment')}
-                    <CreditCard className="w-4 h-4" />
+                    {t('continueToContact')}
+                    <MessageCircle className="w-4 h-4" />
                   </button>
                 </motion.div>
               </motion.div>
             ) : (
               <motion.div
-                key="payment"
+                key="contact"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 className="grid grid-cols-1 lg:grid-cols-3 gap-8"
               >
-                {/* Payment Form */}
+                {/* WhatsApp CTA */}
                 <div className="lg:col-span-2">
                   <div className="bg-background border border-border p-8">
-                    <h2 className="font-display text-2xl font-bold text-white mb-6">
-                      {t('paymentDetails')}
+                    <h2 className="font-display text-2xl font-bold text-white mb-3">
+                      {t('contactDetailsTitle')}
                     </h2>
+                    <p className="text-foreground-muted mb-6">
+                      {t('contactDetailsSubtitle')}
+                    </p>
 
-                    <div className="space-y-6">
-                      <div>
-                        <label className="block text-sm font-medium text-white mb-2">
-                          {t('emailAddress')}
-                        </label>
-                        <input
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="your@email.com"
-                          className="w-full px-4 py-3 bg-background-secondary border border-border text-white placeholder-foreground-muted focus:outline-none focus:border-brand-yellow transition-colors"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-white mb-2">
-                          {t('fullName')}
-                        </label>
-                        <input
-                          type="text"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          placeholder="Your full name"
-                          className="w-full px-4 py-3 bg-background-secondary border border-border text-white placeholder-foreground-muted focus:outline-none focus:border-brand-yellow transition-colors"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-white mb-2">
-                          {t('cardInformation')}
-                        </label>
-                        {/* Stripe Card Element placeholder */}
-                        <div className="w-full px-4 py-4 bg-background-secondary border border-border text-foreground-muted">
-                          <div className="flex items-center gap-2">
-                            <CreditCard className="w-5 h-5" />
-                            <span className="text-sm">{t('stripeIntegration')}</span>
-                          </div>
-                        </div>
-                        <p className="text-foreground-muted text-xs mt-2">
-                          {t('secureEncryption')}
+                    <div className="px-4 py-4 mb-6 border border-amber-500/40 bg-amber-500/10 text-amber-200 text-sm">
+                      <div className="flex items-start gap-3">
+                        <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
+                        <p>
+                          <span className="font-semibold">{t('maintenance.title')} </span>
+                          {t('maintenance.checkoutNote')}
                         </p>
                       </div>
+                    </div>
 
-                      <Button
-                        variant="primary"
-                        size="lg"
-                        className="w-full"
-                        rightIcon={<Shield className="w-5 h-5" />}
-                      >
-                        {t('pay')} ฿{selectedPackage?.price.toLocaleString()}
-                      </Button>
+                    <ol className="space-y-3 mb-8 text-sm text-foreground-muted">
+                      <li className="flex gap-3">
+                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-yellow/15 text-brand-yellow font-bold text-xs shrink-0">1</span>
+                        {t('contactStep1')}
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-yellow/15 text-brand-yellow font-bold text-xs shrink-0">2</span>
+                        {t('contactStep2')}
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-yellow/15 text-brand-yellow font-bold text-xs shrink-0">3</span>
+                        {t('contactStep3')}
+                      </li>
+                    </ol>
 
-                      <div className="flex items-center justify-center gap-6 pt-4 border-t border-border">
-                        <div className="flex items-center gap-2 text-foreground-muted text-sm">
-                          <Shield className="w-4 h-4 text-brand-yellow" />
-                          {t('securePayment')}
-                        </div>
-                        <div className="flex items-center gap-2 text-foreground-muted text-sm">
-                          <Zap className="w-4 h-4 text-brand-yellow" />
-                          {t('instantAccess')}
-                        </div>
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-3 px-6 py-4 rounded-full bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-all duration-300"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      {t('contactViaWhatsApp')}
+                    </a>
+
+                    <div className="flex items-center justify-center gap-6 pt-6 mt-6 border-t border-border">
+                      <div className="flex items-center gap-2 text-foreground-muted text-sm">
+                        <Shield className="w-4 h-4 text-brand-yellow" />
+                        {t('directContact')}
+                      </div>
+                      <div className="flex items-center gap-2 text-foreground-muted text-sm">
+                        <Zap className="w-4 h-4 text-brand-yellow" />
+                        {t('quickReply')}
                       </div>
                     </div>
                   </div>
@@ -423,16 +424,16 @@ function CheckoutContent() {
         <Container>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
             <div className="flex items-center gap-3 text-foreground-muted">
-              <Shield className="w-6 h-6 text-brand-yellow" />
-              <span className="text-sm">{t('sslSecured')}</span>
-            </div>
-            <div className="flex items-center gap-3 text-foreground-muted">
-              <CreditCard className="w-6 h-6 text-brand-yellow" />
-              <span className="text-sm">{t('poweredByStripe')}</span>
+              <MessageCircle className="w-6 h-6 text-brand-yellow" />
+              <span className="text-sm">{t('directContact')}</span>
             </div>
             <div className="flex items-center gap-3 text-foreground-muted">
               <Zap className="w-6 h-6 text-brand-yellow" />
-              <span className="text-sm">{t('instantConfirmation')}</span>
+              <span className="text-sm">{t('quickReply')}</span>
+            </div>
+            <div className="flex items-center gap-3 text-foreground-muted">
+              <Shield className="w-6 h-6 text-brand-yellow" />
+              <span className="text-sm">{t('flexibleBooking')}</span>
             </div>
           </div>
         </Container>
