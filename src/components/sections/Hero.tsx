@@ -72,7 +72,7 @@ export function Hero() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-yellow text-black font-semibold uppercase tracking-wider text-sm hover:bg-brand-yellow-dark transition-colors rounded-full"
             >
               <ShoppingCart className="w-5 h-5" />
-              {t('buttons.buyOnline')}
+              {t('buttons.buyMembership')}
             </Link>
             <Link
               href="/classes"
