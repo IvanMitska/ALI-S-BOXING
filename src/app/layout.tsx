@@ -1,6 +1,16 @@
 import type { Metadata } from 'next';
 import { Inter, Noto_Sans_Thai, Oswald, Alfa_Slab_One, Anton } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
+
+const nouten = localFont({
+  src: [
+    { path: './fonts/Nouten/Nouten.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/Nouten/Nouten.woff', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-nouten',
+  display: 'swap',
+});
 
 const inter = Inter({
   variable: '--font-inter',
@@ -48,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${oswald.variable} ${notoSansThai.variable} ${alfaSlabOne.variable} ${anton.variable} antialiased`}>
+      <body className={`${inter.variable} ${oswald.variable} ${notoSansThai.variable} ${alfaSlabOne.variable} ${anton.variable} ${nouten.variable} antialiased`}>
         {children}
       </body>
     </html>

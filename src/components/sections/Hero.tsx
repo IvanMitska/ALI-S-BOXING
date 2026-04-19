@@ -54,7 +54,7 @@ export function Hero() {
           </p>
 
           {/* Main headline */}
-          <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-bold uppercase leading-[0.9] tracking-tight mb-8" style={{ fontFamily: 'Oswald, system-ui, sans-serif' }}>
+          <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-bold uppercase leading-[0.9] tracking-tight mb-8" style={{ fontFamily: 'var(--font-nouten), Oswald, system-ui, sans-serif' }}>
             <span className="text-white block">TRAIN LIKE</span>
             <span className="text-white block">A LEGEND,</span>
             <span className="text-brand-yellow block">FIGHT LIKE ALI.</span>
