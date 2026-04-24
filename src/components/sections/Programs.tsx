@@ -104,7 +104,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                   </h3>
 
                   <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    {t('viewSchedule')}
+                    {showViewAllButton ? t('viewSchedule') : t('bookNow')}
                   </span>
                 </div>
               </a>

@@ -95,7 +95,8 @@
         "level": "ทุกระดับ"
       },
       "viewSchedule": "ดูตารางเรียน",
-      "seeTheClass": "ดูคลาส"
+      "seeTheClass": "ดูคลาส",
+      "bookNow": "จองเลย"
     },
     "pricing": {
       "title": "ราคา",

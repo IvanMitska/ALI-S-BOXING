@@ -95,7 +95,8 @@
         "level": "所有级别"
       },
       "viewSchedule": "查看课程表",
-      "seeTheClass": "查看课程"
+      "seeTheClass": "查看课程",
+      "bookNow": "立即预约"
     },
     "pricing": {
       "title": "价格",

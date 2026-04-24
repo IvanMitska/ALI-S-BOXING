@@ -95,7 +95,8 @@
         "level": "All Levels"
       },
       "viewSchedule": "View Class Schedule",
-      "seeTheClass": "See the class"
+      "seeTheClass": "See the class",
+      "bookNow": "Book Now"
     },
     "pricing": {
       "title": "Pricing",
