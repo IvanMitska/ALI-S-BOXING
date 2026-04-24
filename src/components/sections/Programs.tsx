@@ -98,7 +98,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                     {t(`${program.id}.title`)}
                   </h3>
 
-                  <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
+                  <span className="mt-4 px-4 py-1.5 bg-white text-black text-xs font-semibold uppercase tracking-wider opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
                     {showViewAllButton ? t('viewSchedule') : t('bookNow')}
                   </span>
                 </div>
