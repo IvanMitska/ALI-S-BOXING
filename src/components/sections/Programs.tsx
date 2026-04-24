@@ -10,13 +10,34 @@ interface Program {
   id: string;
   image: string;
   hoverColor: string;
+  videoUrl: string;
 }
 
 const programs: Program[] = [
-  { id: 'westernBoxing', image: '/images/Boxing-section-_4_-_1_-_1_.webp', hoverColor: '#D4AF37' },
-  { id: 'strengthConditioning', image: '/images/s_c-_1_.webp', hoverColor: '#B8860B' },
-  { id: 'womensBoxing', image: '/images/womens-boxing-_1_.webp', hoverColor: '#FFD700' },
-  { id: 'drillsSparring', image: '/images/drills-and-sparring-_1_.webp', hoverColor: '#DAA520' },
+  {
+    id: 'westernBoxing',
+    image: '/images/Boxing-section-_4_-_1_-_1_.webp',
+    hoverColor: '#D4AF37',
+    videoUrl: 'https://youtube.com/shorts/pHKTy-XRehM',
+  },
+  {
+    id: 'strengthConditioning',
+    image: '/images/s_c-_1_.webp',
+    hoverColor: '#B8860B',
+    videoUrl: 'https://youtube.com/shorts/ZXfglmZ5iYE',
+  },
+  {
+    id: 'womensBoxing',
+    image: '/images/womens-boxing-_1_.webp',
+    hoverColor: '#FFD700',
+    videoUrl: 'https://www.instagram.com/reel/DVnK8pTCcBq/',
+  },
+  {
+    id: 'drillsSparring',
+    image: '/images/drills-and-sparring-_1_.webp',
+    hoverColor: '#DAA520',
+    videoUrl: 'https://youtube.com/shorts/wTRnTRP3My8',
+  },
 ];
 
 interface ProgramsProps {
@@ -86,6 +107,23 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                     {t('viewSchedule')}
                   </span>
                 </div>
+              </a>
+
+              <a
+                href={program.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center justify-center gap-2 self-start px-5 py-2.5 border border-white/30 text-white text-xs font-semibold uppercase tracking-wider hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors duration-300"
+              >
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <span>{t('seeTheClass')}</span>
               </a>
             </div>
           ))}

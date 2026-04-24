@@ -94,7 +94,8 @@
         "description": "Boxing classes designed specifically for women of all skill levels",
         "level": "All Levels"
       },
-      "viewSchedule": "View Class Schedule"
+      "viewSchedule": "View Class Schedule",
+      "seeTheClass": "See the class"
     },
     "pricing": {
       "title": "Pricing",
