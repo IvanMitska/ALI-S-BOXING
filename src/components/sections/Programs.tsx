@@ -4,19 +4,39 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Link } from '@/i18n/navigation';
-import { getBookingWhatsAppUrl } from '@/lib/whatsapp';
 
 interface Program {
   id: string;
   image: string;
   hoverColor: string;
+  videoUrl: string;
 }
 
 const programs: Program[] = [
-  { id: 'westernBoxing', image: '/images/Boxing-section-_4_-_1_-_1_.webp', hoverColor: '#D4AF37' },
-  { id: 'strengthConditioning', image: '/images/s_c-_1_.webp', hoverColor: '#B8860B' },
-  { id: 'womensBoxing', image: '/images/womens-boxing-_1_.webp', hoverColor: '#FFD700' },
-  { id: 'drillsSparring', image: '/images/drills-and-sparring-_1_.webp', hoverColor: '#DAA520' },
+  {
+    id: 'westernBoxing',
+    image: '/images/Boxing-section-_4_-_1_-_1_.webp',
+    hoverColor: '#D4AF37',
+    videoUrl: 'https://youtube.com/shorts/pHKTy-XRehM',
+  },
+  {
+    id: 'strengthConditioning',
+    image: '/images/s_c-_1_.webp',
+    hoverColor: '#B8860B',
+    videoUrl: 'https://youtube.com/shorts/ZXfglmZ5iYE',
+  },
+  {
+    id: 'womensBoxing',
+    image: '/images/womens-boxing-_1_.webp',
+    hoverColor: '#FFD700',
+    videoUrl: 'https://www.instagram.com/reel/DVnK8pTCcBq/',
+  },
+  {
+    id: 'drillsSparring',
+    image: '/images/drills-and-sparring-_1_.webp',
+    hoverColor: '#DAA520',
+    videoUrl: 'https://youtube.com/shorts/wTRnTRP3My8',
+  },
 ];
 
 interface ProgramsProps {
@@ -49,7 +69,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
           {programs.map((program, index) => (
             <div key={program.id} className="flex flex-col">
               <a
-                href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
+                href={program.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative block aspect-[4/3] lg:aspect-[16/11] overflow-hidden cursor-pointer"
@@ -83,7 +103,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                   </h3>
 
                   <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    {t('viewSchedule')}
+                    {t('watchVideo')}
                   </span>
                 </div>
               </a>
