@@ -67,14 +67,9 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
 
         {/* Programs grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {programs.map((program, index) => (
-            <div key={program.id} className="group relative">
-              <a
-                href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block aspect-[4/3] lg:aspect-[16/11] overflow-hidden cursor-pointer"
-              >
+          {programs.map((program, index) => {
+            const cardInner = (
+              <>
                 {/* Background image */}
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                   <Image
@@ -107,7 +102,28 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                     {showViewAllButton ? t('viewSchedule') : t('bookNow')}
                   </span>
                 </div>
-              </a>
+              </>
+            );
+
+            const cardClassName =
+              'relative block aspect-[4/3] lg:aspect-[16/11] overflow-hidden cursor-pointer';
+
+            return (
+              <div key={program.id} className="group relative">
+                {showViewAllButton ? (
+                  <Link href="/classes" className={cardClassName}>
+                    {cardInner}
+                  </Link>
+                ) : (
+                  <a
+                    href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cardClassName}
+                  >
+                    {cardInner}
+                  </a>
+                )}
 
               <a
                 href={program.videoUrl}
@@ -126,7 +142,8 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                 <span>{t('seeTheClass')}</span>
               </a>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* View all link */}
