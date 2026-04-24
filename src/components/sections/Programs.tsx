@@ -68,12 +68,12 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
         {/* Programs grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {programs.map((program, index) => (
-            <div key={program.id} className="relative">
+            <div key={program.id} className="group relative">
               <a
                 href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block aspect-[4/3] lg:aspect-[16/11] overflow-hidden cursor-pointer"
+                className="relative block aspect-[4/3] lg:aspect-[16/11] overflow-hidden cursor-pointer"
               >
                 {/* Background image */}
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
@@ -99,11 +99,11 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
-                  <h3 className="font-display text-2xl sm:text-3xl lg:text-5xl font-bold uppercase text-white leading-tight text-center transition-transform duration-300 group-hover:-translate-y-4">
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-5xl font-bold uppercase text-white leading-tight text-center transition-transform duration-300 md:group-hover:-translate-y-4">
                     {t(`${program.id}.title`)}
                   </h3>
 
-                  <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <span className="mt-6 px-6 py-2.5 bg-white text-black text-sm font-semibold uppercase tracking-wider opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
                     {showViewAllButton ? t('viewSchedule') : t('bookNow')}
                   </span>
                 </div>
@@ -113,7 +113,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                 href={program.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 px-4 py-2.5 bg-black/70 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold uppercase tracking-wider hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors duration-300 whitespace-nowrap"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 px-4 py-2.5 bg-black/70 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold uppercase tracking-wider opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-all duration-300 whitespace-nowrap"
               >
                 <svg
                   className="w-3.5 h-3.5"
