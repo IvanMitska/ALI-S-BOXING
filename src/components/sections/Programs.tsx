@@ -68,7 +68,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
         {/* Programs grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {programs.map((program, index) => (
-            <div key={program.id} className="flex flex-col">
+            <div key={program.id} className="relative">
               <a
                 href={getBookingWhatsAppUrl(t(`${program.id}.title`))}
                 target="_blank"
@@ -113,7 +113,7 @@ export function Programs({ showViewAllButton = true }: ProgramsProps) {
                 href={program.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center justify-center gap-2 self-start px-5 py-2.5 border border-white/30 text-white text-xs font-semibold uppercase tracking-wider hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors duration-300"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 px-4 py-2.5 bg-black/70 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold uppercase tracking-wider hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors duration-300 whitespace-nowrap"
               >
                 <svg
                   className="w-3.5 h-3.5"
